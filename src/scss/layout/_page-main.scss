@@ -1,0 +1,10 @@
+@layer layout {
+  @scope (.page-main) {
+    :scope {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-x: clip;
+    }
+  }
+}
