@@ -4,6 +4,7 @@
     -webkit-font-smoothing: antialiased;
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
+    font-size: clamp(2px, calc(1px + 0.47vw), 125px);
 
     @media (width <= 576px) {
       font-size: 10px;
@@ -19,6 +20,7 @@
     overscroll-behavior: none;
     font-family: var(--pragmatica);
     color: var(--text-color);
+    background-color: var(--bg-color);
   }
 
   :where(a, button) {
@@ -29,8 +31,8 @@
   }
 
   ::selection {
-    color: white;
+    color: var(--bg-color);
     background-color: var(--primary-color);
-    -webkit-text-fill-color: white;
+    -webkit-text-fill-color: var(--bg-color);
   }
 }

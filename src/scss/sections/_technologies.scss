@@ -1,0 +1,221 @@
+@layer sections {
+  @scope (.technologies) {
+    :scope {
+      background-color: var(--primary-color);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "stack";
+
+      & > * {
+        grid-area: stack;
+      }
+    }
+
+    .orb {
+      width: 100%;
+      max-width: 81.1rem;
+      justify-self: center;
+      align-self: center;
+      place-items: center;
+      text-align: center;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "stack";
+      margin: 3.5rem 0;
+      //   z-index: 10;
+
+      img {
+        mix-blend-mode: overlay;
+      }
+
+      & > * {
+        grid-area: stack;
+      }
+    }
+
+    .heading {
+      z-index: 20;
+      position: relative;
+    }
+
+    .tech-cloud {
+      position: relative;
+      width: 100vw;
+      width: 100svw;
+      left: 50%;
+      transform: translateX(-50%);
+      aspect-ratio: 1920 / 800;
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tech-cloud li {
+      /* исходные данные из макета */
+      --x: 640; /* центр по X в px (из макета 1920) */
+      --y: 320; /* центр по Y в px (из макета) */
+      --d: 100; /* диаметр круга в px */
+
+      /* размеры макета */
+      --mw: 1920;
+      --mh: 800;
+      --b-width: 0.2rem;
+      --bg: var(--primary-color);
+      position: absolute;
+      border-radius: 50%;
+      border: var(--b-width) solid #2bf4fc;
+      background-color: var(--bg);
+      color: #fff;
+      text-align: center;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 94%;
+      letter-spacing: -0.04rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      left: calc((var(--x) + var(--d) / 2) / var(--mw) * 100%);
+      top: calc((var(--y) + var(--d) / 2) / var(--mh) * 100%);
+      transform: translate(-50%, -50%);
+      width: calc(var(--d) / var(--mw) * 100%);
+      padding: 2rem;
+
+      //   left: calc(var(--x) / var(--mw) * 100%);
+      //   top: calc(var(--y) / var(--mh) * 100%);
+
+      &:nth-child(1) {
+        --d: 142;
+        --x: 157;
+        --y: 252;
+      }
+      &:nth-child(2) {
+        --d: 142;
+        --x: 221;
+        --y: 403;
+      }
+      &:nth-child(3) {
+        --d: 142;
+        --x: 375;
+        --y: 339;
+      }
+      &:nth-child(4) {
+        --d: 142;
+        --x: 363;
+        --y: 507;
+      }
+      &:nth-child(5) {
+        --d: 100;
+        --x: 573;
+        --y: 442;
+      }
+      &:nth-child(6) {
+        --d: 142;
+        --x: 440;
+        --y: 171;
+      }
+      &:nth-child(7) {
+        --d: 142;
+        --x: 603;
+        --y: 84;
+      }
+      &:nth-child(8) {
+        --d: 100;
+        --x: 786;
+        --y: 207;
+        --b-width: 1px;
+      }
+      &:nth-child(9) {
+        --d: 72;
+        --x: 938;
+        --y: 302;
+        --b-width: 1px;
+      }
+      &:nth-child(10) {
+        --d: 142;
+        --x: 1069;
+        --y: 10;
+      }
+      &:nth-child(11) {
+        --d: 142;
+        --x: 1211;
+        --y: 97;
+        --bg: transparent;
+        --b-width: 0.3rem;
+      }
+      &:nth-child(12) {
+        --d: 142;
+        --x: 1096;
+        --y: 206;
+      }
+      &:nth-child(13) {
+        --d: 100;
+        --x: 1394;
+        --y: 202;
+        --b-width: 1px;
+      }
+      &:nth-child(14) {
+        --d: 142;
+        --x: 1573;
+        --y: 186;
+      }
+      &:nth-child(15) {
+        --d: 72;
+        --x: 1356;
+        --y: 303;
+        --b-width: 1px;
+      }
+      &:nth-child(16) {
+        --d: 142;
+        --x: 1431;
+        --y: 313;
+      }
+      &:nth-child(17) {
+        --d: 100;
+        --x: 1262;
+        --y: 422;
+      }
+      &:nth-child(18) {
+        --d: 142;
+        --x: 1549;
+        --y: 421;
+      }
+      &:nth-child(19) {
+        --d: 105;
+        --x: 1431;
+        --y: 575;
+      }
+      &:nth-child(20) {
+        --d: 145;
+        --x: 830;
+        --y: 511;
+        --b-width: 1px;
+      }
+      &:nth-child(21) {
+        --d: 142;
+        --x: 607;
+        --y: 592;
+        --bg: transparent;
+        --b-width: 0.3rem;
+      }
+      &:nth-child(22) {
+        --d: 142;
+        --x: 985;
+        --y: 572;
+      }
+      &:nth-child(23) {
+        --d: 142;
+        --x: 1155;
+        --y: 640;
+        --b-width: 0.3rem;
+        --bg: transparent;
+      }
+    }
+  }
+}

@@ -1,1 +1,27 @@
-// Styles for .portfolio section live here.
+@layer sections {
+  @scope (.portfolio) to (.item > *) {
+    :scope {
+      padding-top: 11rem;
+      padding-bottom: 10rem;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+      justify-content: space-between;
+      margin-bottom: 3.4rem;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
