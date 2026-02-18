@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation, EffectCreative, Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 import EffectPanorama from "../lib/swiper/effectPanorama";
 
@@ -20,18 +20,28 @@ export default function platform() {
   elements.forEach((element) => {
     const container = element.querySelector<HTMLElement>(".swiper");
     if (!container) return;
+    const wrapper = container.querySelector<HTMLElement>(".swiper-wrapper");
+    if (!wrapper) return;
+    const originalSlides = Array.from(
+      wrapper.querySelectorAll<HTMLElement>(".swiper-slide")
+    );
+    const clonedSlides = originalSlides.map((slide) => slide.cloneNode(true));
+    wrapper.append(...clonedSlides);
 
     const options: PanoramaSwiperOptions = {
-      modules: [Navigation, Pagination, EffectCreative, EffectPanorama],
+      modules: [Navigation, Pagination, EffectPanorama],
       effect: "panorama",
-      //   spaceBetween: 40,
       slidesPerView: "auto",
       loop: true,
       centeredSlides: true,
       panoramaEffect: { depth: 50, rotate: -15 },
       pagination: {
         el: element.querySelector<HTMLElement>(".platform__slider-pagination"),
-        type: "fraction",
+        type: "custom",
+        renderCustom: (swiper) => {
+          const current = (swiper.realIndex % originalSlides.length) + 1;
+          return `${current}/${originalSlides.length}`;
+        },
       },
       navigation: {
         prevEl: element.querySelector<HTMLButtonElement>(
