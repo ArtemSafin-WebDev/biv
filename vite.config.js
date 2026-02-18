@@ -17,7 +17,11 @@ function cssRelativePublicUrls() {
           const prefix = "../".repeat(depth);
           chunk.source = chunk.source.replace(
             /url\(\s*(['"]?)\/images\//g,
-            `url($1${prefix}images/`,
+            `url($1${prefix}images/`
+          );
+          chunk.source = chunk.source.replace(
+            /url\(\s*(['"]?)\/fonts\//g,
+            `url($1${prefix}fonts/`
           );
         }
       }
