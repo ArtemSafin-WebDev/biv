@@ -14,6 +14,7 @@ export default function platform() {
       slidesPerView: "auto",
       centeredSlides: true,
       centeredSlidesBounds: false,
+      effect: "creative",
       creativeEffect: {
         prev: {
           translate: ["-120%", 0, -500],
