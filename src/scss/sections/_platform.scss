@@ -38,6 +38,12 @@
       width: 47rem;
       transform-style: preserve-3d;
       backface-visibility: hidden;
+
+      &.swiper-slide--far {
+        .platform__slider-card {
+          transform: translateX(var(--far-slide-shift));
+        }
+      }
     }
   }
 

@@ -8,6 +8,7 @@ export default function platform() {
   elements.forEach((element) => {
     const container = element.querySelector<HTMLElement>(".swiper");
     if (!container) return;
+
     new Swiper(container, {
       modules: [Navigation, Pagination, EffectCreative],
       effect: "creative",
@@ -15,23 +16,26 @@ export default function platform() {
       slidesPerView: "auto",
       watchSlidesProgress: true,
       loop: true,
+      //   loopAddBlankSlides: false,
+      //   loopAdditionalSlides: 5,
+      //   loopPreventsSliding: true,
       speed: 700,
-      spaceBetween: 0,
+      spaceBetween: 10,
       creativeEffect: {
         perspective: true,
-        limitProgress: 2,
-        progressMultiplier: 0.9,
+        limitProgress: 3,
+        progressMultiplier: 1,
         prev: {
-          translate: ["-62%", "6%", -320],
-          rotate: [0, 22, 0],
-          scale: 0.9,
+          translate: ["-105%", "0%", -120],
+          rotate: [0, -25, 0],
+          scale: 1,
           opacity: 1,
           shadow: false,
         },
         next: {
-          translate: ["62%", "6%", -320],
-          rotate: [0, -22, 0],
-          scale: 0.9,
+          translate: ["105%", "0%", -120],
+          rotate: [0, 25, 0],
+          scale: 1,
           opacity: 1,
           shadow: false,
         },
