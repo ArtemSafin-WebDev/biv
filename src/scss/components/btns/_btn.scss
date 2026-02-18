@@ -1,23 +1,22 @@
 @layer components {
-  @scope (.btn) {
-    :scope {
-      flex-shrink: 0;
-      display: block;
-      padding: 1.2rem 2rem;
-      border-radius: 20rem;
-      text-align: center;
-      font-size: 2rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%;
-      background-color: var(--primary-color);
-      border: 1px solid var(--primary-color);
-      color: var(--text-color);
-      transition:
-        background-color 0.2s,
-        color 0.2s;
-    }
-    :scope.btn--outline {
+  .btn {
+    flex-shrink: 0;
+    display: block;
+    padding: 1.2rem 2rem;
+    border-radius: 20rem;
+    text-align: center;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &--outline {
       background-color: transparent;
       border-color: var(--text-color);
       @media (hover: hover) and (pointer: fine) {
@@ -28,7 +27,7 @@
       }
     }
 
-    :scope.btn--white {
+    &--white {
       background-color: white;
       border-color: white;
       color: var(--text-color);

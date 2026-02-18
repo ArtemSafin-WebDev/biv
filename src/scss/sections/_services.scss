@@ -1,156 +1,159 @@
 @layer sections {
-  @scope (.services) {
-    :scope {
-      padding-top: 11rem;
-      padding-bottom: 3.7rem;
-    }
+  .services {
+    padding-top: 11rem;
+    padding-bottom: 3.7rem;
+  }
 
-    .list {
-      margin-top: 3.4rem;
-    }
+  .services__list {
+    margin-top: 3.4rem;
+  }
 
-    .item {
-      border-top: 1px solid #7d838a;
-      &:last-child {
-        border-bottom: 1px solid #7d838a;
-      }
-    }
+  .services__item {
+    border-top: 1px solid #7d838a;
 
-    .accordion {
-      padding: 3rem 0;
-      display: grid;
-      gap: 34.8rem;
-      grid-template-columns: 1fr minmax(0, 56rem);
-      grid-template-areas: "content image";
-      position: relative;
-
-      &--reverse {
-        grid-template-columns: minmax(0, 56rem) 1fr;
-        grid-template-areas: "image content";
-      }
-    }
-
-    .accordion-toggle {
-      position: absolute;
-      inset: 0;
-      z-index: 4;
-    }
-
-    .accordion-image {
-      height: 15.2rem;
-      border-radius: 13rem;
-      transition:
-        height 0.6s,
-        border-radius 0.4s;
-      overflow: clip;
-      grid-area: image;
-      position: relative;
-
-      img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: grayscale(100%);
-        transition: filter 0.2s;
-        object-position: 50% var(--y-offset, 50%);
-      }
-    }
-
-    .accordion.active .accordion-image {
-      height: 44rem;
-      border-radius: 4rem;
-      img {
-        filter: grayscale(0);
-      }
-    }
-
-    .accordion-content {
-      grid-area: content;
-      display: flex;
-      flex-direction: column;
-
-      &::before,
-      &::after {
-        content: "";
-        height: 1px;
-        width: 1px;
-        flex-grow: 1;
-        transition: flex-grow 0.8s;
-      }
-    }
-
-    .accordion.active .accordion-content {
-      &::before {
-        flex-grow: 0;
-        transition: flex-grow 0.4s;
-      }
-    }
-
-    .accordion-title {
-      font-size: 6.4rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 90%;
-      letter-spacing: -0.128rem;
-      color: #9a9fa5;
-      transition: color 0.2s;
-    }
-
-    .accordion.active .accordion-title {
-      color: var(--text-color);
-    }
-
-    .accordion-dropdown {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 600ms;
-    }
-
-    .accordion.active .accordion-dropdown {
-      grid-template-rows: 1fr;
-    }
-
-    .accordion-inner {
-      grid-row: 1 / 2;
-      overflow: hidden;
-    }
-
-    .accordion-desc {
-      padding-top: 2rem;
-      font-size: 2rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%;
-      max-width: 70rem;
-      opacity: 0;
-      transition: opacity 0.2s;
-      ul {
-        & > li {
-          position: relative;
-          padding-left: 2.5rem;
-          &::before {
-            content: "•";
-            position: absolute;
-            top: 0;
-            left: 0.5rem;
-            font-size: 1.4em;
-          }
-        }
-      }
-    }
-
-    .accordion.active .accordion-desc {
-      opacity: 1;
-      transition: opacity 0.2s ease 0.4s;
+    &:last-child {
+      border-bottom: 1px solid #7d838a;
     }
   }
 
-  .show-more {
+  .services__accordion {
+    padding: 3rem 0;
+    display: grid;
+    gap: 34.8rem;
+    grid-template-columns: 1fr minmax(0, 56rem);
+    grid-template-areas: "content image";
+    position: relative;
+
+    &--reverse {
+      grid-template-columns: minmax(0, 56rem) 1fr;
+      grid-template-areas: "image content";
+    }
+  }
+
+  .services__accordion-toggle {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+  }
+
+  .services__accordion-image {
+    height: 15.2rem;
+    border-radius: 13rem;
+    transition:
+      height 0.6s,
+      border-radius 0.4s;
+    overflow: clip;
+    grid-area: image;
+    position: relative;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.2s;
+      object-position: 50% var(--y-offset, 50%);
+    }
+  }
+
+  .services__accordion.active .services__accordion-image {
+    height: 44rem;
+    border-radius: 4rem;
+
+    img {
+      filter: grayscale(0);
+    }
+  }
+
+  .services__accordion-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      width: 1px;
+      flex-grow: 1;
+      transition: flex-grow 0.8s;
+    }
+  }
+
+  .services__accordion.active .services__accordion-content {
+    &::before {
+      flex-grow: 0;
+      transition: flex-grow 0.4s;
+    }
+  }
+
+  .services__accordion-title {
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: -0.128rem;
+    color: #9a9fa5;
+    transition: color 0.2s;
+  }
+
+  .services__accordion.active .services__accordion-title {
+    color: var(--text-color);
+  }
+
+  .services__accordion-dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 600ms;
+  }
+
+  .services__accordion.active .services__accordion-dropdown {
+    grid-template-rows: 1fr;
+  }
+
+  .services__accordion-inner {
+    grid-row: 1 / 2;
+    overflow: hidden;
+  }
+
+  .services__accordion-desc {
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    max-width: 70rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    ul {
+      & > li {
+        position: relative;
+        padding-left: 2.5rem;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          top: 0;
+          left: 0.5rem;
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+
+  .services__accordion.active .services__accordion-desc {
+    opacity: 1;
+    transition: opacity 0.2s ease 0.4s;
+  }
+
+  .services__show-more {
     margin-top: 3rem;
     align-self: flex-start;
+
     &--centered {
       align-self: center;
     }

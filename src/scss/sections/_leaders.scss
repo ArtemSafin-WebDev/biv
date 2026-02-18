@@ -1,65 +1,64 @@
 @layer sections {
-  @scope (.leaders) {
-    :scope {
-      background-color: var(--primary-color);
-      color: white;
-      overflow: hidden;
-    }
+  .leaders {
+    background-color: var(--primary-color);
+    color: white;
+    overflow: hidden;
+  }
 
-    .content {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "stack";
-      & > * {
-        grid-area: stack;
-      }
-    }
+  .leaders__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "stack";
 
-    .left {
+    & > * {
       grid-area: stack;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      align-self: center;
-      max-width: 82rem;
-      justify-self: flex-start;
     }
+  }
 
-    .right {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: -13.3rem;
-      margin-top: -16.3rem;
-      margin-right: calc(((100svw - 100%) / 2 * -1) - 12.4rem);
+  .leaders__left {
+    grid-area: stack;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-self: center;
+    max-width: 82rem;
+    justify-self: flex-start;
+  }
+
+  .leaders__right {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -13.3rem;
+    margin-top: -16.3rem;
+    margin-right: calc(((100svw - 100%) / 2 * -1) - 12.4rem);
+  }
+
+  .leaders__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .leaders__circle {
+    position: relative;
+    border-radius: 50%;
+    width: 24.6rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
+  }
 
-    .row {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-    }
-
-    .circle {
-      position: relative;
-      border-radius: 50%;
-      width: 24.6rem;
-      aspect-ratio: 1;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.1);
-
-      img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    .show-more {
-      align-self: flex-start;
-    }
+  .leaders__show-more {
+    align-self: flex-start;
   }
 }
