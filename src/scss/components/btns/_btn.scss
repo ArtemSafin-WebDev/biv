@@ -27,5 +27,11 @@
         }
       }
     }
+
+    :scope.btn--white {
+      background-color: white;
+      border-color: white;
+      color: var(--text-color);
+    }
   }
 }
