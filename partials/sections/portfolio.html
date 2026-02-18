@@ -9,58 +9,11 @@
             </a>
         </div>
         <ul class="portfolio__list">
-            <li class="portfolio__item">
-                <a href="#" class="portfolio-card">
-                    <div class="portfolio-card__top">
-                        <h3 class="portfolio-card__title">
-                            Оптимизация маршрутов транспортной компании
-                        </h3>
-                        <div class="portfolio-card__arrow">
-                            <svg width="14" height="14" aria-hidden="true">
-                                <use xlink:href="#arrows/right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="portfolio-card__image">
-                        <img src="/images/portfolio-card/1-hovered.webp" alt="" class="portfolio-card__img portfolio-card__img--hovered">
-                        <img src="/images/portfolio-card/1.webp" alt="" class="portfolio-card__img">
-                    </div>
-                </a>
-            </li>
-            <li class="portfolio__item">
-                <a href="#" class="portfolio-card">
-                    <div class="portfolio-card__top">
-                        <h3 class="portfolio-card__title">
-                            Автоматизация ОСАГО
-                        </h3>
-                        <div class="portfolio-card__arrow">
-                            <svg width="14" height="14" aria-hidden="true">
-                                <use xlink:href="#arrows/right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="portfolio-card__image">
-                        <img src="/images/portfolio-card/2.webp" alt="" class="portfolio-card__img">
-                    </div>
-                </a>
-            </li>
-            <li class="portfolio__item">
-                <a href="#" class="portfolio-card">
-                    <div class="portfolio-card__top">
-                        <h3 class="portfolio-card__title">
-                            Разработка личного кабинета для страховой компании
-                        </h3>
-                        <div class="portfolio-card__arrow">
-                            <svg width="14" height="14" aria-hidden="true">
-                                <use xlink:href="#arrows/right"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="portfolio-card__image">
-                        <img src="/images/portfolio-card/3.webp" alt="" class="portfolio-card__img">
-                    </div>
-                </a>
-            </li>
+            {{#each portfolio}}
+                <li class="portfolio__item">
+                    {{> components/cards/portfolio-card }}
+                </li>
+            {{/each}}
         </ul>
     </div>
 </section>

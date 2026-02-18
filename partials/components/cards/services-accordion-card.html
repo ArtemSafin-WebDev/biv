@@ -1,0 +1,24 @@
+<div class="services__accordion{{#if isReversed}} services__accordion--reverse{{/if}} js-accordion">
+    <div class="services__accordion-content">
+        <div class="services__accordion-title">
+            {{ title }}
+        </div>
+        <div class="services__accordion-dropdown js-accordion-dropdown">
+            <div class="services__accordion-inner">
+                <div class="services__accordion-desc">
+                    <ul>
+                        {{#each items}}
+                            <li>
+                                {{ this }}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="services__accordion-image">
+        <img src="{{ image }}" alt=""{{#if imageOffset}} style="--y-offset: {{ imageOffset }};"{{/if}}>
+    </div>
+    <button class="services__accordion-toggle js-accordion-btn"></button>
+</div>
