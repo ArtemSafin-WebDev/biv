@@ -1,10 +1,16 @@
 @layer sections {
   .team {
-    margin-top: 4.2rem;
-    aspect-ratio: 1920 / 957;
+    background: #f9fcff;
+
+    padding-top: 4.3rem;
+    padding-bottom: 5rem;
+  }
+
+  .team__inner {
+    padding: 5.6rem 0;
     position: relative;
     isolation: isolate;
-    padding: 5.6rem 0;
+    aspect-ratio: 1920 / 957;
   }
 
   .team__bg {

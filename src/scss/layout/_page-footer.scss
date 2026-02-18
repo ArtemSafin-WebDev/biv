@@ -1,0 +1,121 @@
+@layer layout {
+  .page-footer {
+    background-color: #eeeeee;
+    padding: 2rem 0;
+  }
+
+  .page-footer__bottom,
+  .page-footer__top {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .page-footer__bottom {
+    align-items: flex-end;
+    margin-top: 2rem;
+  }
+
+  .page-footer__col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-footer__logo {
+    width: 12.6rem;
+  }
+
+  .page-footer__logo-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .page-footer__copyright {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.054rem;
+    color: #7d838a;
+    margin-top: 1.7rem;
+  }
+
+  .page-footer__nav {
+    display: block;
+  }
+
+  .page-footer__nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+
+  .page-footer__nav-list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .page-footer__nav-link {
+    display: block;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.054rem;
+  }
+  .page-footer__nav-submenu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .page-footer__nav-submenu-link {
+    display: block;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #7d838a;
+    line-height: 120%;
+    letter-spacing: -0.054rem;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  .page-footer__address {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.054rem;
+    color: #7d838a;
+  }
+
+  .page-footer__requisites {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.028rem;
+    color: #7d838a;
+
+    ul {
+      li {
+        position: relative;
+        padding-left: 2rem;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          font-size: 1.2em;
+          left: 0.3rem;
+        }
+      }
+    }
+  }
+}
