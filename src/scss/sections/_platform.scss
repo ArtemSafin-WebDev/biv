@@ -19,12 +19,15 @@
   }
 
   .platform__slider-wrapper {
+    perspective: 180rem;
+
     .swiper {
       overflow: visible;
     }
 
     .swiper-wrapper {
       display: flex;
+      transform-style: preserve-3d;
     }
 
     .swiper-slide {
@@ -33,6 +36,7 @@
       height: auto;
       box-sizing: border-box;
       width: 47rem;
+      transform-style: preserve-3d;
     }
   }
 

@@ -10,17 +10,30 @@ export default function platform() {
     if (!container) return;
     new Swiper(container, {
       modules: [Navigation, Pagination, EffectCreative],
-      speed: 600,
-      slidesPerView: "auto",
-      centeredSlides: true,
-      centeredSlidesBounds: false,
       effect: "creative",
+      centeredSlides: true,
+      slidesPerView: "auto",
+      watchSlidesProgress: true,
+      loop: true,
+      speed: 700,
+      spaceBetween: 24,
       creativeEffect: {
+        perspective: true,
+        limitProgress: 2,
+        progressMultiplier: 1.1,
         prev: {
-          translate: ["-120%", 0, -500],
+          translate: ["-95%", "4%", -360],
+          rotate: [0, 28, 0],
+          scale: 0.84,
+          opacity: 0.55,
+          shadow: true,
         },
         next: {
-          translate: ["120%", 0, -500],
+          translate: ["95%", "4%", -360],
+          rotate: [0, -28, 0],
+          scale: 0.84,
+          opacity: 0.55,
+          shadow: true,
         },
       },
     });
