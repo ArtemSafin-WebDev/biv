@@ -10,164 +10,34 @@
             <div class="platform__slider-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
+                        {{#each platformCards}}
                         <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/1.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Low code + Pro Code
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Относится к классу low code-платформа с расширенными PRO Code возможностями
-                                    </div>
-                                </div>
-                            </div>
+                            {{> components/cards/platform-slider-card }}
                         </div>
+                        {{/each}}
+                        {{#each platformCards}}
                         <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/2.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Технологический суверенитет
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Включен в реестр российского ПО: 19858
-                                    </div>
-                                </div>
-                            </div>
+                            {{> components/cards/platform-slider-card }}
                         </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/3.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Свобода от vendor lock-in
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Передаём исходный код, вы сохраняете полный контроль над проектом
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/4.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Single-stack подход
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Ускорение работы команды разработки: один разработчик = один микросервис
-                                        от логики до интерфейса
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/5.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Гибкость на фронтенде
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Часть интерфейса формируется посредством SDUI, часть — классическим способом
-                                        на Angular
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/1.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Low code + Pro Code
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Относится к классу low code-платформа с расширенными PRO Code возможностями
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/2.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Технологический суверенитет
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Включен в реестр российского ПО: 19858
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/3.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Свобода от vendor lock-in
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Передаём исходный код, вы сохраняете полный контроль над проектом
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/4.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Single-stack подход
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Ускорение работы команды разработки: один разработчик = один микросервис
-                                        от логики до интерфейса
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="platform__slider-card">
-                                <div class="platform__slider-card-bg">
-                                    <img src="/images/platform/5.png" alt="">
-                                </div>
-                                <div class="platform__slider-card-content">
-                                    <h3 class="platform__slider-card-title">
-                                        Гибкость на фронтенде
-                                    </h3>
-                                    <div class="platform__slider-card-text">
-                                        Часть интерфейса формируется посредством SDUI, часть — классическим способом
-                                        на Angular
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
+            <div class="platform__slider-controls">
+                <button class="platform__slider-arrow platform__slider-arrow--prev">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrows/left"></use>
+                    </svg>
+                </button>
+                <div class="platform__slider-pagination">
 
+                </div>
+                <button class="platform__slider-arrow platform__slider-arrow--next">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrows/right"></use>
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 </section>

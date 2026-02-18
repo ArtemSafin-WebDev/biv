@@ -89,6 +89,33 @@ export default {
         ],
       },
     ],
+    platformCards: [
+      {
+        image: "/images/platform/1.png",
+        title: "Low code + Pro Code",
+        text: "Относится к классу low code-платформа с расширенными PRO Code возможностями",
+      },
+      {
+        image: "/images/platform/2.png",
+        title: "Технологический суверенитет",
+        text: "Включен в реестр российского ПО: 19858",
+      },
+      {
+        image: "/images/platform/3.png",
+        title: "Свобода от vendor lock-in",
+        text: "Передаём исходный код, вы сохраняете полный контроль над проектом",
+      },
+      {
+        image: "/images/platform/4.png",
+        title: "Single-stack подход",
+        text: "Ускорение работы команды разработки: один разработчик = один микросервис от логики до интерфейса",
+      },
+      {
+        image: "/images/platform/5.png",
+        title: "Гибкость на фронтенде",
+        text: "Часть интерфейса формируется посредством SDUI, часть — классическим способом на Angular",
+      },
+    ],
     portfolio: [
       {
         href: "#",

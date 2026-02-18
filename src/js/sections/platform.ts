@@ -1,5 +1,17 @@
 import Swiper from "swiper";
 import { Navigation, EffectCreative, Pagination } from "swiper/modules";
+import type { SwiperOptions } from "swiper/types";
+import EffectPanorama from "../lib/swiper/effectPanorama";
+
+type PanoramaEffectOptions = {
+  depth?: number;
+  rotate?: number;
+  transformEl?: string;
+};
+
+type PanoramaSwiperOptions = SwiperOptions & {
+  panoramaEffect?: PanoramaEffectOptions;
+};
 
 export default function platform() {
   const elements = Array.from(
@@ -9,37 +21,28 @@ export default function platform() {
     const container = element.querySelector<HTMLElement>(".swiper");
     if (!container) return;
 
-    new Swiper(container, {
-      modules: [Navigation, Pagination, EffectCreative],
-      effect: "creative",
-      centeredSlides: true,
+    const options: PanoramaSwiperOptions = {
+      modules: [Navigation, Pagination, EffectCreative, EffectPanorama],
+      effect: "panorama",
+      //   spaceBetween: 40,
       slidesPerView: "auto",
-      watchSlidesProgress: true,
       loop: true,
-      //   loopAddBlankSlides: false,
-      //   loopAdditionalSlides: 5,
-      //   loopPreventsSliding: true,
-      speed: 700,
-      spaceBetween: 10,
-      creativeEffect: {
-        perspective: true,
-        limitProgress: 3,
-        progressMultiplier: 1,
-        prev: {
-          translate: ["-105%", "0%", -120],
-          rotate: [0, -25, 0],
-          scale: 1,
-          opacity: 1,
-          shadow: false,
-        },
-        next: {
-          translate: ["105%", "0%", -120],
-          rotate: [0, 25, 0],
-          scale: 1,
-          opacity: 1,
-          shadow: false,
-        },
+      centeredSlides: true,
+      panoramaEffect: { depth: 50, rotate: -15 },
+      pagination: {
+        el: element.querySelector<HTMLElement>(".platform__slider-pagination"),
+        type: "fraction",
       },
-    });
+      navigation: {
+        prevEl: element.querySelector<HTMLButtonElement>(
+          ".platform__slider-arrow--prev"
+        ),
+        nextEl: element.querySelector<HTMLButtonElement>(
+          ".platform__slider-arrow--next"
+        ),
+      },
+    };
+
+    new Swiper(container, options);
   });
 }
