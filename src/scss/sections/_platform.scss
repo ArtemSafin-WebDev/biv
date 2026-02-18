@@ -37,6 +37,7 @@
       box-sizing: border-box;
       width: 47rem;
       transform-style: preserve-3d;
+      backface-visibility: hidden;
     }
   }
 
