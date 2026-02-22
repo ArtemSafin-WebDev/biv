@@ -21,6 +21,10 @@
     flex-direction: column;
   }
 
+  .page-footer__requisites--tablet-company {
+    display: none;
+  }
+
   .page-footer__logo {
     width: 12.6rem;
   }
@@ -116,6 +120,103 @@
           left: 0.3rem;
         }
       }
+    }
+  }
+
+  @media (width <= 1024px) and (width > 576px) {
+    .page-footer__top {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      column-gap: 2rem;
+      row-gap: 2.3rem;
+      align-items: start;
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1.2rem;
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(3) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .page-footer__col--desktop-company-info {
+      display: none;
+    }
+
+    .page-footer__col--contacts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+      align-items: start;
+    }
+
+    .page-footer__requisites--tablet-company {
+      display: block;
+    }
+
+    .page-footer__logo {
+      width: 7rem;
+    }
+
+    .page-footer__copyright {
+      margin-top: 0;
+      font-size: 2.4rem;
+      letter-spacing: -0.072rem;
+      color: rgba(17, 17, 17, 0.64);
+    }
+
+    .page-footer__nav-list {
+      grid-template-columns: 19.8rem minmax(0, 1fr);
+      column-gap: 5.1rem;
+      row-gap: 0;
+    }
+
+    .page-footer__nav-list-item {
+      gap: 1.2rem;
+    }
+
+    .page-footer__nav-link {
+      font-size: 1.6rem;
+      line-height: 92%;
+      letter-spacing: -0.048rem;
+      color: #404040;
+    }
+
+    .page-footer__nav-submenu-link,
+    .page-footer__address {
+      font-size: 1.6rem;
+      line-height: 120%;
+      letter-spacing: -0.048rem;
+      color: rgba(70, 70, 70, 0.64);
+    }
+
+    .page-footer__bottom {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+      align-items: flex-start;
+      margin-top: 2rem;
+    }
+
+    .page-footer__requisites {
+      font-size: 1.2rem;
+      letter-spacing: -0.036rem;
+      color: rgba(17, 17, 17, 0.64);
+    }
+
+    .page-footer__requisites--company {
+      font-size: 1.6rem;
+      letter-spacing: -0.048rem;
     }
   }
 
