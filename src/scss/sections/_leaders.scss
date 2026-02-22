@@ -25,13 +25,6 @@
       grid-area: stack;
     }
 
-    @media (width <= 1024px) {
-      min-height: 82.6rem;
-    }
-
-    @media (width <= 576px) {
-      min-height: 68rem;
-    }
   }
 
   .leaders__heading {
@@ -97,16 +90,11 @@
 
     @media (width <= 1024px) {
       width: 100svw;
-      height: 82.6rem;
       margin: 0;
       margin-left: calc((100svw - 100%) / -2);
       overflow: hidden;
       align-self: stretch;
       justify-self: stretch;
-    }
-
-    @media (width <= 576px) {
-      height: 68rem;
     }
   }
 
