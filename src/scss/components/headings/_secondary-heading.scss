@@ -11,5 +11,14 @@
     @media (width <= 1366px) {
       line-height: 94%;
     }
+
+    @media (width <= 1024px) {
+      font-size: 6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 94%;
+      letter-spacing: -0.12rem;
+      text-transform: uppercase;
+    }
   }
 }
