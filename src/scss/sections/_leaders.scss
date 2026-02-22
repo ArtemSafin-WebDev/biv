@@ -6,6 +6,10 @@
     @media (width <= 1366px) {
       background-color: #1caded;
     }
+
+    @media (width <= 1024px) {
+      min-height: 82.6rem;
+    }
   }
 
   .leaders__content {
@@ -16,11 +20,19 @@
     & > * {
       grid-area: stack;
     }
+
+    @media (width <= 1024px) {
+      min-height: 82.6rem;
+    }
   }
 
   .leaders__heading {
     @media (width <= 1366px) {
       max-width: 55rem;
+    }
+
+    @media (width <= 1024px) {
+      max-width: 54.7rem;
     }
   }
 
@@ -37,6 +49,13 @@
     @media (width <= 1366px) {
       gap: 3.2rem;
     }
+
+    @media (width <= 1024px) {
+      gap: 2rem;
+      align-self: flex-start;
+      margin-top: 8.8rem;
+      max-width: 81.9rem;
+    }
   }
 
   .leaders__right {
@@ -51,12 +70,36 @@
       margin-bottom: -14.3rem;
       margin-right: calc(((100svw - 100%) / 2 * -1) - 14.8rem);
     }
+
+    @media (width <= 1024px) {
+      width: 100svw;
+      height: 82.6rem;
+      margin: 0;
+      margin-left: calc((100svw - 100%) / -2);
+      overflow: hidden;
+      align-self: stretch;
+      justify-self: stretch;
+    }
+  }
+
+  .leaders__grid {
+    @media (width <= 1024px) {
+      display: flex;
+      flex-direction: column;
+      width: 132rem;
+      margin-top: -13.25rem;
+      margin-left: -8.1rem;
+    }
   }
 
   .leaders__row {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+
+    @media (width <= 1024px) {
+      width: 100%;
+    }
   }
 
   .leaders__circle {
@@ -83,5 +126,11 @@
 
   .leaders__show-more {
     align-self: flex-start;
+
+    @media (width <= 1024px) {
+      padding: 1.2rem 2rem;
+      font-size: 2rem;
+      line-height: 120%;
+    }
   }
 }

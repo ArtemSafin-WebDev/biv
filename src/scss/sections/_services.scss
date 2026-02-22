@@ -6,6 +6,11 @@
     @media (width <= 1366px) {
       padding-bottom: 3rem;
     }
+
+    @media (width <= 1024px) and (width > 576px) {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+    }
   }
 
   .services__list {
@@ -13,6 +18,10 @@
 
     @media (width <= 1366px) {
       margin-top: 3rem;
+    }
+
+    @media (width <= 1024px) and (width > 576px) {
+      margin-top: 3.1rem;
     }
   }
 
@@ -37,11 +46,20 @@
       grid-template-columns: 1fr minmax(0, 41.5rem);
     }
 
+    @media (width <= 1024px) and (width > 576px) {
+      gap: 13.1rem;
+      grid-template-columns: minmax(0, 49.3rem) minmax(0, 36rem);
+    }
+
     &--reverse {
       grid-template-columns: minmax(0, 56rem) 1fr;
       grid-template-areas: "image content";
       @media (width <= 1366px) {
         grid-template-columns: minmax(0, 41.5rem) 1fr;
+      }
+
+      @media (width <= 1024px) and (width > 576px) {
+        grid-template-columns: minmax(0, 36rem) minmax(0, 49.3rem);
       }
     }
   }
@@ -66,6 +84,12 @@
       height: 11.3rem;
     }
 
+    @media (width <= 1024px) and (width > 576px) {
+      height: 9.8rem;
+      border-radius: 13rem;
+      mix-blend-mode: luminosity;
+    }
+
     img {
       position: absolute;
       left: 0;
@@ -76,6 +100,10 @@
       filter: grayscale(100%);
       transition: filter 0.2s;
       object-position: 50% var(--y-offset, 50%);
+
+      @media (width <= 1024px) and (width > 576px) {
+        filter: none;
+      }
     }
   }
 
@@ -85,6 +113,12 @@
 
     @media (width <= 1366px) {
       height: 32.5rem;
+    }
+
+    @media (width <= 1024px) and (width > 576px) {
+      height: 28rem;
+      border-radius: 3rem;
+      mix-blend-mode: normal;
     }
 
     img {
@@ -122,6 +156,14 @@
     letter-spacing: -0.128rem;
     color: #9a9fa5;
     transition: color 0.2s;
+
+    @media (width <= 1024px) and (width > 576px) {
+      max-width: 49.3rem;
+      font-size: 4rem;
+      line-height: 90%;
+      letter-spacing: -0.08rem;
+      color: var(--text-color);
+    }
   }
 
   .services__accordion.active .services__accordion-title {
@@ -153,10 +195,19 @@
     opacity: 0;
     transition: opacity 0.2s;
 
+    @media (width <= 1024px) and (width > 576px) {
+      max-width: 49.3rem;
+      font-size: 1.6rem;
+    }
+
     ul {
       & > li {
         position: relative;
         padding-left: 2.5rem;
+
+        @media (width <= 1024px) and (width > 576px) {
+          padding-left: 2.4rem;
+        }
 
         &::before {
           content: "•";
@@ -164,6 +215,12 @@
           top: 0;
           left: 0.5rem;
           font-size: 1.4em;
+
+          @media (width <= 1024px) and (width > 576px) {
+            top: 0.1rem;
+            left: 0.3rem;
+            font-size: 1.1em;
+          }
         }
       }
     }
@@ -177,6 +234,10 @@
   .services__show-more {
     margin-top: 3rem;
     align-self: flex-start;
+
+    @media (width <= 1024px) and (width > 576px) {
+      margin-top: 3.1rem;
+    }
 
     &--centered {
       align-self: center;
