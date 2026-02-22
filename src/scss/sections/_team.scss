@@ -35,4 +35,39 @@
       object-fit: cover;
     }
   }
+
+  @media (width <= 576px) {
+    .team {
+      padding-top: 7rem;
+      padding-bottom: 2rem;
+    }
+
+    .team__row {
+      display: contents;
+    }
+
+    .team__row .secondary-heading {
+      width: 19.4rem;
+      margin-bottom: 4rem;
+    }
+
+    .team__bg {
+      order: 2;
+      width: 100vw;
+      width: 100svw;
+      aspect-ratio: 360 / 288;
+    }
+
+    .team__row .btn {
+      order: 3;
+      width: 100%;
+      max-width: 32rem;
+      margin-top: 1.8rem;
+      font-size: 1.4rem;
+      height: 4rem;
+      padding: 1rem 2rem;
+      line-height: 120%;
+      align-self: center;
+    }
+  }
 }
