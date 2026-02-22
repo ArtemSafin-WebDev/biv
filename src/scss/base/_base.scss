@@ -4,7 +4,15 @@
     -webkit-font-smoothing: antialiased;
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
-    // font-size: clamp(2px, calc(1px + 0.47vw), 125px);
+    font-size: clamp(7.42px, calc(1px + 0.47vw), 125px);
+
+    @media (width <= 1366px) {
+      font-size: clamp(5.81px, calc(1px + 0.66vw), 135px);
+    }
+
+    @media (width <= 1024px) {
+      font-size: clamp(5.81px, calc(1px + 0.88vw), 135px);
+    }
 
     @media (width <= 576px) {
       font-size: 10px;
