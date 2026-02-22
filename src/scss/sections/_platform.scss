@@ -32,12 +32,21 @@
       font-weight: 400;
       line-height: 120%;
     }
+
+    @media (width <= 576px) {
+      align-self: center;
+      max-width: 24rem;
+    }
   }
 
   .platform__slider {
     margin-top: 4rem;
     @media (width <= 1366px) {
       margin-top: 3rem;
+    }
+
+    @media (width <= 576px) {
+      margin-top: 1.6rem;
     }
   }
 
@@ -95,10 +104,19 @@
     display: flex;
     align-items: baseline;
     justify-content: center;
+
+    @media (width <= 576px) {
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 94%;
+      letter-spacing: -0.032rem;
+      text-transform: uppercase;
+    }
   }
 
   .platform__slider-wrapper {
-    perspective: 180rem;
+    // perspective: 180rem;
 
     .swiper {
       overflow: visible;

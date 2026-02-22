@@ -25,6 +25,10 @@
     display: none;
   }
 
+  .page-footer__mobile-brand {
+    display: none;
+  }
+
   .page-footer__logo {
     width: 12.6rem;
   }
@@ -120,6 +124,45 @@
           left: 0.3rem;
         }
       }
+    }
+  }
+
+  @media (width <= 1366px) and (width > 1024px) {
+    .page-footer__top,
+    .page-footer__bottom {
+      display: grid;
+      grid-template-columns: 185fr 33fr minmax(0, 501fr) 154fr minmax(0, 413fr);
+      gap: 0;
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(1),
+    .page-footer__bottom > .page-footer__col:nth-child(1) {
+      grid-column: 1;
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(2),
+    .page-footer__bottom > .page-footer__col:nth-child(2) {
+      grid-column: 3;
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(3),
+    .page-footer__bottom > .page-footer__col:nth-child(3) {
+      grid-column: 5;
+    }
+
+    .page-footer__bottom {
+      align-items: flex-start;
+      margin-top: 4rem;
+    }
+
+    .page-footer__nav-list {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      gap: 2rem;
+    }
+
+    .page-footer__requisites,
+    .page-footer__copyright {
+      color: rgba(17, 17, 17, 0.64);
     }
   }
 
@@ -220,41 +263,113 @@
     }
   }
 
-  @media (width <= 1366px) and (width > 1024px) {
-    .page-footer__top,
-    .page-footer__bottom {
-      display: grid;
-      grid-template-columns: 185fr 33fr minmax(0, 501fr) 154fr minmax(0, 413fr);
-      gap: 0;
+  @media (width <= 576px) {
+    .page-footer {
+      padding: 2rem 0;
     }
 
-    .page-footer__top > .page-footer__col:nth-child(1),
-    .page-footer__bottom > .page-footer__col:nth-child(1) {
-      grid-column: 1;
+    .page-footer__top {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2.4rem;
     }
 
-    .page-footer__top > .page-footer__col:nth-child(2),
-    .page-footer__bottom > .page-footer__col:nth-child(2) {
-      grid-column: 3;
-    }
-
-    .page-footer__top > .page-footer__col:nth-child(3),
-    .page-footer__bottom > .page-footer__col:nth-child(3) {
-      grid-column: 5;
-    }
-
-    .page-footer__bottom {
-      align-items: flex-start;
-      margin-top: 4rem;
+    .page-footer__top > .page-footer__col:nth-child(1) {
+      display: none;
     }
 
     .page-footer__nav-list {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
-      gap: 2rem;
+      grid-template-columns: 9.6rem 14.8rem;
+      column-gap: 6.9rem;
+      row-gap: 0;
     }
 
-    .page-footer__requisites,
+    .page-footer__nav-list-item {
+      gap: 1.2rem;
+    }
+
+    .page-footer__nav-link {
+      font-size: 1.4rem;
+      line-height: 92%;
+      letter-spacing: 0;
+      color: #404040;
+    }
+
+    .page-footer__nav-submenu-list {
+      gap: 0.2rem;
+    }
+
+    .page-footer__nav-submenu-link,
+    .page-footer__address {
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.042rem;
+      color: rgba(70, 70, 70, 0.64);
+    }
+
+    .page-footer__top > .page-footer__col:nth-child(3) {
+      gap: 2.4rem;
+    }
+
+    .page-footer__address {
+      p + p {
+        margin-top: 0.1rem;
+      }
+    }
+
+    .page-footer__requisites--tablet-company {
+      display: block;
+    }
+
+    .page-footer__col--desktop-company-info {
+      display: none;
+    }
+
+    .page-footer__bottom {
+      grid-template-columns: minmax(0, 1fr);
+      margin-top: 1.8rem;
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .page-footer__requisites {
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.042rem;
+      color: rgba(17, 17, 17, 0.64);
+
+      ul {
+        li {
+          padding-left: 1.7rem;
+
+          &::before {
+            left: 0;
+          }
+        }
+      }
+    }
+
+    .page-footer__bottom > .page-footer__col:nth-child(2) {
+      .page-footer__requisites {
+        line-height: 110%;
+      }
+    }
+
+    .page-footer__logo {
+      width: 6rem;
+    }
+
+    .page-footer__mobile-brand {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.8rem;
+      margin-top: 3.2rem;
+    }
+
     .page-footer__copyright {
+      margin-top: 0;
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.042rem;
       color: rgba(17, 17, 17, 0.64);
     }
   }

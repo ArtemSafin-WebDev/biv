@@ -1,6 +1,10 @@
 @layer sections {
   .technologies {
     background-color: var(--primary-color);
+
+    @media (width <= 576px) {
+      display: none;
+    }
   }
 
   .technologies__content {

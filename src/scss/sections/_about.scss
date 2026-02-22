@@ -12,6 +12,10 @@
     @media (width <= 1024px) {
       padding-bottom: 4.5rem;
     }
+
+    @media (width <= 576px) {
+      display: none;
+    }
   }
 
   .about .secondary-heading {
