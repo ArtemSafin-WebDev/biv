@@ -3,9 +3,9 @@
     background-color: var(--primary-color);
     padding-top: 4.5rem;
     padding-bottom: 10rem;
+    margin-top: -1px;
 
     @media (width <= 1366px) {
-      background-color: #1caded;
       padding-bottom: 9.7rem;
     }
   }

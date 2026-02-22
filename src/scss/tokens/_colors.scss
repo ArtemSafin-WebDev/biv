@@ -3,5 +3,9 @@
     --text-color: #002435;
     --primary-color: #17a5e4;
     --bg-color: #f9fcff;
+
+    @media (width <= 1366px) {
+      --primary-color: #1caded;
+    }
   }
 }
