@@ -8,6 +8,17 @@
     @media (width <= 1366px) {
       padding-bottom: 9.7rem;
     }
+
+    @media (width <= 1024px) {
+      padding-bottom: 4.5rem;
+    }
+  }
+
+  .about .secondary-heading {
+    @media (width <= 1024px) {
+      line-height: 90%;
+      letter-spacing: -0.18rem;
+    }
   }
 
   .about__subheading {
@@ -16,6 +27,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 110%;
+
+    @media (width <= 1024px) {
+      max-width: 52rem;
+      font-size: 2rem;
+      line-height: 100%;
+    }
   }
 
   .about__list {
@@ -27,6 +44,11 @@
     @media (width <= 1366px) {
       grid-template-columns: 1fr 4.4rem 1fr 1fr 4.4rem 1fr;
       margin-top: 5rem;
+    }
+
+    @media (width <= 1024px) {
+      grid-template-columns: 1fr 1.2rem 1fr 1fr 1.2rem 1fr;
+      margin-top: 4.7rem;
     }
   }
 
@@ -219,6 +241,11 @@
     @media (width <= 1366px) {
       line-height: 100%;
     }
+
+    @media (width <= 1024px) {
+      font-size: 6rem;
+      line-height: 100%;
+    }
   }
 
   .about__text {
@@ -228,6 +255,11 @@
     line-height: 120%;
 
     @media (width <= 1366px) {
+      line-height: 100%;
+    }
+
+    @media (width <= 1024px) {
+      font-size: 1.6rem;
       line-height: 100%;
     }
 
