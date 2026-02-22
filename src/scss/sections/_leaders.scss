@@ -24,7 +24,6 @@
     & > * {
       grid-area: stack;
     }
-
   }
 
   .leaders__heading {
@@ -105,12 +104,14 @@
       width: 132rem;
       margin-top: -13.25rem;
       margin-left: -8.1rem;
+      margin-bottom: -14rem;
     }
 
     @media (width <= 576px) {
       width: max(60rem, calc(100svw + 24rem));
       margin-top: 19.5rem;
       margin-left: -16rem;
+      margin-bottom: 0;
     }
   }
 
