@@ -12,19 +12,24 @@
         </div>
         <div class="services__accordion-dropdown js-accordion-dropdown">
             <div class="services__accordion-inner">
-                <div class="services__accordion-desc">
-                    <ul>
-                        {{#each items}}
-                            <li>
-                                {{ this }}
-                            </li>
-                        {{/each}}
-                    </ul>
+                <div class="services__accordion-body">
+                    <div class="services__accordion-desc">
+                        <ul>
+                            {{#each items}}
+                                <li>
+                                    {{ this }}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="services__accordion-image services__accordion-image--mobile">
+                        <img src="{{ image }}" alt=""{{#if imageOffset}} style="--y-offset: {{ imageOffset }};"{{/if}}>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="services__accordion-image">
+    <div class="services__accordion-image services__accordion-image--desktop">
         <img src="{{ image }}" alt=""{{#if imageOffset}} style="--y-offset: {{ imageOffset }};"{{/if}}>
     </div>
     <button class="services__accordion-toggle js-accordion-btn"></button>
