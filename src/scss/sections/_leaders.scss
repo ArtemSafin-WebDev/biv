@@ -10,6 +10,10 @@
     @media (width <= 1024px) {
       min-height: 82.6rem;
     }
+
+    @media (width <= 576px) {
+      min-height: 68rem;
+    }
   }
 
   .leaders__content {
@@ -24,6 +28,10 @@
     @media (width <= 1024px) {
       min-height: 82.6rem;
     }
+
+    @media (width <= 576px) {
+      min-height: 68rem;
+    }
   }
 
   .leaders__heading {
@@ -33,6 +41,10 @@
 
     @media (width <= 1024px) {
       max-width: 54.7rem;
+    }
+
+    @media (width <= 576px) {
+      max-width: none;
     }
   }
 
@@ -55,6 +67,18 @@
       align-self: flex-start;
       margin-top: 8.8rem;
       max-width: 81.9rem;
+    }
+
+    @media (width <= 576px) {
+      gap: 2rem;
+      align-self: stretch;
+      justify-self: stretch;
+      justify-content: space-between;
+      margin-top: 0;
+
+      max-width: none;
+      padding-top: 5rem;
+      padding-bottom: 2rem;
     }
   }
 
@@ -80,6 +104,10 @@
       align-self: stretch;
       justify-self: stretch;
     }
+
+    @media (width <= 576px) {
+      height: 68rem;
+    }
   }
 
   .leaders__grid {
@@ -89,6 +117,12 @@
       width: 132rem;
       margin-top: -13.25rem;
       margin-left: -8.1rem;
+    }
+
+    @media (width <= 576px) {
+      width: max(60rem, calc(100svw + 24rem));
+      margin-top: 19.5rem;
+      margin-left: -16rem;
     }
   }
 
@@ -114,6 +148,10 @@
       width: 22rem;
     }
 
+    @media (width <= 576px) {
+      width: 10rem;
+    }
+
     img {
       position: absolute;
       left: 0;
@@ -131,6 +169,28 @@
       padding: 1.2rem 2rem;
       font-size: 2rem;
       line-height: 120%;
+    }
+
+    @media (width <= 576px) {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      line-height: normal;
+      text-align: center;
+    }
+  }
+
+  .leaders__logo-mobile-only {
+    display: none;
+
+    @media (width <= 576px) {
+      display: block;
+    }
+  }
+
+  .leaders__logo-hide-mobile {
+    @media (width <= 576px) {
+      display: none;
     }
   }
 }

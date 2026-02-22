@@ -11,6 +11,10 @@
       padding-top: 8rem;
       padding-bottom: 8rem;
     }
+
+    @media (width <= 576px) {
+      display: none;
+    }
   }
 
   .portfolio__top {
