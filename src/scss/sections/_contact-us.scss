@@ -2,6 +2,10 @@
   .contact-us {
     padding-top: 6rem;
     background-color: #eeeeee;
+
+    @media (width <= 1366px) {
+      padding-bottom: 5rem;
+    }
   }
 
   .contact-us__stack {
@@ -10,6 +14,7 @@
     grid-template-areas: "stack";
     width: 64rem;
     align-self: center;
+
     &::before {
       content: "";
       padding-bottom: 100%;
@@ -81,6 +86,10 @@
 
   .contact-us__form-policy {
     margin-top: 2.7rem;
+
+    @media (width <= 1366px) {
+      margin-top: 2rem;
+    }
   }
 
   .contact-us__form-policy-checkbox {

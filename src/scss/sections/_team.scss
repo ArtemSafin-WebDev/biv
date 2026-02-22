@@ -1,23 +1,28 @@
 @layer sections {
   .team {
     background: #f9fcff;
-
-    padding-top: 4.3rem;
+    padding-top: 10rem;
     padding-bottom: 5rem;
+    @media (width <= 1366px) {
+      padding-bottom: 3rem;
+    }
   }
 
-  .team__inner {
-    padding: 5.6rem 0;
-    position: relative;
-    isolation: isolate;
-    aspect-ratio: 1920 / 957;
+  .team__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.2rem;
+    justify-content: space-between;
+    margin-bottom: 5rem;
   }
 
   .team__bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 1365 / 600;
+    width: 100vw;
+    width: 100svw;
     img {
       position: absolute;
       left: 0;
@@ -26,12 +31,5 @@
       height: 100%;
       object-fit: cover;
     }
-  }
-
-  .team__row {
-    display: flex;
-    align-items: center;
-    gap: 3.2rem;
-    justify-content: space-between;
   }
 }

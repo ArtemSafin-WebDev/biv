@@ -2,10 +2,18 @@
   .services {
     padding-top: 11rem;
     padding-bottom: 3.7rem;
+
+    @media (width <= 1366px) {
+      padding-bottom: 3rem;
+    }
   }
 
   .services__list {
     margin-top: 3.4rem;
+
+    @media (width <= 1366px) {
+      margin-top: 3rem;
+    }
   }
 
   .services__item {
@@ -24,9 +32,17 @@
     grid-template-areas: "content image";
     position: relative;
 
+    @media (width <= 1366px) {
+      gap: 4rem;
+      grid-template-columns: 1fr minmax(0, 41.5rem);
+    }
+
     &--reverse {
       grid-template-columns: minmax(0, 56rem) 1fr;
       grid-template-areas: "image content";
+      @media (width <= 1366px) {
+        grid-template-columns: minmax(0, 41.5rem) 1fr;
+      }
     }
   }
 
@@ -46,6 +62,10 @@
     grid-area: image;
     position: relative;
 
+    @media (width <= 1366px) {
+      height: 11.3rem;
+    }
+
     img {
       position: absolute;
       left: 0;
@@ -62,6 +82,10 @@
   .services__accordion.active .services__accordion-image {
     height: 44rem;
     border-radius: 4rem;
+
+    @media (width <= 1366px) {
+      height: 32.5rem;
+    }
 
     img {
       filter: grayscale(0);

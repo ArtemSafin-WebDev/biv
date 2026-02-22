@@ -13,6 +13,12 @@
       color 0.2s,
       background-color 0.2s;
 
+    @media (width <= 1366px) {
+      aspect-ratio: 415 / 557;
+      padding: 2rem;
+      padding-top: 3rem;
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--primary-color);
@@ -37,6 +43,10 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 3.2rem;
+
+    @media (width <= 1366px) {
+      gap: 2.4rem;
+    }
   }
 
   .portfolio-card__title {
@@ -69,6 +79,10 @@
     position: relative;
     border-radius: 1.2rem;
     margin-top: auto;
+
+    @media (width <= 1366px) {
+      aspect-ratio: 375 / 412;
+    }
   }
 
   .portfolio-card__img {

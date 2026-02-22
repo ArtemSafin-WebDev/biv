@@ -7,5 +7,9 @@
     letter-spacing: -0.16rem;
     text-transform: uppercase;
     text-wrap: balance;
+
+    @media (width <= 1366px) {
+      line-height: 94%;
+    }
   }
 }

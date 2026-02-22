@@ -4,15 +4,15 @@
             <h2 class="secondary-heading">
                 портфолио
             </h2>
-            <a href="#" class="btn">
+            <a href="#" class="btn portfolio__btn">
                 Смотреть кейсы
             </a>
         </div>
         <ul class="portfolio__list">
             {{#each portfolio}}
-                <li class="portfolio__item">
-                    {{> components/cards/portfolio-card }}
-                </li>
+            <li class="portfolio__item">
+                {{> components/cards/portfolio-card }}
+            </li>
             {{/each}}
         </ul>
     </div>

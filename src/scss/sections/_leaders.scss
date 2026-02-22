@@ -3,6 +3,9 @@
     background-color: var(--primary-color);
     color: white;
     overflow: hidden;
+    @media (width <= 1366px) {
+      background-color: #1caded;
+    }
   }
 
   .leaders__content {
@@ -15,6 +18,12 @@
     }
   }
 
+  .leaders__heading {
+    @media (width <= 1366px) {
+      max-width: 55rem;
+    }
+  }
+
   .leaders__left {
     grid-area: stack;
     z-index: 10;
@@ -24,6 +33,10 @@
     align-self: center;
     max-width: 82rem;
     justify-self: flex-start;
+
+    @media (width <= 1366px) {
+      gap: 3.2rem;
+    }
   }
 
   .leaders__right {
@@ -32,6 +45,12 @@
     margin-bottom: -13.3rem;
     margin-top: -16.3rem;
     margin-right: calc(((100svw - 100%) / 2 * -1) - 12.4rem);
+
+    @media (width <= 1366px) {
+      margin-top: -13.2rem;
+      margin-bottom: -14.3rem;
+      margin-right: calc(((100svw - 100%) / 2 * -1) - 14.8rem);
+    }
   }
 
   .leaders__row {
@@ -47,6 +66,10 @@
     aspect-ratio: 1;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.1);
+
+    @media (width <= 1366px) {
+      width: 22rem;
+    }
 
     img {
       position: absolute;

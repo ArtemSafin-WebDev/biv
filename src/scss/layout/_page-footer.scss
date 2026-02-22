@@ -9,6 +9,10 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.2rem;
+
+    @media (width <= 1366px) {
+      grid-template-columns: 1fr 2fr 2fr;
+    }
   }
 
   .page-footer__bottom {

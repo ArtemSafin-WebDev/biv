@@ -2,6 +2,10 @@
   .portfolio {
     padding-top: 11rem;
     padding-bottom: 10rem;
+
+    @media (width <= 1366px) {
+      padding-bottom: 8rem;
+    }
   }
 
   .portfolio__top {
@@ -10,12 +14,25 @@
     gap: 3.2rem;
     justify-content: space-between;
     margin-bottom: 3.4rem;
+
+    @media (width <= 1366px) {
+      margin-bottom: 4rem;
+    }
   }
 
   .portfolio__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.2rem;
+    @media (width <= 1366px) {
+      gap: 2rem;
+    }
+  }
+
+  .portfolio__btn {
+    @media (width <= 1366px) {
+      display: none;
+    }
   }
 
   .portfolio__item {
