@@ -43,6 +43,12 @@
     white-space: nowrap;
     align-self: center;
     margin-top: -3rem;
+
+    @media (width <= 1024px) and (width > 576px) {
+      font-size: 14rem;
+      letter-spacing: -0.42rem;
+      margin-top: 0;
+    }
   }
 
   .contact-us__form {
@@ -50,6 +56,10 @@
     max-width: 39rem;
     align-self: center;
     width: 100%;
+
+    @media (width <= 1024px) and (width > 576px) {
+      margin-top: 6.9rem;
+    }
   }
 
   .contact-us__form-fields {
@@ -77,11 +87,26 @@
     &:focus {
       border-color: var(--text-color);
     }
+
+    @media (width <= 1024px) and (width > 576px) {
+      height: 3rem;
+      line-height: 171.4286%;
+      border-bottom-color: #b3b3b3;
+
+      &::placeholder {
+        color: rgba(77, 77, 77, 0.4);
+      }
+    }
   }
 
   textarea.contact-us__form-input {
     height: 7rem;
     padding-top: 0.4rem;
+
+    @media (width <= 1024px) and (width > 576px) {
+      height: 7.2rem;
+      padding-top: 0;
+    }
   }
 
   .contact-us__form-policy {
@@ -125,6 +150,10 @@
         opacity: 1;
       }
     }
+
+    @media (width <= 1024px) and (width > 576px) {
+      border-color: rgba(0, 0, 0, 0.8);
+    }
   }
 
   .contact-us__form-policy-checkbox-text {
@@ -139,10 +168,25 @@
     a {
       font-weight: 700;
     }
+
+    @media (width <= 1024px) and (width > 576px) {
+      align-self: flex-start;
+      color: rgba(0, 0, 0, 0.8);
+    }
   }
 
   .contact-us__form-submit {
     margin-top: 1.2rem;
     width: 100%;
+
+    @media (width <= 1024px) and (width > 576px) {
+      height: 4.8rem;
+      border-radius: 2.4rem;
+      font-size: 1.6rem;
+      line-height: 150%;
+      letter-spacing: -0.032rem;
+      padding-block: 0;
+      padding-inline: 2.4rem;
+    }
   }
 }

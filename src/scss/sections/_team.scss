@@ -6,6 +6,9 @@
     @media (width <= 1366px) {
       padding-bottom: 3rem;
     }
+    @media (width <= 1024px) {
+      padding-top: 8rem;
+    }
   }
 
   .team__row {
