@@ -1,7 +1,14 @@
 <div class="services__accordion{{#if isReversed}} services__accordion--reverse{{/if}} js-accordion">
     <div class="services__accordion-content">
-        <div class="services__accordion-title">
-            {{ title }}
+        <div class="services__accordion-head">
+            <div class="services__accordion-title">
+                {{ title }}
+            </div>
+            <div class="services__accordion-icon" aria-hidden="true">
+                <svg width="14" height="14">
+                    <use xlink:href="#arrows/right"></use>
+                </svg>
+            </div>
         </div>
         <div class="services__accordion-dropdown js-accordion-dropdown">
             <div class="services__accordion-inner">
