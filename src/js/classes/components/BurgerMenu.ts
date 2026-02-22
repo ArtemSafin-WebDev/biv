@@ -12,7 +12,7 @@ class BurgerMenu extends Component {
       this.element.querySelector<HTMLButtonElement>(".page-header__burger");
     this.menu = this.element.querySelector<HTMLElement>(".page-header__menu");
     this.links = Array.from(
-      this.element.querySelectorAll<HTMLAnchorElement>(".page-header__nav-link")
+      this.element.querySelectorAll<HTMLAnchorElement>(".page-header__menu a")
     );
 
     if (!this.burgerButton || !this.menu) return;

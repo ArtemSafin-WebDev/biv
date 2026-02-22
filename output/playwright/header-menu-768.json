@@ -1,0 +1,13 @@
+{
+  "viewport": [
+    768,
+    900
+  ],
+  "rowGrid": "303px 90px 303px",
+  "desktopBtnDisplay": "block",
+  "mobileBtnDisplay": "block",
+  "navLinkSize": "40px",
+  "navLinkLineHeight": "40px",
+  "burgerJustifySelf": "center",
+  "menuDisplay": "grid"
+}
