@@ -35,7 +35,31 @@
   .page-header__menu {
     display: contents;
     @media (width <= 1024px) {
-      display: none;
+      position: fixed;
+      left: 0;
+
+      width: 100%;
+      height: calc(100% - var(--header-height));
+      display: block;
+      background-color: white;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-2rem);
+      transition:
+        opacity 0.25s,
+        transform 0.25s,
+        visibility 0.25s;
+      z-index: 40;
+      top: var(--header-height, 0);
+    }
+
+    @media (width <= 1024px) {
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
     }
   }
 
@@ -54,11 +78,36 @@
       justify-self: center;
       border-radius: 30rem;
       background-color: var(--primary-color);
+      position: relative;
 
       & > span {
+        position: absolute;
         width: 2.5rem;
-        height: 1px;
+        height: 0.1rem;
         background-color: #002435;
+        transition:
+          transform 0.25s,
+          opacity 0.25s;
+      }
+
+      & > span:nth-child(1) {
+        transform: translateY(-0.6rem);
+      }
+
+      & > span:nth-child(3) {
+        transform: translateY(0.6rem);
+      }
+
+      &.active > span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      &.active > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.active > span:nth-child(3) {
+        transform: rotate(-45deg);
       }
     }
   }
@@ -68,6 +117,13 @@
     flex-wrap: wrap;
     gap: 4rem;
     row-gap: 1rem;
+
+    @media (width <= 1024px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 3rem;
+      align-items: center;
+    }
   }
 
   .page-header__nav-item {
@@ -80,6 +136,12 @@
     font-weight: 400;
     line-height: 90%;
 
+    @media (width <= 1024px) {
+      font-size: 4rem;
+      line-height: 100%;
+      letter-spacing: -0.08rem;
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: var(--primary-color);
@@ -87,8 +149,47 @@
     }
   }
 
+  .page-header__nav {
+    @media (width <= 1024px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max-content;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .page-header__contacts {
+    display: none;
+
+    @media (width <= 1024px) {
+      position: absolute;
+      right: var(--container-padding);
+      bottom: 2rem;
+      width: 15.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      color: rgb(70 70 70 / 64%);
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.042rem;
+      text-align: center;
+    }
+  }
+
+  .page-header__contact-link {
+    color: inherit;
+  }
+
   .page-header__btn {
     grid-area: cta;
     justify-self: flex-end;
+
+    @media (width <= 1024px) {
+      min-width: 14rem;
+      padding-inline: 2rem;
+    }
   }
 }
