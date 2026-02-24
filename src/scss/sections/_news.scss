@@ -3,6 +3,9 @@
     padding-top: 11rem;
     padding-bottom: 8rem;
     background-color: white;
+    @media (width <= 1024px) {
+      display: none;
+    }
   }
 
   .news__top {
