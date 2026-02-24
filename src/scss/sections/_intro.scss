@@ -20,20 +20,24 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      clip-path: circle(36rem at 50% 50%);
 
-      clip-path: circle(
-        calc(
-            min(
-                var(--container-max-width),
-                calc(100vw - (var(--container-padding) * 2))
-              ) /
-              2
-          )
-          at 50% 50%
-      );
+      @media (width <= 1366px) {
+        clip-path: circle(28rem at 50% 50%);
+      }
 
       @media (width <= 576px) {
         object-position: 55% 50%;
+        clip-path: circle(
+          calc(
+              min(
+                  var(--container-max-width),
+                  calc(100vw - (var(--container-padding) * 2))
+                ) /
+                2
+            )
+            at 50% 50%
+        );
       }
     }
   }
