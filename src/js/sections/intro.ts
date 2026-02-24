@@ -7,6 +7,10 @@ function getHeaderOffset() {
   return document.querySelector<HTMLElement>(".page-header")?.offsetHeight ?? 0;
 }
 
+function getViewportCoverRadius() {
+  return Math.hypot(window.innerWidth, window.innerHeight) / 2 + 2;
+}
+
 export default function intro() {
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>(".intro-spacer")
@@ -18,7 +22,7 @@ export default function intro() {
     if (!backgroundImage) return;
 
     gsap.to(backgroundImage, {
-      clipPath: "circle(150vmax at 50% 50%)",
+      clipPath: () => `circle(${getViewportCoverRadius()}px at 50% 50%)`,
       ease: "none",
       scrollTrigger: {
         trigger: section,

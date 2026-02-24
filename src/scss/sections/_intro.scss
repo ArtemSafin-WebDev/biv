@@ -1,6 +1,6 @@
 @layer sections {
   .intro-spacer {
-    min-height: 500vh;
+    min-height: 200vh;
     background-color: var(--primary-color);
   }
   .intro {
@@ -21,7 +21,6 @@
       height: 100%;
       object-fit: cover;
       clip-path: circle(28rem at 50% 50%);
-      will-change: clip-path;
     }
   }
 
