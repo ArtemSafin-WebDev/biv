@@ -176,5 +176,28 @@ export default {
         image: "/images/portfolio-card/3.webp",
       },
     ],
+    newsCards: [
+      {
+        href: "#",
+        image: "/images/news/news-1.webp",
+        alt: "Турнир по футболу",
+        title: "Турнир по футболу",
+        date: "13.01.2026",
+      },
+      {
+        href: "#",
+        image: "/images/news/news-2.webp",
+        alt: "Конференция 2025",
+        title: "Конференция 2025",
+        date: "10.01.2026",
+      },
+      {
+        href: "#",
+        image: "/images/news/news-3.webp",
+        alt: "Разработчики взяли награду",
+        title: "Разработчики взяли награду",
+        date: "20.11.2025",
+      },
+    ],
   },
 };
