@@ -52,6 +52,11 @@ export default function leaders() {
       .map((c) => c.querySelector<HTMLImageElement>("img"))
       .filter((img): img is HTMLImageElement => img !== null);
     gsap.killTweensOf(allImgs);
+    circles.forEach((circle, i) => {
+      const logo = circleLogos[i];
+      const img = circle.querySelector<HTMLImageElement>("img");
+      if (img && logo) img.src = logo;
+    });
     gsap.set(allImgs, { autoAlpha: 1 });
 
     const filled = shuffle(circleLogos.flatMap((l, i) => (l ? [i] : [])));
