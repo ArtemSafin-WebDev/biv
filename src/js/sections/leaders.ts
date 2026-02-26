@@ -52,6 +52,7 @@ export default function leaders() {
       .map((c) => c.querySelector<HTMLImageElement>("img"))
       .filter((img): img is HTMLImageElement => img !== null);
     gsap.killTweensOf(allImgs);
+    gsap.set(allImgs, { autoAlpha: 1 });
 
     const filled = shuffle(circleLogos.flatMap((l, i) => (l ? [i] : [])));
     const swapCount = Math.min(filled.length, hiddenPool.length);
@@ -67,13 +68,13 @@ export default function leaders() {
       const newLogo = nextLogos[i];
       circleLogos[circleIdx] = newLogo;
       gsap.to(img, {
-        opacity: 0,
+        autoAlpha: 0,
         duration: FADE_DURATION,
         ease: "power2.inOut",
         onComplete: () => {
           img.src = newLogo;
           gsap.to(img, {
-            opacity: 1,
+            autoAlpha: 1,
             duration: FADE_DURATION,
             ease: "power2.inOut",
           });
