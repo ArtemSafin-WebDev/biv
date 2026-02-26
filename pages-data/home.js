@@ -1,6 +1,22 @@
 export default {
   "/index.html": {
     title: "Главная страница",
+    leaders: [
+      "/images/leaders/1.svg",
+      "/images/leaders/2.svg",
+      "/images/leaders/3.webp",
+      "/images/leaders/4.svg",
+      "/images/leaders/5.svg",
+      "/images/leaders/6.svg",
+      "/images/leaders/7.svg",
+      "/images/leaders/8.svg",
+      "/images/leaders/9.svg",
+      "/images/leaders/10.svg",
+      "/images/leaders/11.svg",
+      "/images/leaders/12.svg",
+      "/images/leaders/13.svg",
+      "/images/leaders/14.svg",
+    ],
     services: [
       {
         title: "Заказная разработка ПО",

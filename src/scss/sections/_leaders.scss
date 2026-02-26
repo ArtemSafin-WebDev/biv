@@ -167,18 +167,4 @@
       text-align: center;
     }
   }
-
-  .leaders__logo-mobile-only {
-    display: none;
-
-    @media (width <= 576px) {
-      display: block;
-    }
-  }
-
-  .leaders__logo-hide-mobile {
-    @media (width <= 576px) {
-      display: none;
-    }
-  }
 }

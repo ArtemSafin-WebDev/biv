@@ -115,6 +115,7 @@ export default {
           for (let i = 0; i < n; ++i) accum += block.fn(i);
           return accum;
         },
+        json: (value) => JSON.stringify(value),
       },
       context(pagePath) {
         const normalized = pagePath.replace(/^\/pages\//, "/");
