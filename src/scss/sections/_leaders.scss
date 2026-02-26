@@ -150,6 +150,20 @@
     }
   }
 
+  .leaders__circle[data-leaders-mobile] {
+    display: none;
+
+    @media (width <= 576px) {
+      display: block;
+    }
+  }
+
+  .leaders__circle[data-leaders-desktop] {
+    @media (width <= 576px) {
+      display: none;
+    }
+  }
+
   .leaders__show-more {
     align-self: flex-start;
 
