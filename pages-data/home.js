@@ -4,7 +4,7 @@ export default {
     leaders: [
       "/images/leaders/1.svg",
       "/images/leaders/2.svg",
-      "/images/leaders/3.webp",
+      "/images/leaders/3.svg",
       "/images/leaders/4.svg",
       "/images/leaders/5.svg",
       "/images/leaders/6.svg",
@@ -12,10 +12,12 @@ export default {
       "/images/leaders/8.svg",
       "/images/leaders/9.svg",
       "/images/leaders/10.svg",
-      "/images/leaders/11.svg",
+      "/images/leaders/11.png",
       "/images/leaders/12.svg",
-      "/images/leaders/13.svg",
+      "/images/leaders/13.png",
       "/images/leaders/14.svg",
+      "/images/leaders/15.svg",
+      "/images/leaders/16.webp",
     ],
     services: [
       {
