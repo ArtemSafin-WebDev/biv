@@ -412,6 +412,8 @@
   @media (width <= 576px) {
     .technologies {
       overflow: hidden;
+      width: 100%;
+      aspect-ratio: 9 / 17;
     }
 
     .technologies__orb {
