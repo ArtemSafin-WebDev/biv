@@ -10,9 +10,12 @@ export default function team() {
   const slides = [
     ...section.querySelectorAll<HTMLElement>(".team__image-wrapper"),
   ];
-  if (slides.length < 2) return;
-
   const btn = section.querySelector<HTMLElement>(".team__btn");
+
+  if (slides.length < 2) {
+    if (btn) btn.style.display = "none";
+    return;
+  }
 
   let current = 0;
   let scheduled: gsap.core.Tween | null = null;
