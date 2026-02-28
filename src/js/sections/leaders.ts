@@ -41,8 +41,9 @@ export default function leaders() {
   function init() {
     circles = getVisibleCircles();
     const shuffled = shuffle([...ALL_LOGOS]);
-    circleLogos = shuffled.slice(0, circles.length);
-    queue = shuffled.slice(circles.length);
+    const n = Math.min(circles.length, ALL_LOGOS.length);
+    circleLogos = shuffled.slice(0, n);
+    queue = shuffled.slice(n);
     circleLogos.forEach((logo, i) => {
       const img = document.createElement("img");
       img.src = logo;
@@ -96,7 +97,9 @@ export default function leaders() {
   function setup() {
     cleanup();
     init();
-    scheduleNext();
+    const swappable = circles.length > 0 && ALL_LOGOS.length > circles.length;
+    if (btn) btn.hidden = !swappable;
+    if (swappable) scheduleNext();
   }
 
   setup();
