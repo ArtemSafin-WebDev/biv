@@ -12,28 +12,38 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 export default function leaders() {
-  const section = document.querySelector(".leaders");
+  const section = document.querySelector<HTMLElement>(".leaders");
   if (!section) return;
+  const el = section;
 
-  const ALL_LOGOS: string[] = JSON.parse(
-    (section as HTMLElement).dataset.leadersLogos ?? "[]"
-  );
+  const ALL_LOGOS: string[] = JSON.parse(el.dataset.leadersLogos ?? "[]");
   if (!ALL_LOGOS.length) return;
 
-  const circles = [
-    ...section.querySelectorAll<HTMLElement>("[data-leaders-circle]"),
-  ];
-  const btn = section.querySelector<HTMLElement>("[data-leaders-swap]");
-  const VISIBLE_COUNT = circles.length;
+  const btn = el.querySelector<HTMLElement>("[data-leaders-swap]");
 
-  let circleLogos: (string | null)[] = circles.map(() => null);
+  let circles: HTMLElement[] = [];
+  let circleLogos: (string | null)[] = [];
   let hiddenPool: string[] = [];
   let scheduled: gsap.core.Tween | null = null;
 
+  function getVisibleCircles() {
+    return [
+      ...el.querySelectorAll<HTMLElement>("[data-leaders-circle]"),
+    ].filter((el) => el.offsetParent !== null);
+  }
+
+  function cleanup() {
+    scheduled?.kill();
+    scheduled = null;
+    circles.forEach((c) => c.querySelector("img")?.remove());
+  }
+
   function init() {
+    circles = getVisibleCircles();
+    circleLogos = circles.map(() => null);
     const shuffled = shuffle([...ALL_LOGOS]);
-    hiddenPool = shuffled.slice(VISIBLE_COUNT);
-    shuffled.slice(0, VISIBLE_COUNT).forEach((logo, i) => {
+    hiddenPool = shuffled.slice(circles.length);
+    shuffled.slice(0, circles.length).forEach((logo, i) => {
       circleLogos[i] = logo;
       const img = document.createElement("img");
       img.src = logo;
@@ -95,8 +105,15 @@ export default function leaders() {
     scheduleNext();
   }
 
-  init();
-  scheduleNext();
+  function setup() {
+    cleanup();
+    init();
+    scheduleNext();
+  }
+
+  setup();
+
+  window.matchMedia("(max-width: 576px)").addEventListener("change", setup);
 
   btn?.addEventListener("click", (e) => {
     e.preventDefault();
