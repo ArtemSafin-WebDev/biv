@@ -55,6 +55,31 @@
     padding: 0;
   }
 
+  .technologies__cloud-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    will-change: opacity;
+    transition:
+      opacity 0.8s ease,
+      visibility 0s linear 0.8s;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+      transition:
+        opacity 0.8s ease,
+        visibility 0s linear 0s;
+    }
+  }
+
   .technologies__cloud-item {
     /* исходные данные из макета */
     --x: 640; /* центр по X в px (из макета 1920) */

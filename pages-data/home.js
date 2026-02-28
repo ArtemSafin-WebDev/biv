@@ -1,3 +1,208 @@
+const technologyReferenceSlide = [
+  { modifier: 1, label: "WEBPACK" },
+  { modifier: 2, label: "JAVA / JAVA EE" },
+  { modifier: 3, label: "RUBY<br>RUBY ON RAILS" },
+  { modifier: 4, label: "JAVASCRIPT" },
+  { modifier: 5, label: "HTML" },
+  { modifier: 6, label: "BLITZ" },
+  { modifier: 7, label: "ANDROID<br>STUDIO" },
+  { modifier: 8, label: "CSS" },
+  { modifier: 9, label: "C#" },
+  { modifier: 10, label: "CHROME<br>DEVTOOLS" },
+  { modifier: 11, label: "ORACLE" },
+  { modifier: 12, label: "JENKINS" },
+  { modifier: 13, label: "VUE.JS" },
+  { modifier: 14, label: "SELENIUM<br>IDE" },
+  { modifier: 15, label: "PHP" },
+  { modifier: 16, label: "SPRING<br>BOOT" },
+  { modifier: 17, label: "RXJS" },
+  { modifier: 18, label: "SPRING" },
+  { modifier: 19, label: "MYSQL" },
+  { modifier: 20, label: "REACT" },
+  { modifier: 21, label: "KARMA" },
+  { modifier: 22, label: "SWAGGER" },
+  { modifier: 23, label: "INSOMNIA" },
+];
+
+const technologyCircleSlots = [
+  { modifier: 1, x: 157, y: 252, diameter: 142 },
+  { modifier: 2, x: 221, y: 403, diameter: 142 },
+  { modifier: 3, x: 375, y: 339, diameter: 142 },
+  { modifier: 4, x: 363, y: 507, diameter: 142 },
+  { modifier: 5, x: 573, y: 442, diameter: 100 },
+  { modifier: 6, x: 440, y: 171, diameter: 142 },
+  { modifier: 7, x: 603, y: 84, diameter: 142 },
+  { modifier: 8, x: 786, y: 207, diameter: 100 },
+  { modifier: 9, x: 938, y: 302, diameter: 72 },
+  { modifier: 10, x: 1069, y: 10, diameter: 142 },
+  { modifier: 11, x: 1211, y: 97, diameter: 142 },
+  { modifier: 12, x: 1096, y: 206, diameter: 142 },
+  { modifier: 13, x: 1394, y: 202, diameter: 100 },
+  { modifier: 14, x: 1573, y: 186, diameter: 142 },
+  { modifier: 15, x: 1356, y: 303, diameter: 72 },
+  { modifier: 16, x: 1431, y: 313, diameter: 142 },
+  { modifier: 17, x: 1262, y: 422, diameter: 100 },
+  { modifier: 18, x: 1549, y: 421, diameter: 142 },
+  { modifier: 19, x: 1431, y: 575, diameter: 105 },
+  { modifier: 20, x: 830, y: 511, diameter: 145 },
+  { modifier: 21, x: 607, y: 592, diameter: 142 },
+  { modifier: 22, x: 985, y: 572, diameter: 142 },
+  { modifier: 23, x: 1155, y: 640, diameter: 142 },
+];
+
+const technologiesNameSets = [
+  [
+    "Angular",
+    "HTML",
+    "Angular Material",
+    "React (TypeScript)",
+    "Webpack",
+    "CSS",
+    "Node.js",
+    "Vue.js",
+    "TypeScript",
+    "RxJS",
+    "SASS",
+    "Karma",
+    "Jasmine",
+  ],
+  [
+    "Java / Java EE",
+    "C#",
+    "Spring Boot",
+    ".NET 8",
+    "Spring",
+    "ASP.NET MVC",
+    "Quarkus",
+    "ASP.NET Web API",
+    "Hibernate (для ORM)",
+    "Camunda",
+    "Maven",
+    "Android Studio",
+    "Vault",
+  ],
+  ["Blitz", "Keycloak"],
+  ["RabbitMQ", "Kafka", "REST API", "SOAP (WebServices)", "Gravitee"],
+  [
+    "Docker",
+    "Kubernetes",
+    "OpenShift",
+    "GitLab CI/CD",
+    "Jenkins",
+    "SonarQube",
+    "Zabbix",
+    "Prometheus + Grafana",
+    "bitbucket",
+  ],
+  [
+    "Postman",
+    "Swagger",
+    "Insomnia",
+    "kibana",
+    "Java",
+    "TestNG",
+    "selenium",
+    "Selenide",
+    "Playwright",
+    "Rest-assured",
+  ],
+  ["draw.io"],
+  ["Microsoft SQLServer", "Oracle", "PostgreSQL", "MySQL"],
+];
+
+function getCircleTier(diameter) {
+  if (diameter >= 140) return 3;
+  if (diameter >= 95) return 2;
+  return 1;
+}
+
+function getPreferredTier(weight) {
+  if (weight >= 14) return 3;
+  if (weight >= 8) return 2;
+  return 1;
+}
+
+function getTechnologyWeight(label) {
+  const plainLabel = label.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return plainLabel.length;
+}
+
+function getSlotDistance(firstSlot, secondSlot) {
+  const dx = firstSlot.centerX - secondSlot.centerX;
+  const dy = firstSlot.centerY - secondSlot.centerY;
+  return Math.hypot(dx, dy);
+}
+
+function pickBestSlot(availableSlots, pickedSlots, preferredTier) {
+  const preferredSlots = availableSlots.filter(
+    (slot) => slot.tier >= preferredTier
+  );
+  const candidateSlots = preferredSlots.length > 0 ? preferredSlots : availableSlots;
+
+  let bestSlot = null;
+  let bestScore = -Infinity;
+
+  candidateSlots.forEach((slot) => {
+    const tierScore = 160 - Math.abs(slot.tier - preferredTier) * 70;
+    const spreadScore =
+      pickedSlots.length === 0
+        ? getSlotDistance(slot, { centerX: 960, centerY: 400 })
+        : Math.min(...pickedSlots.map((pickedSlot) => getSlotDistance(slot, pickedSlot)));
+    const score = tierScore + spreadScore;
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestSlot = slot;
+    }
+  });
+
+  return bestSlot;
+}
+
+function distributeTechnologiesBySlots(technologyNames) {
+  const labels = technologyNames
+    .filter((label) => typeof label === "string" && label.trim().length > 0)
+    .map((label) => label.trim());
+
+  if (labels.length === 0) {
+    return [];
+  }
+
+  const slots = technologyCircleSlots.map((slot) => ({
+    ...slot,
+    tier: getCircleTier(slot.diameter),
+    centerX: slot.x + slot.diameter / 2,
+    centerY: slot.y + slot.diameter / 2,
+  }));
+  const technologiesByWeight = labels
+    .map((label) => ({ label, weight: getTechnologyWeight(label) }))
+    .sort((a, b) => b.weight - a.weight)
+    .slice(0, slots.length);
+  const placedItems = [];
+
+  technologiesByWeight.forEach(({ label, weight }) => {
+    const preferredTier = getPreferredTier(weight);
+    const bestSlot = pickBestSlot(slots, placedItems, preferredTier);
+
+    if (!bestSlot) return;
+
+    placedItems.push({ ...bestSlot, label });
+
+    const slotIndex = slots.findIndex((slot) => slot.modifier === bestSlot.modifier);
+    if (slotIndex >= 0) {
+      slots.splice(slotIndex, 1);
+    }
+  });
+
+  return placedItems
+    .map(({ modifier, label }) => ({ modifier, label }))
+    .sort((a, b) => a.modifier - b.modifier);
+}
+
+const technologiesSlides = technologiesNameSets.map((technologyNames) => ({
+  items: distributeTechnologiesBySlots(technologyNames),
+}));
+
 export default {
   "/index.html": {
     title: "Главная страница",
@@ -149,6 +354,7 @@ export default {
         ],
       },
     ],
+    technologiesSlides,
     platformCards: [
       {
         image: "/images/platform/1.png",

@@ -5,6 +5,7 @@ import platform from "./platform";
 import portfolio from "./portfolio";
 import services from "./services";
 import team from "./team";
+import technologies from "./technologies";
 
 export default function sections() {
   intro();
@@ -13,5 +14,6 @@ export default function sections() {
   services();
   news();
   portfolio();
+  technologies();
   team();
 }
