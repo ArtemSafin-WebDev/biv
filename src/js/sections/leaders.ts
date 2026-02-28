@@ -22,14 +22,14 @@ export default function leaders() {
   const btn = el.querySelector<HTMLElement>("[data-leaders-swap]");
 
   let circles: HTMLElement[] = [];
-  let circleLogos: (string | null)[] = [];
-  let hiddenPool: string[] = [];
+  let circleLogos: string[] = [];
+  let queue: string[] = [];
   let scheduled: gsap.core.Tween | null = null;
 
   function getVisibleCircles() {
     return [
       ...el.querySelectorAll<HTMLElement>("[data-leaders-circle]"),
-    ].filter((el) => el.offsetParent !== null);
+    ].filter((c) => c.offsetParent !== null);
   }
 
   function cleanup() {
@@ -40,11 +40,10 @@ export default function leaders() {
 
   function init() {
     circles = getVisibleCircles();
-    circleLogos = circles.map(() => null);
     const shuffled = shuffle([...ALL_LOGOS]);
-    hiddenPool = shuffled.slice(circles.length);
-    shuffled.slice(0, circles.length).forEach((logo, i) => {
-      circleLogos[i] = logo;
+    circleLogos = shuffled.slice(0, circles.length);
+    queue = shuffled.slice(circles.length);
+    circleLogos.forEach((logo, i) => {
       const img = document.createElement("img");
       img.src = logo;
       img.alt = "";
@@ -62,26 +61,20 @@ export default function leaders() {
       .map((c) => c.querySelector<HTMLImageElement>("img"))
       .filter((img): img is HTMLImageElement => img !== null);
     gsap.killTweensOf(allImgs);
-    circles.forEach((circle, i) => {
-      const logo = circleLogos[i];
-      const img = circle.querySelector<HTMLImageElement>("img");
-      if (img && logo) img.src = logo;
+    allImgs.forEach((img, i) => {
+      img.src = circleLogos[i];
     });
     gsap.set(allImgs, { autoAlpha: 1 });
 
-    const filled = shuffle(circleLogos.flatMap((l, i) => (l ? [i] : [])));
-    const swapCount = Math.min(filled.length, hiddenPool.length);
-    if (!swapCount) return;
+    // Outgoing logos shuffled → в хвост очереди
+    // Затем берём первые circles.length из головы очереди
+    queue.push(...shuffle([...circleLogos]));
+    const incoming = queue.splice(0, circles.length);
 
-    const targets = filled.slice(0, swapCount);
-    const nextLogos = shuffle([...hiddenPool]).slice(0, swapCount);
-    const oldLogos = targets.map((i) => circleLogos[i]!);
-
-    targets.forEach((circleIdx, i) => {
-      const img = circles[circleIdx].querySelector<HTMLImageElement>("img");
+    incoming.forEach((newLogo, i) => {
+      const img = allImgs[i];
       if (!img) return;
-      const newLogo = nextLogos[i];
-      circleLogos[circleIdx] = newLogo;
+      circleLogos[i] = newLogo;
       gsap.to(img, {
         autoAlpha: 0,
         duration: FADE_DURATION,
@@ -96,11 +89,6 @@ export default function leaders() {
         },
       });
     });
-
-    hiddenPool = [
-      ...hiddenPool.filter((l) => !nextLogos.includes(l)),
-      ...oldLogos,
-    ];
 
     scheduleNext();
   }
