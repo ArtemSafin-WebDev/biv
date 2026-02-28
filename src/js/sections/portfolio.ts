@@ -4,8 +4,10 @@ import { Navigation } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 import { MOBILE_BREAKPOINT } from "../constants/breakpoints";
 
-export default function news() {
-  const sections = Array.from(document.querySelectorAll<HTMLElement>(".news"));
+export default function portfolio() {
+  const sections = Array.from(
+    document.querySelectorAll<HTMLElement>(".portfolio")
+  );
 
   sections.forEach((section) => {
     const container = section.querySelector<HTMLElement>(".swiper");
@@ -15,14 +17,13 @@ export default function news() {
       const options: SwiperOptions = {
         modules: [Navigation],
         slidesPerView: "auto",
-
         speed: 600,
         navigation: {
           prevEl: section.querySelector<HTMLButtonElement>(
-            ".news__slider-arrow--prev"
+            ".portfolio__slider-arrow--prev"
           ),
           nextEl: section.querySelector<HTMLButtonElement>(
-            ".news__slider-arrow--next"
+            ".portfolio__slider-arrow--next"
           ),
         },
       };

@@ -61,7 +61,12 @@
 
     @media (width <= 576px) {
       width: 30rem;
+      margin-right: 2rem;
       flex-shrink: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 

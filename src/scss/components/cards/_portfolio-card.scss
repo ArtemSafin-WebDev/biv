@@ -25,6 +25,13 @@
       padding: 3rem 1rem 1rem;
     }
 
+    @media (width <= 576px) {
+      padding: 1rem;
+      padding-top: 2rem;
+      border-radius: 2.4rem;
+      aspect-ratio: 320 / 414;
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--primary-color);
@@ -58,6 +65,10 @@
       gap: 2rem;
       padding-inline: 1rem;
     }
+
+    @media (width <= 576px) {
+      gap: 1.6rem;
+    }
   }
 
   .portfolio-card__title {
@@ -70,6 +81,14 @@
       font-size: 1.6rem;
       line-height: 120%;
       letter-spacing: -0.016rem;
+    }
+
+    @media (width <= 576px) {
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.014rem;
     }
   }
 
@@ -99,6 +118,10 @@
 
     @media (width <= 1366px) {
       aspect-ratio: 375 / 412;
+    }
+
+    @media (width <= 576px) {
+      aspect-ratio: 1;
     }
   }
 

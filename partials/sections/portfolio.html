@@ -8,12 +8,31 @@
                 Смотреть кейсы
             </a>
         </div>
-        <ul class="portfolio__list">
-            {{#each portfolio}}
-            <li class="portfolio__item">
-                {{> components/cards/portfolio-card }}
-            </li>
-            {{/each}}
-        </ul>
+        <div class="portfolio__slider">
+            <div class="portfolio__slider-wrapper">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        {{#each portfolio}}
+                        <div class="swiper-slide">
+                            {{> components/cards/portfolio-card }}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio__slider-controls">
+                <button class="portfolio__slider-arrow portfolio__slider-arrow--prev">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrows/left"></use>
+                    </svg>
+                </button>
+                <button class="portfolio__slider-arrow portfolio__slider-arrow--next">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrows/right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
     </div>
 </section>

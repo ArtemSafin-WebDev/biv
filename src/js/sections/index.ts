@@ -2,6 +2,7 @@ import intro from "./intro";
 import leaders from "./leaders";
 import news from "./news";
 import platform from "./platform";
+import portfolio from "./portfolio";
 import services from "./services";
 
 export default function sections() {
@@ -10,4 +11,5 @@ export default function sections() {
   platform();
   services();
   news();
+  portfolio();
 }
