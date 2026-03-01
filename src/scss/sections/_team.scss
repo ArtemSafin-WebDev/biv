@@ -3,17 +3,17 @@
     padding-top: 10rem;
     padding-bottom: 5rem;
     background-color: #f9fcff;
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       padding-top: 10rem;
       padding-bottom: 4rem;
     }
 
-    @media (width <= 1024px) {
+    @media (max-width: 1024px) {
       padding-top: 8rem;
       padding-bottom: 3rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       padding-top: 7rem;
       padding-bottom: 4rem;
     }
@@ -25,15 +25,15 @@
     justify-content: space-between;
     gap: 3.2rem;
     margin-bottom: 4rem;
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       margin-bottom: 7rem;
     }
 
-    @media (width <= 1024px) {
+    @media (max-width: 1024px) {
       margin-bottom: 5rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: contents;
     }
   }
@@ -45,7 +45,7 @@
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "stack";
     align-items: flex-end;
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       margin-top: 4rem;
     }
   }
@@ -55,7 +55,7 @@
   }
 
   .team__btn {
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       order: 30;
       margin-top: 2rem;
       align-self: stretch;

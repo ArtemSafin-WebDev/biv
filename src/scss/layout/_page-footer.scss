@@ -127,7 +127,7 @@
     }
   }
 
-  @media (width <= 1366px) and (width > 1024px) {
+  @media (max-width: 1366px) and (min-width: 1025px) {
     .page-footer__top,
     .page-footer__bottom {
       display: grid;
@@ -166,7 +166,7 @@
     }
   }
 
-  @media (width <= 1024px) and (width > 576px) {
+  @media (max-width: 1024px) and (min-width: 577px) {
     .page-footer__top {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-rows: auto auto;
@@ -263,7 +263,7 @@
     }
   }
 
-  @media (width <= 576px) {
+  @media (max-width: 576px) {
     .page-footer {
       padding: 2rem 0;
     }

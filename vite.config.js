@@ -1,3 +1,4 @@
+import postcssNesting from "postcss-nesting";
 import handlebars from "vite-plugin-handlebars";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path, { resolve } from "path";
@@ -70,6 +71,9 @@ function flattenPagesPlugin() {
 
 export default {
   css: {
+    postcss: {
+      plugins: [postcssNesting()],
+    },
     preprocessorOptions: {
       scss: {
         loadPaths: [path.resolve(__dirname, "src/scss")],

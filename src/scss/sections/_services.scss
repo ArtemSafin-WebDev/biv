@@ -3,16 +3,16 @@
     padding-top: 11rem;
     padding-bottom: 3.7rem;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       padding-bottom: 3rem;
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       padding-top: 8rem;
       padding-bottom: 4rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       padding-top: 5rem;
       padding-bottom: 2rem;
     }
@@ -21,15 +21,15 @@
   .services__list {
     margin-top: 3.4rem;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       margin-top: 3rem;
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       margin-top: 3.1rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       margin-top: 3rem;
     }
   }
@@ -54,17 +54,17 @@
     grid-template-areas: "content image";
     position: relative;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       gap: 4rem;
       grid-template-columns: 1fr minmax(0, 41.5rem);
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       gap: 13.1rem;
       grid-template-columns: minmax(0, 49.3rem) minmax(0, 36rem);
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: block;
       padding: 2rem 0;
     }
@@ -72,11 +72,11 @@
     &--reverse {
       grid-template-columns: minmax(0, 56rem) 1fr;
       grid-template-areas: "image content";
-      @media (width <= 1366px) {
+      @media (max-width: 1366px) {
         grid-template-columns: minmax(0, 41.5rem) 1fr;
       }
 
-      @media (width <= 1024px) and (width > 576px) {
+      @media (max-width: 1024px) and (min-width: 577px) {
         grid-template-columns: minmax(0, 36rem) minmax(0, 49.3rem);
       }
     }
@@ -94,21 +94,22 @@
     transition:
       height 0.6s,
       border-radius 0.4s;
-    overflow: clip;
+    overflow: hidden;
     grid-area: image;
     position: relative;
+    transform: translateZ(0);
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       height: 11.3rem;
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       height: 9.8rem;
       border-radius: 13rem;
       mix-blend-mode: luminosity;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       height: 0;
       border-radius: 0;
       mix-blend-mode: normal;
@@ -125,18 +126,18 @@
       transition: filter 0.2s;
       object-position: 50% var(--y-offset, 50%);
 
-      @media (width <= 1024px) and (width > 576px) {
+      @media (max-width: 1024px) and (min-width: 577px) {
         filter: none;
       }
 
-      @media (width <= 576px) {
+      @media (max-width: 576px) {
         filter: none;
       }
     }
   }
 
   .services__accordion-image--desktop {
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: none;
     }
   }
@@ -144,7 +145,7 @@
   .services__accordion-image--mobile {
     display: none;
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: block;
       width: 100%;
       aspect-ratio: 320 / 252;
@@ -160,11 +161,11 @@
     height: 44rem;
     border-radius: 4rem;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       height: 32.5rem;
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       height: 28rem;
       border-radius: 3rem;
       mix-blend-mode: normal;
@@ -185,7 +186,7 @@
     display: flex;
     flex-direction: column;
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: block;
     }
 
@@ -198,7 +199,7 @@
       transition: flex-grow 0.8s;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       &::before,
       &::after {
         display: none;
@@ -207,7 +208,7 @@
   }
 
   .services__accordion-head {
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -218,7 +219,7 @@
   .services__accordion-icon {
     display: none;
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       width: 4rem;
       height: 4rem;
       flex-shrink: 0;
@@ -259,10 +260,12 @@
     letter-spacing: -0.128rem;
     color: #9a9fa5;
     transition: color 0.2s;
-    text-wrap: balance;
+    @supports (text-wrap: balance) {
+      text-wrap: balance;
+    }
     margin-top: -0.7rem;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       max-width: 49.3rem;
       font-size: 4rem;
       line-height: 90%;
@@ -271,7 +274,7 @@
       margin-top: 0;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       max-width: calc(100% - 6rem);
       font-size: 2.4rem;
       line-height: 100%;
@@ -300,7 +303,7 @@
   }
 
   .services__accordion-body {
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       padding-top: 1.2rem;
     }
   }
@@ -315,12 +318,12 @@
     opacity: 0;
     transition: opacity 0.2s;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       max-width: 49.3rem;
       font-size: 1.6rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       padding-top: 0;
       max-width: 100%;
       font-size: 1.4rem;
@@ -333,11 +336,11 @@
         position: relative;
         padding-left: 2.5rem;
 
-        @media (width <= 1024px) and (width > 576px) {
+        @media (max-width: 1024px) and (min-width: 577px) {
           padding-left: 2.4rem;
         }
 
-        @media (width <= 576px) {
+        @media (max-width: 576px) {
           padding-left: 2.1rem;
         }
 
@@ -348,13 +351,13 @@
           left: 0.5rem;
           font-size: 1.4em;
 
-          @media (width <= 1024px) and (width > 576px) {
+          @media (max-width: 1024px) and (min-width: 577px) {
             top: 0.1rem;
             left: 0.3rem;
             font-size: 1.1em;
           }
 
-          @media (width <= 576px) {
+          @media (max-width: 576px) {
             left: 0.3rem;
           }
         }
@@ -371,11 +374,11 @@
     margin-top: 3rem;
     align-self: flex-start;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       margin-top: 3.1rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       margin-top: 2rem;
       width: 100%;
       padding: 1rem 2rem;

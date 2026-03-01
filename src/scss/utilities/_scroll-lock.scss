@@ -4,6 +4,9 @@
     touch-action: none;
     -webkit-overflow-scrolling: none;
     overflow: hidden;
-    overscroll-behavior: none;
+
+    @supports (overscroll-behavior: none) {
+      overscroll-behavior: none;
+    }
   }
 }

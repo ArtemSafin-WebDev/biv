@@ -3,6 +3,8 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow-x: clip;
+    @supports (overflow: clip) {
+      overflow-x: clip;
+    }
   }
 }

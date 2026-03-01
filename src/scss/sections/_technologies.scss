@@ -263,7 +263,7 @@
     }
   }
 
-  @media (width <= 1024px) and (width > 576px) {
+  @media (max-width: 1024px) and (min-width: 577px) {
     .technologies {
       overflow: hidden;
     }
@@ -434,7 +434,7 @@
     }
   }
 
-  @media (width <= 576px) {
+  @media (max-width: 576px) {
     .technologies {
       overflow: hidden;
       width: 100%;

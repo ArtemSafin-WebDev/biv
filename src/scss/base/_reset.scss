@@ -30,8 +30,13 @@
     box-shadow: none;
     display: block;
     width: 100%;
-    field-sizing: content;
-    height: auto;
+    min-height: 7rem;
+
+    @supports (field-sizing: content) {
+      field-sizing: content;
+      min-height: auto;
+      height: auto;
+    }
   }
 
   button {

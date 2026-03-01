@@ -3,16 +3,16 @@
     padding-top: 11rem;
     padding-bottom: 10rem;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       padding-bottom: 8rem;
     }
 
-    @media (width <= 1024px) {
+    @media (max-width: 1024px) {
       padding-top: 8rem;
       padding-bottom: 8rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       padding-top: 5rem;
       padding-bottom: 3rem;
     }
@@ -25,21 +25,21 @@
     justify-content: space-between;
     margin-bottom: 3.4rem;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       margin-bottom: 4rem;
     }
 
-    @media (width <= 1024px) {
+    @media (max-width: 1024px) {
       margin-bottom: 3rem;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       display: contents;
     }
   }
 
   .portfolio__slider {
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       margin-top: 3rem;
     }
     .swiper {
@@ -48,20 +48,20 @@
 
     .swiper-wrapper {
       gap: 1.2rem;
-      @media (width > 576px) {
+      @media (min-width: 577px) {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      @media (width <= 1366px) {
+      @media (max-width: 1366px) {
         gap: 2rem;
       }
 
-      @media (width <= 1024px) {
+      @media (max-width: 1024px) {
         gap: 1.2rem;
       }
 
-      @media (width <= 576px) {
+      @media (max-width: 576px) {
         gap: 0;
       }
     }
@@ -72,7 +72,7 @@
       height: auto;
       box-sizing: border-box;
 
-      @media (width <= 576px) {
+      @media (max-width: 576px) {
         width: 30rem;
         margin-right: 1rem;
         &:last-child {
@@ -83,7 +83,7 @@
   }
 
   .portfolio__btn {
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       display: none;
     }
   }
@@ -96,7 +96,7 @@
   .portfolio__slider-controls {
     display: none;
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       margin-top: 2.4rem;
       display: flex;
       align-items: center;

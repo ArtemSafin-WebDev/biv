@@ -6,13 +6,15 @@
     line-height: 90%;
     letter-spacing: -0.16rem;
     text-transform: uppercase;
-    text-wrap: balance;
+    @supports (text-wrap: balance) {
+      text-wrap: balance;
+    }
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       line-height: 94%;
     }
 
-    @media (width <= 1024px) {
+    @media (max-width: 1024px) {
       font-size: 6rem;
       font-style: normal;
       font-weight: 400;
@@ -21,7 +23,7 @@
       text-transform: uppercase;
     }
 
-    @media (width <= 576px) {
+    @media (max-width: 576px) {
       font-size: 4rem;
       font-style: normal;
       font-weight: 400;

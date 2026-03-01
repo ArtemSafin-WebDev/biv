@@ -3,7 +3,7 @@
     padding-top: 6rem;
     background-color: #eeeeee;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       padding-bottom: 5rem;
     }
   }
@@ -44,7 +44,7 @@
     align-self: center;
     margin-top: -3rem;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       font-size: 14rem;
       letter-spacing: -0.42rem;
       margin-top: 0;
@@ -57,7 +57,7 @@
     align-self: center;
     width: 100%;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       margin-top: 6.9rem;
     }
   }
@@ -88,7 +88,7 @@
       border-color: var(--text-color);
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       height: 3rem;
       line-height: 171.4286%;
       border-bottom-color: #b3b3b3;
@@ -103,7 +103,7 @@
     height: 7rem;
     padding-top: 0.4rem;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       height: 7.2rem;
       padding-top: 0;
     }
@@ -112,7 +112,7 @@
   .contact-us__form-policy {
     margin-top: 2.7rem;
 
-    @media (width <= 1366px) {
+    @media (max-width: 1366px) {
       margin-top: 2rem;
     }
   }
@@ -151,7 +151,7 @@
       }
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       border-color: rgba(0, 0, 0, 0.8);
     }
   }
@@ -169,7 +169,7 @@
       font-weight: 700;
     }
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       align-self: flex-start;
       color: rgba(0, 0, 0, 0.8);
     }
@@ -179,7 +179,7 @@
     margin-top: 1.2rem;
     width: 100%;
 
-    @media (width <= 1024px) and (width > 576px) {
+    @media (max-width: 1024px) and (min-width: 577px) {
       height: 4.8rem;
       border-radius: 2.4rem;
       font-size: 1.6rem;
@@ -190,7 +190,7 @@
     }
   }
 
-  @media (width <= 576px) {
+  @media (max-width: 576px) {
     .contact-us {
       padding-top: 4.6rem;
       padding-bottom: 0;

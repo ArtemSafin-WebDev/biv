@@ -16,7 +16,7 @@
       background-color 0.2s,
       color 0.2s;
 
-    @media (width <= 1024px) {
+    @media (max-width: 1024px) {
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 400;
