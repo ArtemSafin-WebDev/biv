@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 
 const SWAP_INTERVAL = 4;
 const FADE_DURATION = 0.4;
+const STAGGER_DELAY = 0.07;
 
 function shuffle<T>(arr: T[]): T[] {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -25,6 +26,7 @@ export default function leaders() {
   let circleLogos: string[] = [];
   let queue: string[] = [];
   let scheduled: gsap.core.Tween | null = null;
+  let midSwap: gsap.core.Tween | null = null;
 
   function getVisibleCircles() {
     return [
@@ -35,6 +37,8 @@ export default function leaders() {
   function cleanup() {
     scheduled?.kill();
     scheduled = null;
+    midSwap?.kill();
+    midSwap = null;
     circles.forEach((c) => c.querySelector("img")?.remove());
   }
 
@@ -58,6 +62,9 @@ export default function leaders() {
   }
 
   function swapAll() {
+    midSwap?.kill();
+    midSwap = null;
+
     const allImgs = circles
       .map((c) => c.querySelector<HTMLImageElement>("img"))
       .filter((img): img is HTMLImageElement => img !== null);
@@ -72,22 +79,26 @@ export default function leaders() {
     queue.push(...shuffle([...circleLogos]));
     const incoming = queue.splice(0, circles.length);
 
-    incoming.forEach((newLogo, i) => {
-      const img = allImgs[i];
-      if (!img) return;
-      circleLogos[i] = newLogo;
-      gsap.to(img, {
-        autoAlpha: 0,
+    // Все исчезают синхронно
+    gsap.to(allImgs, {
+      autoAlpha: 0,
+      duration: FADE_DURATION,
+      ease: "power2.inOut",
+    });
+
+    // После исчезновения — обновляем src и появляемся с stagger (слева→право, сверху→вниз)
+    midSwap = gsap.delayedCall(FADE_DURATION, () => {
+      incoming.forEach((newLogo, i) => {
+        if (allImgs[i]) {
+          allImgs[i].src = newLogo;
+          circleLogos[i] = newLogo;
+        }
+      });
+      gsap.to(allImgs, {
+        autoAlpha: 1,
         duration: FADE_DURATION,
         ease: "power2.inOut",
-        onComplete: () => {
-          img.src = newLogo;
-          gsap.to(img, {
-            autoAlpha: 1,
-            duration: FADE_DURATION,
-            ease: "power2.inOut",
-          });
-        },
+        stagger: STAGGER_DELAY,
       });
     });
 
