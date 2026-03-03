@@ -104,6 +104,14 @@
     color: #7d838a;
   }
 
+  .page-footer__address a {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--text-color);
+        }
+      }
+  }
+
   .page-footer__requisites {
     font-size: 1.4rem;
     font-style: normal;

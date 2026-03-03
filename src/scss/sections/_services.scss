@@ -44,6 +44,10 @@
     &:last-child {
       border-bottom: 1px solid #7d838a;
     }
+
+    :hover .services__accordion-title {
+        color: var(--text-color);
+    }
   }
 
   .services__accordion {
