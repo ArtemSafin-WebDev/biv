@@ -101,6 +101,9 @@
     &:last-child {
       border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
+    :hover .career__link-arrow {
+        background-color: var(--primary-color);
+    }
   }
 
   .career__link {
@@ -138,6 +141,7 @@
     width: 4rem;
     height: 4rem;
     background-color: #fff;
+    transition: all ease-in-out 0.2s;
 
     svg {
       display: block;

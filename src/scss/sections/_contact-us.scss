@@ -167,6 +167,11 @@
     text-align: left;
     a {
       font-weight: 700;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: #7D838A;
+        }
+      }
     }
 
     @media (max-width: 1024px) and (min-width: 577px) {
