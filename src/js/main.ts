@@ -1,5 +1,6 @@
 import "virtual:svg-icons-register";
 import "../scss/style.scss";
+import "./smooth-scroll";
 import ui from "./ui";
 import sections from "./sections";
 import initForms from "./forms";
