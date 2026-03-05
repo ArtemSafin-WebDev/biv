@@ -5,8 +5,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const isTouch = window.matchMedia("(pointer: coarse)").matches;
+const isBitrixAdmin = document.body.classList.contains("is-admin");
 
-if (!isTouch) {
+if (!isTouch && !isBitrixAdmin) {
   const desktopQuery = window.matchMedia("(min-width: 1025px)");
 
   function init() {
