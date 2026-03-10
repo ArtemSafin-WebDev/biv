@@ -180,7 +180,7 @@
       content: "";
       display: block;
       grid-area: stack;
-      padding-bottom: 134%;
+      padding-bottom: 112%;
     }
   }
 
@@ -212,7 +212,7 @@
   }
 
   .platform__slider-card-title {
-    font-size: calc(2.2rem * var(--scale-factor, 1));
+    font-size: calc(2.4rem * var(--scale-factor, 1));
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
@@ -223,7 +223,7 @@
   }
 
   .platform__slider-card-text {
-    font-size: calc(1.6rem * var(--scale-factor, 1));
+    font-size: calc(2rem * var(--scale-factor, 1));
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
