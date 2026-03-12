@@ -30,7 +30,7 @@ export default function intro() {
       section.querySelector<HTMLElement>(".intro__bg img");
     const introContent = section.querySelector<HTMLElement>(".intro__content");
     const introLogo = section.querySelector<HTMLElement>(".intro__logo");
-    const introText = section.querySelector<HTMLElement>(".intro__text");
+    const introSlogan = section.querySelector<HTMLElement>(".intro__slogan");
     if (!backgroundImage) return;
 
     const timeline = gsap.timeline({
@@ -42,16 +42,8 @@ export default function intro() {
         invalidateOnRefresh: true,
       },
     });
-    const revealDuration = introText ? 0.85 : 1;
+    const revealDuration = introSlogan ? 0.85 : 1;
     const logoLag = 0;
-
-    if (introText) {
-      timeline.to(introText, {
-        opacity: 0,
-        duration: 0.15,
-        ease: "none",
-      });
-    }
 
     timeline.to(backgroundImage, {
       clipPath: () => `circle(${getViewportCoverRadius()}px at 50% 50%)`,
@@ -68,6 +60,18 @@ export default function intro() {
           ease: "power1.in",
         },
         `<+=${logoLag}`
+      );
+    }
+
+    if (introSlogan) {
+      timeline.to(
+        introSlogan,
+        {
+          opacity: 1,
+          duration: 0.15,
+          ease: "none",
+        },
+        ">"
       );
     }
   });
