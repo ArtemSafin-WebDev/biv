@@ -1,0 +1,137 @@
+<section class="case-detail-hero">
+    <div class="container">
+        <div class="case-detail-hero__inner">
+            <h1 class="case-detail-hero__title">{{ caseDetail.heroTitle }}</h1>
+            <div class="case-detail-hero__logo">
+                <img src="{{ caseDetail.heroLogo }}" alt="BIV">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="case-detail-nav">
+    <div class="container">
+        <a href="#" class="case-detail-nav__back">
+            <svg width="40" height="40" aria-hidden="true" class="case-detail-nav__back-icon">
+                <use xlink:href="#arrows/left"></use>
+            </svg>
+            Назад
+        </a>
+    </div>
+</section>
+<section class="case-detail">
+    <div class="container">
+        <div class="case-detail__stack">
+            <article class="case-detail__row">
+                <div class="case-detail__tag">проект</div>
+                <div class="case-detail__content case-detail__content--project">
+                    <h2 class="case-detail__project-title">{{ caseDetail.projectTitle }}</h2>
+                    <p class="case-detail__project-goal">{{ caseDetail.projectGoal }}</p>
+                </div>
+            </article>
+
+            <article class="case-detail__row">
+                <div class="case-detail__tag">задачи</div>
+                <div class="case-detail__content">
+                    <h3 class="case-detail__section-title">Наши задачи в рамках проекта:</h3>
+                    <ul class="case-detail__bullets">
+                        {{#each caseDetail.tasks}}
+                        <li class="case-detail__bullet">{{ this }}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </article>
+
+            <article class="case-detail__row">
+                <div class="case-detail__tag">технологии</div>
+                <div class="case-detail__content">
+                    <h3 class="case-detail__section-title">Технологии в проекте:</h3>
+                    <ul class="case-detail__bullets">
+                        {{#each caseDetail.technologies}}
+                        <li class="case-detail__bullet case-detail__bullet--technology">
+                            <span>{{ this.text }}</span>
+                            {{#if this.orderedItems}}
+                            <ol class="case-detail__sublist">
+                                {{#each this.orderedItems}}
+                                <li>{{ this }}</li>
+                                {{/each}}
+                            </ol>
+                            {{/if}}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </article>
+
+            <article class="case-detail__row">
+                <div class="case-detail__tag">модели</div>
+                <div class="case-detail__content case-detail__content--models">
+                    <div class="case-detail__model-block">
+                        <h3 class="case-detail__section-title">Описание математической модели:</h3>
+                        <p class="case-detail__section-text">{{ caseDetail.modelDescription }}</p>
+                        <div class="case-detail__model-image">
+                            <img src="{{ caseDetail.modelImage }}" alt="Модель XGBoost">
+                        </div>
+                    </div>
+                    <div class="case-detail__model-block">
+                        <h3 class="case-detail__section-title">Алгоритм DBSCAN</h3>
+                        <p class="case-detail__section-text">{{ caseDetail.dbscanDescription }}</p>
+                        <div class="case-detail__dbscan-images">
+                            {{#each caseDetail.dbscanImages}}
+                            <div class="case-detail__dbscan-image">
+                                <img src="{{ this.src }}" alt="{{ this.alt }}">
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-detail__row">
+                <div class="case-detail__tag">результаты</div>
+                <div class="case-detail__content">
+                    <h3 class="case-detail__section-title">Итоги реализации:</h3>
+                    <p class="case-detail__section-text">{{ caseDetail.resultsLead }}</p>
+                    <ul class="case-detail__bullets">
+                        {{#each caseDetail.results}}
+                        <li class="case-detail__bullet">{{ this }}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </article>
+
+            <article class="case-detail__row case-detail__row--visuals">
+                <div class="case-detail__tag">визуализация</div>
+                <div class="case-detail__content case-detail__content--visuals">
+                    <div class="case-detail__visuals-viewport case-detail__visuals-slider swiper">
+                        <div class="case-detail__visuals-track swiper-wrapper">
+                            {{#each caseDetail.visualizations}}
+                            <div class="case-detail__visual-slide swiper-slide">
+                                <figure class="case-detail__visual-card">
+                                    <div class="case-detail__visual-image case-detail__visual-image--{{@index}}">
+                                        <img src="{{ this.image }}" alt="{{ this.alt }}">
+                                    </div>
+                                    <figcaption class="case-detail__visual-caption">{{ this.caption }}</figcaption>
+                                </figure>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="case-detail__visual-controls">
+            <button class="case-detail__control case-detail__control--prev" type="button"
+                aria-label="Предыдущая иллюстрация">
+                <svg width="40" height="40" aria-hidden="true">
+                    <use xlink:href="#arrows/linear-right"></use>
+                </svg>
+            </button>
+            <button class="case-detail__control case-detail__control--next" type="button"
+                aria-label="Следующая иллюстрация">
+                <svg width="40" height="40" aria-hidden="true">
+                    <use xlink:href="#arrows/linear-right"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>

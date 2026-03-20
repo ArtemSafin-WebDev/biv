@@ -1,0 +1,229 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "О компании" [ref=e10] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e11]:
+            - link "Услуги" [ref=e12] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e13]:
+            - link "Решения" [ref=e14] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e15]:
+            - link "BIV Platform" [ref=e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e17]:
+            - link "Клиенты" [ref=e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e19]:
+            - link "Технологии" [ref=e20] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e21]:
+            - link "Наш опыт" [ref=e22] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e23]:
+            - link "Команда" [ref=e24] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e25]:
+            - link "Карьера" [ref=e26] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e27]:
+            - link "Новости" [ref=e28] [cursor=pointer]:
+              - /url: "#"
+      - link "Связаться" [ref=e29] [cursor=pointer]:
+        - /url: "#"
+  - main [ref=e30]:
+    - generic [ref=e32]:
+      - heading "логистика" [level=1] [ref=e33]
+      - img "BIV" [ref=e35]
+    - link "Назад" [ref=e38] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e39]
+      - text: Назад
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - article [ref=e44]:
+          - generic [ref=e45]: проект
+          - generic [ref=e46]:
+            - heading "Разработка предикативной модели для снижения простоев и оптимизации перевозок" [level=2] [ref=e47]
+            - paragraph [ref=e48]: "Цель проекта: разработать цифровые модули и предикативную модель для оптимизации управления перевозками и финансового планирования на ж/д транспорте."
+        - article [ref=e49]:
+          - generic [ref=e50]: задачи
+          - generic [ref=e51]:
+            - heading "Наши задачи в рамках проекта:" [level=3] [ref=e52]
+            - list [ref=e53]:
+              - listitem [ref=e54]: Реализовать компоненты платформы, состоящей из прикладных, системных и сервисных модулей.
+              - listitem [ref=e55]: Разработать предикативную модель готовности вагонов к выводу.
+              - listitem [ref=e56]: Реализовать расчёт потенциальной грузовой базы для непрерывного планирования бюджета компании и проведения исследовательских расчётов оптимального плана.
+              - listitem [ref=e57]: Создать автоматизированную систему прогнозов для различного уровня пользователей.
+              - listitem [ref=e58]: Реализовать механизмы интеграции различных модулей/систем платформы.
+              - listitem [ref=e59]: Реализовать «Пульт управления расчётами логистов».
+              - listitem [ref=e60]: Обеспечить миграцию данные из действующих систем компании.
+        - article [ref=e61]:
+          - generic [ref=e62]: технологии
+          - generic [ref=e63]:
+            - heading "Технологии в проекте:" [level=3] [ref=e64]
+            - list [ref=e65]:
+              - listitem [ref=e66]: Бэкенд реализован на .net
+              - listitem [ref=e67]: Серверная часть развёрнута в Docker и Kubernetes.
+              - listitem [ref=e68]:
+                - text: База данных
+                - list [ref=e69]:
+                  - listitem [ref=e70]: GraphQL - хранение прогнозов
+                  - listitem [ref=e71]: MS SQL Server — хранение статичных данных
+        - article [ref=e72]:
+          - generic [ref=e73]: модели
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - heading "Описание математической модели:" [level=3] [ref=e76]
+              - paragraph [ref=e77]: Для прогнозирования даты готовности вагона к выводу используется модель XGBoost — производительный регрессионный алгоритм на основе градиентного бустинга деревьев решений.
+              - img "Модель XGBoost" [ref=e79]
+            - generic [ref=e80]:
+              - heading "Алгоритм DBSCAN" [level=3] [ref=e81]
+              - paragraph [ref=e82]: Для прогнозирования даты готовности вагона к выводу используется модель XGBoost — производительный регрессионный алгоритм на основе градиентного бустинга деревьев решений.
+              - generic [ref=e83]:
+                - img "Визуализация DBSCAN, кластер 1" [ref=e85]
+                - img "Визуализация DBSCAN, кластер 2" [ref=e87]
+        - article [ref=e88]:
+          - generic [ref=e89]: результаты
+          - generic [ref=e90]:
+            - heading "Итоги реализации:" [level=3] [ref=e91]
+            - paragraph [ref=e92]: "Разработана модель прогнозирования готовности вагонов к выводу, которая призвана:"
+            - list [ref=e93]:
+              - listitem [ref=e94]: Сократить простои вагонов
+              - listitem [ref=e95]: Обеспечить рост производительности и точность планирования бюджета.
+              - listitem [ref=e96]: Ускорить процесс планирования перевозок
+              - listitem [ref=e97]: Сократить операционные расходы благодаря оптимальным маршрутам и сокращению срочных ремонтов.
+        - article [ref=e98]:
+          - generic [ref=e99]: визуализация
+          - generic [ref=e102]:
+            - figure "Факторы, влияющие на прогноз даты готовности вывода вагона" [ref=e104]:
+              - img "Матрица корреляции для транспортной компании" [ref=e106]
+              - generic [ref=e107]: Факторы, влияющие на прогноз даты готовности вывода вагона
+            - figure "Факторы, влияющие на прогноз группировки вагонов" [ref=e109]:
+              - img "Факторы влияния на прогноз группировки вагонов" [ref=e111]
+              - generic [ref=e112]: Факторы, влияющие на прогноз группировки вагонов
+            - figure "Среднее прогнозное время готовности вагона = 11 дней" [ref=e114]:
+              - img "Среднее прогнозное время готовности вагона" [ref=e116]
+              - generic [ref=e117]: Среднее прогнозное время готовности вагона = 11 дней
+      - generic [ref=e118]:
+        - button "Предыдущая иллюстрация" [disabled] [ref=e119] [cursor=pointer]:
+          - img [ref=e120]
+        - button "Следующая иллюстрация" [ref=e122] [cursor=pointer]:
+          - img [ref=e123]
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - heading "другие проекты" [level=2] [ref=e128]
+        - generic [ref=e129]:
+          - button "Предыдущий проект" [ref=e130] [cursor=pointer]:
+            - img [ref=e131]
+          - button "Следующий проект" [ref=e133] [cursor=pointer]:
+            - img [ref=e134]
+      - list [ref=e137]:
+        - listitem [ref=e138]:
+          - link "Защищенная система слежения за рудой Защищенная система слежения за рудой для Северстали" [ref=e139] [cursor=pointer]:
+            - /url: "#"
+            - img "Защищенная система слежения за рудой" [ref=e141]
+            - heading "Защищенная система слежения за рудой для Северстали" [level=3] [ref=e142]
+        - listitem [ref=e143]:
+          - link "Оптимизация маршрутов транспортной компании Оптимизация маршрутов транспортной компании" [ref=e144] [cursor=pointer]:
+            - /url: "#"
+            - img "Оптимизация маршрутов транспортной компании" [ref=e146]
+            - heading "Оптимизация маршрутов транспортной компании" [level=3] [ref=e147]
+        - listitem [ref=e148]:
+          - link "Оптимизация маршрутов транспортной компании Оптимизация маршрутов транспортной компании" [ref=e149] [cursor=pointer]:
+            - /url: "#"
+            - img "Оптимизация маршрутов транспортной компании" [ref=e151]
+            - heading "Оптимизация маршрутов транспортной компании" [level=3] [ref=e152]
+        - listitem [ref=e153]:
+          - link "Защищенная система слежения за рудой Защищенная система слежения за рудой для Северстали" [ref=e154] [cursor=pointer]:
+            - /url: "#"
+            - img "Защищенная система слежения за рудой" [ref=e156]
+            - heading "Защищенная система слежения за рудой для Северстали" [level=3] [ref=e157]
+    - generic [ref=e161]:
+      - heading "контакты" [level=2] [ref=e162]
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - textbox "Ваше имя*" [ref=e167]
+          - textbox "телефон" [ref=e170]
+          - textbox "E-mail" [ref=e173]
+          - textbox "Ваше сообщение" [ref=e176]
+        - generic [ref=e180] [cursor=pointer]:
+          - text: Нажимая на кнопку «Отправить», подтверждаю своё согласие с
+          - link "обработкой персональных данных" [ref=e181]:
+            - /url: "#"
+          - text: и положениями
+          - link "Политики конфиденциальности" [ref=e182]:
+            - /url: "#"
+        - button "Отправить" [ref=e183] [cursor=pointer]
+  - contentinfo [ref=e184]:
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - link [ref=e188] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e189]: 2025, BIV
+        - navigation [ref=e191]:
+          - list [ref=e192]:
+            - listitem [ref=e193]:
+              - link "компания" [ref=e194] [cursor=pointer]:
+                - /url: "#"
+              - list [ref=e195]:
+                - listitem [ref=e196]:
+                  - link "о компании" [ref=e197] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e198]:
+                  - link "направления" [ref=e199] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e200]:
+                  - link "карьера" [ref=e201] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e202]:
+                  - link "портфолио" [ref=e203] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e204]:
+                  - link "блог" [ref=e205] [cursor=pointer]:
+                    - /url: "#"
+            - listitem [ref=e206]:
+              - link "документы" [ref=e207] [cursor=pointer]:
+                - /url: "#"
+              - list [ref=e208]:
+                - listitem [ref=e209]:
+                  - link "политика конфиденциальности" [ref=e210] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e211]:
+                  - link "термины" [ref=e212] [cursor=pointer]:
+                    - /url: "#"
+        - generic [ref=e214]:
+          - paragraph [ref=e215]:
+            - text: Москва, БизнесDepo, Илимская
+            - text: ул. 5, корп. 2,127576
+          - paragraph [ref=e216]:
+            - link "+7 (495) 228 19 42" [ref=e217] [cursor=pointer]:
+              - /url: tel:+74952281942
+          - paragraph [ref=e218]:
+            - link "info@bivgroup.com" [ref=e219] [cursor=pointer]:
+              - /url: mailto:info@bivgroup.com
+      - generic [ref=e220]:
+        - generic [ref=e222]:
+          - paragraph [ref=e223]: "Информация о компании:"
+          - paragraph [ref=e224]: "ОГРН: 1107746323552"
+          - paragraph [ref=e225]: "ИНН / КПП: 7726651929 /"
+          - paragraph [ref=e226]: 771501001ООО
+          - paragraph [ref=e227]: "\"БИАЙВИ\""
+        - generic [ref=e229]:
+          - paragraph [ref=e230]: "Юр. адрес: 127576, Москва г, г. Москва, ул. Илимская, д. 5 корп. 2,"
+          - paragraph [ref=e231]: "Фактический адрес:"
+          - list [ref=e232]:
+            - listitem [ref=e233]: "• Москва, головной офис: 127576, г. Москва, ул. Илимская, д. 5 корп. 2"
+            - listitem [ref=e234]: "• Санкт-Петербург: 191186, Санкт-Петербург, наб. канала Грибоедова, д. 5"
+            - listitem [ref=e235]: "• Череповец: 162602, Череповец, Советский пр-т, 35"
+            - listitem [ref=e236]: "• Казань: 420044, Казань, улица Короленко, 28Б"
+            - listitem [ref=e237]: "• Рыбинск: 152901, Рыбинск, ул. Бородулина, 6А"
+        - paragraph [ref=e240]: "Основной код ОКВЭД: 62.0 (Разработка компьютерного программного обеспечения, консультационные услуги в данной области и другие сопутствующие услуги). Стоимость услуг по разработке ПО на заказ зависит от конкретных требований. Для получения информации о стоимости свяжитесь с нами по почте: info@bivgroup.ru. Номер в Едином Реестре российского ПО: 19858. Для получения доступа к платформе и руководствам свяжитесь с на по почте: info@bivgroup.ru."
+  - img

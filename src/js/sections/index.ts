@@ -6,6 +6,7 @@ import portfolio from "./portfolio";
 import services from "./services";
 import team from "./team";
 import technologies from "./technologies";
+import caseSliders from "./case-sliders";
 
 export default function sections() {
   intro();
@@ -16,4 +17,5 @@ export default function sections() {
   portfolio();
   technologies();
   team();
+  caseSliders();
 }

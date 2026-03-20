@@ -1,0 +1,224 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link:
+        - /url: "#"
+      - navigation [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "О компании" [ref=e9] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e10]:
+            - link "Услуги" [ref=e11] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e12]:
+            - link "Решения" [ref=e13] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e14]:
+            - link "BIV Platform" [ref=e15] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e16]:
+            - link "Клиенты" [ref=e17] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e18]:
+            - link "Технологии" [ref=e19] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e20]:
+            - link "Наш опыт" [ref=e21] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e22]:
+            - link "Команда" [ref=e23] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e24]:
+            - link "Карьера" [ref=e25] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e26]:
+            - link "Новости" [ref=e27] [cursor=pointer]:
+              - /url: "#"
+      - link "Связаться" [ref=e28] [cursor=pointer]:
+        - /url: "#"
+  - main [ref=e29]:
+    - generic [ref=e31]:
+      - heading "логистика" [level=1] [ref=e32]
+      - img "BIV" [ref=e34]
+    - link "Назад" [ref=e37] [cursor=pointer]:
+      - /url: "#"
+      - img [ref=e38]
+      - text: Назад
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - article [ref=e43]:
+          - generic [ref=e44]: проект
+          - generic [ref=e45]:
+            - heading "Разработка предикативной модели для снижения простоев и оптимизации перевозок" [level=2] [ref=e46]
+            - paragraph [ref=e47]: "Цель проекта: разработать цифровые модули и предикативную модель для оптимизации управления перевозками и финансового планирования на ж/д транспорте."
+        - article [ref=e48]:
+          - generic [ref=e49]: задачи
+          - generic [ref=e50]:
+            - heading "Наши задачи в рамках проекта:" [level=3] [ref=e51]
+            - list [ref=e52]:
+              - listitem [ref=e53]: Реализовать компоненты платформы, состоящей из прикладных, системных и сервисных модулей.
+              - listitem [ref=e54]: Разработать предикативную модель готовности вагонов к выводу.
+              - listitem [ref=e55]: Реализовать расчёт потенциальной грузовой базы для непрерывного планирования бюджета компании и проведения исследовательских расчётов оптимального плана.
+              - listitem [ref=e56]: Создать автоматизированную систему прогнозов для различного уровня пользователей.
+              - listitem [ref=e57]: Реализовать механизмы интеграции различных модулей/систем платформы.
+              - listitem [ref=e58]: Реализовать «Пульт управления расчётами логистов».
+              - listitem [ref=e59]: Обеспечить миграцию данные из действующих систем компании.
+        - article [ref=e60]:
+          - generic [ref=e61]: технологии
+          - generic [ref=e62]:
+            - heading "Технологии в проекте:" [level=3] [ref=e63]
+            - list [ref=e64]:
+              - listitem [ref=e65]: Бэкенд реализован на .net
+              - listitem [ref=e66]: Серверная часть развёрнута в Docker и Kubernetes.
+              - listitem [ref=e67]:
+                - text: База данных
+                - list [ref=e68]:
+                  - listitem [ref=e69]: GraphQL - хранение прогнозов
+                  - listitem [ref=e70]: MS SQL Server — хранение статичных данных
+        - article [ref=e71]:
+          - generic [ref=e72]: модели
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - heading "Описание математической модели:" [level=3] [ref=e75]
+              - paragraph [ref=e76]: Для прогнозирования даты готовности вагона к выводу используется модель XGBoost — производительный регрессионный алгоритм на основе градиентного бустинга деревьев решений.
+              - img "Модель XGBoost" [ref=e78]
+            - generic [ref=e79]:
+              - heading "Алгоритм DBSCAN" [level=3] [ref=e80]
+              - paragraph [ref=e81]: Для прогнозирования даты готовности вагона к выводу используется модель XGBoost — производительный регрессионный алгоритм на основе градиентного бустинга деревьев решений.
+              - generic [ref=e82]:
+                - img "Визуализация DBSCAN, кластер 1" [ref=e84]
+                - img "Визуализация DBSCAN, кластер 2" [ref=e86]
+        - article [ref=e87]:
+          - generic [ref=e88]: результаты
+          - generic [ref=e89]:
+            - heading "Итоги реализации:" [level=3] [ref=e90]
+            - paragraph [ref=e91]: "Разработана модель прогнозирования готовности вагонов к выводу, которая призвана:"
+            - list [ref=e92]:
+              - listitem [ref=e93]: Сократить простои вагонов
+              - listitem [ref=e94]: Обеспечить рост производительности и точность планирования бюджета.
+              - listitem [ref=e95]: Ускорить процесс планирования перевозок
+              - listitem [ref=e96]: Сократить операционные расходы благодаря оптимальным маршрутам и сокращению срочных ремонтов.
+        - article [ref=e97]:
+          - generic [ref=e98]: визуализация
+          - generic [ref=e101]:
+            - figure "Факторы, влияющие на прогноз даты готовности вывода вагона" [ref=e103]:
+              - img "Матрица корреляции для транспортной компании" [ref=e105]
+              - generic [ref=e106]: Факторы, влияющие на прогноз даты готовности вывода вагона
+            - figure "Факторы, влияющие на прогноз группировки вагонов" [ref=e108]:
+              - img "Факторы влияния на прогноз группировки вагонов" [ref=e110]
+              - generic [ref=e111]: Факторы, влияющие на прогноз группировки вагонов
+            - figure "Среднее прогнозное время готовности вагона = 11 дней" [ref=e113]:
+              - img "Среднее прогнозное время готовности вагона" [ref=e115]
+              - generic [ref=e116]: Среднее прогнозное время готовности вагона = 11 дней
+      - generic [ref=e117]:
+        - button "Предыдущая иллюстрация" [disabled] [ref=e118] [cursor=pointer]:
+          - img [ref=e119]
+        - button "Следующая иллюстрация" [ref=e121] [cursor=pointer]:
+          - img [ref=e122]
+    - generic [ref=e125]:
+      - generic [ref=e126]:
+        - heading "другие проекты" [level=2] [ref=e127]
+        - generic [ref=e128]:
+          - button "Предыдущий проект" [ref=e129] [cursor=pointer]:
+            - img [ref=e130]
+          - button "Следующий проект" [ref=e132] [cursor=pointer]:
+            - img [ref=e133]
+      - list [ref=e136]:
+        - listitem [ref=e137]:
+          - link "Защищенная система слежения за рудой Защищенная система слежения за рудой для Северстали" [ref=e138] [cursor=pointer]:
+            - /url: "#"
+            - img "Защищенная система слежения за рудой" [ref=e140]
+            - heading "Защищенная система слежения за рудой для Северстали" [level=3] [ref=e141]
+        - listitem [ref=e142]:
+          - link "Оптимизация маршрутов транспортной компании Оптимизация маршрутов транспортной компании" [ref=e143] [cursor=pointer]:
+            - /url: "#"
+            - img "Оптимизация маршрутов транспортной компании" [ref=e145]
+            - heading "Оптимизация маршрутов транспортной компании" [level=3] [ref=e146]
+        - listitem [ref=e147]:
+          - link "Оптимизация маршрутов транспортной компании Оптимизация маршрутов транспортной компании" [ref=e148] [cursor=pointer]:
+            - /url: "#"
+            - img "Оптимизация маршрутов транспортной компании" [ref=e150]
+            - heading "Оптимизация маршрутов транспортной компании" [level=3] [ref=e151]
+    - generic [ref=e155]:
+      - heading "контакты" [level=2] [ref=e156]
+      - generic [ref=e157]:
+        - generic [ref=e158]:
+          - textbox "Ваше имя*" [ref=e161]
+          - textbox "телефон" [ref=e164]
+          - textbox "E-mail" [ref=e167]
+          - textbox "Ваше сообщение" [ref=e170]
+        - generic [ref=e174] [cursor=pointer]:
+          - text: Нажимая на кнопку «Отправить», подтверждаю своё согласие с
+          - link "обработкой персональных данных" [ref=e175]:
+            - /url: "#"
+          - text: и положениями
+          - link "Политики конфиденциальности" [ref=e176]:
+            - /url: "#"
+        - button "Отправить" [ref=e177] [cursor=pointer]
+  - contentinfo [ref=e178]:
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - link [ref=e182] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e183]: 2025, BIV
+        - navigation [ref=e185]:
+          - list [ref=e186]:
+            - listitem [ref=e187]:
+              - link "компания" [ref=e188] [cursor=pointer]:
+                - /url: "#"
+              - list [ref=e189]:
+                - listitem [ref=e190]:
+                  - link "о компании" [ref=e191] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e192]:
+                  - link "направления" [ref=e193] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e194]:
+                  - link "карьера" [ref=e195] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e196]:
+                  - link "портфолио" [ref=e197] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e198]:
+                  - link "блог" [ref=e199] [cursor=pointer]:
+                    - /url: "#"
+            - listitem [ref=e200]:
+              - link "документы" [ref=e201] [cursor=pointer]:
+                - /url: "#"
+              - list [ref=e202]:
+                - listitem [ref=e203]:
+                  - link "политика конфиденциальности" [ref=e204] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e205]:
+                  - link "термины" [ref=e206] [cursor=pointer]:
+                    - /url: "#"
+        - generic [ref=e208]:
+          - paragraph [ref=e209]:
+            - text: Москва, БизнесDepo, Илимская
+            - text: ул. 5, корп. 2,127576
+          - paragraph [ref=e210]:
+            - link "+7 (495) 228 19 42" [ref=e211] [cursor=pointer]:
+              - /url: tel:+74952281942
+          - paragraph [ref=e212]:
+            - link "info@bivgroup.com" [ref=e213] [cursor=pointer]:
+              - /url: mailto:info@bivgroup.com
+      - generic [ref=e214]:
+        - generic [ref=e216]:
+          - paragraph [ref=e217]: "Информация о компании:"
+          - paragraph [ref=e218]: "ОГРН: 1107746323552"
+          - paragraph [ref=e219]: "ИНН / КПП: 7726651929 /"
+          - paragraph [ref=e220]: 771501001ООО
+          - paragraph [ref=e221]: "\"БИАЙВИ\""
+        - generic [ref=e223]:
+          - paragraph [ref=e224]: "Юр. адрес: 127576, Москва г, г. Москва, ул. Илимская, д. 5 корп. 2,"
+          - paragraph [ref=e225]: "Фактический адрес:"
+          - list [ref=e226]:
+            - listitem [ref=e227]: "• Москва, головной офис: 127576, г. Москва, ул. Илимская, д. 5 корп. 2"
+            - listitem [ref=e228]: "• Санкт-Петербург: 191186, Санкт-Петербург, наб. канала Грибоедова, д. 5"
+            - listitem [ref=e229]: "• Череповец: 162602, Череповец, Советский пр-т, 35"
+            - listitem [ref=e230]: "• Казань: 420044, Казань, улица Короленко, 28Б"
+            - listitem [ref=e231]: "• Рыбинск: 152901, Рыбинск, ул. Бородулина, 6А"
+        - paragraph [ref=e234]: "Основной код ОКВЭД: 62.0 (Разработка компьютерного программного обеспечения, консультационные услуги в данной области и другие сопутствующие услуги). Стоимость услуг по разработке ПО на заказ зависит от конкретных требований. Для получения информации о стоимости свяжитесь с нами по почте: info@bivgroup.ru. Номер в Едином Реестре российского ПО: 19858. Для получения доступа к платформе и руководствам свяжитесь с на по почте: info@bivgroup.ru."
+  - img

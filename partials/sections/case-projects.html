@@ -1,0 +1,30 @@
+<section class="case-projects">
+    <div class="container">
+        <div class="case-projects__top">
+            <h2 class="secondary-heading case-projects__heading">
+                другие проекты
+            </h2>
+            <div class="case-projects__controls">
+                <button class="case-projects__control case-projects__control--prev" type="button" aria-label="Предыдущий проект">
+                    <svg width="40" height="40" aria-hidden="true">
+                        <use xlink:href="#arrows/linear-right"></use>
+                    </svg>
+                </button>
+                <button class="case-projects__control case-projects__control--next" type="button" aria-label="Следующий проект">
+                    <svg width="40" height="40" aria-hidden="true">
+                        <use xlink:href="#arrows/linear-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="case-projects__slider swiper">
+            <ul class="case-projects__list swiper-wrapper">
+                {{#each relatedProjects}}
+                <li class="case-projects__item swiper-slide">
+                    {{> components/cards/case-project-card }}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>
