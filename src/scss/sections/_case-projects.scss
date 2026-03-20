@@ -11,6 +11,18 @@
       padding-top: 8rem;
       padding-bottom: 6.4rem;
     }
+
+    @media (max-width: 576px) {
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  .case-projects .container {
+    @media (max-width: 576px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .case-projects__top {
@@ -27,17 +39,33 @@
     @media (max-width: 1024px) and (min-width: 577px) {
       margin-bottom: 3rem;
     }
+
+    @media (max-width: 576px) {
+      display: contents;
+      margin-bottom: 0;
+    }
   }
 
   .case-projects__heading {
     margin: 0;
     line-height: 94%;
+
+    @media (max-width: 576px) {
+      order: 1;
+      margin-bottom: 2.8rem;
+    }
   }
 
   .case-projects__controls {
     display: flex;
     align-items: center;
     gap: 1.3rem;
+
+    @media (max-width: 576px) {
+      order: 3;
+      margin-top: 2.4rem;
+      justify-content: flex-start;
+    }
   }
 
   .case-projects__control {
@@ -96,6 +124,11 @@
       margin-right: 1.2rem;
     }
 
+    @media (max-width: 576px) {
+      width: 30rem;
+      margin-right: 2rem;
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -103,42 +136,9 @@
 
   .case-projects__slider {
     overflow: visible;
-  }
 
-  @media (max-width: 576px) {
-    .case-projects {
-      padding-top: 5rem;
-      padding-bottom: 4rem;
-    }
-
-    .case-projects .container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .case-projects__top {
-      display: contents;
-      margin-bottom: 0;
-    }
-
-    .case-projects__heading {
-      order: 1;
-      margin-bottom: 2.8rem;
-    }
-
-    .case-projects__slider {
+    @media (max-width: 576px) {
       order: 2;
-    }
-
-    .case-projects__controls {
-      order: 3;
-      margin-top: 2.4rem;
-      justify-content: flex-start;
-    }
-
-    .case-projects__item {
-      width: 30rem;
-      margin-right: 2rem;
     }
   }
 }
