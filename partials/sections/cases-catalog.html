@@ -1,0 +1,35 @@
+<section class="cases-catalog">
+    <div class="container">
+        <ul class="cases-catalog__categories" aria-label="Категории кейсов">
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link cases-catalog__category-link--active">все кейсы</a>
+            </li>
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link">личные кабинеты</a>
+            </li>
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link">импортозамещение</a>
+            </li>
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link">автоматизация страховых продуктов</a>
+            </li>
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link">решения для промышленности</a>
+            </li>
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link">порталы</a>
+            </li>
+            <li class="cases-catalog__categories-item">
+                <a href="#" class="cases-catalog__category-link">логистика</a>
+            </li>
+        </ul>
+
+        <ul class="cases-catalog__list">
+            {{#each casesList}}
+                <li class="cases-catalog__item">
+                    {{> components/cards/cases-catalog-card }}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<div class="cases-catalog__accordion js-accordion">
+    <div class="cases-catalog__accordion-content">
+        <div class="cases-catalog__accordion-head">
+            <div class="cases-catalog__accordion-title">{{ heading }}</div>
+        </div>
+        <div class="cases-catalog__accordion-dropdown js-accordion-dropdown">
+            <div class="cases-catalog__accordion-inner">
+                <div class="cases-catalog__accordion-body">
+                    <p class="cases-catalog__accordion-description">
+                        {{ description }}
+                    </p>
+                    <a href="#" class="cases-catalog__accordion-link">Узнать про кейс</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cases-catalog__accordion-image">
+        <img src="{{ image }}" alt="{{ heading }}">
+    </div>
+    <button class="cases-catalog__accordion-toggle js-accordion-btn" type="button"
+        aria-label="Раскрыть описание кейса"></button>
+</div>
