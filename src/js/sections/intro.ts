@@ -30,6 +30,7 @@ export default function intro() {
       section.querySelector<HTMLElement>(".intro__bg img");
     const introContent = section.querySelector<HTMLElement>(".intro__content");
     const introLogo = section.querySelector<HTMLElement>(".intro__logo");
+    const introText = section.querySelector<HTMLElement>(".intro__text");
     const introSlogan = section.querySelector<HTMLElement>(".intro__slogan");
     if (!backgroundImage) return;
 
@@ -44,6 +45,14 @@ export default function intro() {
     });
     const revealDuration = introSlogan ? 0.85 : 1;
     const logoLag = 0;
+
+    if (introText) {
+      timeline.to(introText, {
+        opacity: 0,
+        duration: 0.15,
+        ease: "none",
+      });
+    }
 
     timeline.to(backgroundImage, {
       clipPath: () => `circle(${getViewportCoverRadius()}px at 50% 50%)`,
