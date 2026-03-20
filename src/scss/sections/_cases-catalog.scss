@@ -1,8 +1,14 @@
+@use "mixins" as *;
+
 @layer sections {
   .cases-catalog {
     background-color: #f9fcff;
     padding-top: 3rem;
     padding-bottom: 6rem;
+
+    @include desktop-only {
+      padding-top: 6rem;
+    }
   }
 
   .cases-catalog__categories {
@@ -57,6 +63,11 @@
     gap: 34.8rem;
     padding: 3rem 0;
     position: relative;
+
+    @include desktop-only {
+      grid-template-columns: 1fr 41.5rem;
+      gap: 2rem;
+    }
   }
 
   .cases-catalog__accordion-content {
@@ -117,6 +128,10 @@
     transition: opacity 0.2s;
     position: relative;
     z-index: 5;
+
+    @include desktop-only {
+      padding-top: 1.6rem;
+    }
   }
 
   .cases-catalog__accordion.active .cases-catalog__accordion-body {
@@ -165,11 +180,20 @@
       object-fit: cover;
       display: block;
     }
+
+    @include desktop-only {
+      width: 41.5rem;
+      height: 12rem;
+    }
   }
 
   .cases-catalog__accordion.active .cases-catalog__accordion-image {
     height: 38.7rem;
     border-radius: 4rem;
+
+    @include desktop-only {
+      height: 33rem;
+    }
   }
 
   .cases-catalog__accordion-toggle {
