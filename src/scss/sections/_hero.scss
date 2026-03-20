@@ -63,6 +63,26 @@
     }
   }
 
+  .hero--cases-catalog .hero__title {
+    font-size: 20rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    text-transform: uppercase;
+
+    @include desktop {
+      font-size: 12rem;
+    }
+
+    @include tablet {
+      font-size: 10rem;
+    }
+
+    @include mobile {
+      font-size: 4.4rem;
+    }
+  }
+
   .hero__logo {
     width: 28rem;
     aspect-ratio: 1;
