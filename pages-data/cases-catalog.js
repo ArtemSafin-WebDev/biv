@@ -1,6 +1,10 @@
 export default {
-  "/services-catalog.html": {
-    title: "Каталог услуг",
+  "/cases-catalog.html": {
+    title: "Каталог кейсов",
+    casesHero: {
+      title: "Наш опыт",
+      logo: "/images/shared/logo-white.webp",
+    },
     casesList: [
       {
         heading: "Отечественная платформа слежения за рудой для Северстали",
