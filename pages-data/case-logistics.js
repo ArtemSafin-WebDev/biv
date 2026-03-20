@@ -37,16 +37,7 @@ export default {
       modelImage: "/images/case-details/logistics/model-xgboost.webp",
       dbscanDescription:
         "Для прогнозирования даты готовности вагона к выводу используется модель XGBoost — производительный регрессионный алгоритм на основе градиентного бустинга деревьев решений.",
-      dbscanImages: [
-        {
-          src: "/images/case-details/logistics/dbscan-1.webp",
-          alt: "Визуализация DBSCAN, кластер 1",
-        },
-        {
-          src: "/images/case-details/logistics/dbscan-2.webp",
-          alt: "Визуализация DBSCAN, кластер 2",
-        },
-      ],
+      dbscanImage: "/images/case-details/logistics/dbscan.webp",
       resultsLead:
         "Разработана модель прогнозирования готовности вагонов к выводу, которая призвана:",
       results: [

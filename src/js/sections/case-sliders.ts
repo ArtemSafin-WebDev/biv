@@ -68,7 +68,6 @@ export default function caseSliders() {
         modules: [Navigation],
         slidesPerView: "auto",
         speed: 600,
-        spaceBetween: 25,
         loop: true,
         watchOverflow: false,
         navigation: {

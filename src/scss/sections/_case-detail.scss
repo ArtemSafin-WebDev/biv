@@ -108,7 +108,7 @@
     grid-column: 3 / -1;
   }
 
-  .case-detail__content--project {
+  .case-detail__content-project {
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -188,7 +188,7 @@
     }
   }
 
-  .case-detail__content--models {
+  .case-detail__content-models {
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -289,7 +289,6 @@
   }
 
   .case-projects {
-    background-color: var(--bg-color);
     padding-top: 11rem;
     padding-bottom: 8rem;
   }
@@ -336,10 +335,14 @@
   }
 
   .case-projects__item {
-    width: 590px;
+    width: calc(33.33% - 2.5rem * 2 / 3);
     flex-shrink: 0;
     height: auto;
     box-sizing: border-box;
+    margin-right: 2.5rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .case-project-card {

@@ -23,12 +23,13 @@
         <div class="case-detail__stack">
             <article class="case-detail__row">
                 <div class="case-detail__tag">проект</div>
-                <div class="case-detail__content case-detail__content--project">
-                    <h2 class="case-detail__project-title">{{ caseDetail.projectTitle }}</h2>
-                    <p class="case-detail__project-goal">{{ caseDetail.projectGoal }}</p>
+                <div class="case-detail__content">
+                    <div class="case-detail__content-project">
+                        <h2 class="case-detail__project-title">{{ caseDetail.projectTitle }}</h2>
+                        <p class="case-detail__project-goal">{{ caseDetail.projectGoal }}</p>
+                    </div>
                 </div>
             </article>
-
             <article class="case-detail__row">
                 <div class="case-detail__tag">задачи</div>
                 <div class="case-detail__content">
@@ -64,29 +65,25 @@
 
             <article class="case-detail__row">
                 <div class="case-detail__tag">модели</div>
-                <div class="case-detail__content case-detail__content--models">
-                    <div class="case-detail__model-block">
-                        <h3 class="case-detail__section-title">Описание математической модели:</h3>
-                        <p class="case-detail__section-text">{{ caseDetail.modelDescription }}</p>
-                        <div class="case-detail__model-image">
-                            <img src="{{ caseDetail.modelImage }}" alt="Модель XGBoost">
-                        </div>
-                    </div>
-                    <div class="case-detail__model-block">
-                        <h3 class="case-detail__section-title">Алгоритм DBSCAN</h3>
-                        <p class="case-detail__section-text">{{ caseDetail.dbscanDescription }}</p>
-                        <div class="case-detail__dbscan-images">
-                            {{#each caseDetail.dbscanImages}}
-                            <div class="case-detail__dbscan-image">
-                                <img src="{{ this.src }}" alt="{{ this.alt }}">
+                <div class="case-detail__content">
+                    <div class="case-detail__content-models">
+                        <div class="case-detail__model-block">
+                            <h3 class="case-detail__section-title">Описание математической модели:</h3>
+                            <p class="case-detail__section-text">{{ caseDetail.modelDescription }}</p>
+                            <div class="case-detail__model-image">
+                                <img src="{{ caseDetail.modelImage }}" alt="Модель XGBoost">
                             </div>
-                            {{/each}}
                         </div>
-
+                        <div class="case-detail__model-block">
+                            <h3 class="case-detail__section-title">Алгоритм DBSCAN</h3>
+                            <p class="case-detail__section-text">{{ caseDetail.dbscanDescription }}</p>
+                            <div class="case-detail__model-image">
+                                <img src="{{ caseDetail.dbscanImage }}" alt="Алгоритм DBSCAN">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
-
             <article class="case-detail__row">
                 <div class="case-detail__tag">результаты</div>
                 <div class="case-detail__content">
@@ -99,7 +96,6 @@
                     </ul>
                 </div>
             </article>
-
             <article class="case-detail__row">
                 <div class="case-detail__tag">визуализация</div>
                 <div class="case-detail__content">
