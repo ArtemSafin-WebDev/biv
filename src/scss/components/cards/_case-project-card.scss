@@ -41,5 +41,12 @@
       line-height: 90%;
       letter-spacing: -0.054rem;
     }
+
+    @media (max-width: 576px) {
+      margin-top: 0.8rem;
+      font-size: 1.6rem;
+      line-height: 100%;
+      letter-spacing: -0.048rem;
+    }
   }
 }

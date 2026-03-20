@@ -100,4 +100,45 @@
       margin-right: 0;
     }
   }
+
+  .case-projects__slider {
+    overflow: visible;
+  }
+
+  @media (max-width: 576px) {
+    .case-projects {
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .case-projects .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-projects__top {
+      display: contents;
+      margin-bottom: 0;
+    }
+
+    .case-projects__heading {
+      order: 1;
+      margin-bottom: 2.8rem;
+    }
+
+    .case-projects__slider {
+      order: 2;
+    }
+
+    .case-projects__controls {
+      order: 3;
+      margin-top: 2.4rem;
+      justify-content: flex-start;
+    }
+
+    .case-projects__item {
+      width: 30rem;
+      margin-right: 2rem;
+    }
+  }
 }
