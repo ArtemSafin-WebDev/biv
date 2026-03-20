@@ -33,9 +33,9 @@
                 <div class="case-detail__tag">задачи</div>
                 <div class="case-detail__content">
                     <h3 class="case-detail__section-title">Наши задачи в рамках проекта:</h3>
-                    <ul class="case-detail__bullets">
+                    <ul class="case-detail__list">
                         {{#each caseDetail.tasks}}
-                        <li class="case-detail__bullet">{{ this }}</li>
+                        <li class="case-detail__list-item">{{ this }}</li>
                         {{/each}}
                     </ul>
                 </div>
@@ -45,9 +45,9 @@
                 <div class="case-detail__tag">технологии</div>
                 <div class="case-detail__content">
                     <h3 class="case-detail__section-title">Технологии в проекте:</h3>
-                    <ul class="case-detail__bullets">
+                    <ul class="case-detail__list">
                         {{#each caseDetail.technologies}}
-                        <li class="case-detail__bullet case-detail__bullet--technology">
+                        <li class="case-detail__list-item">
                             <span>{{ this.text }}</span>
                             {{#if this.orderedItems}}
                             <ol class="case-detail__sublist">
@@ -82,6 +82,7 @@
                             </div>
                             {{/each}}
                         </div>
+
                     </div>
                 </div>
             </article>
@@ -91,23 +92,23 @@
                 <div class="case-detail__content">
                     <h3 class="case-detail__section-title">Итоги реализации:</h3>
                     <p class="case-detail__section-text">{{ caseDetail.resultsLead }}</p>
-                    <ul class="case-detail__bullets">
+                    <ul class="case-detail__list">
                         {{#each caseDetail.results}}
-                        <li class="case-detail__bullet">{{ this }}</li>
+                        <li class="case-detail__list-item">{{ this }}</li>
                         {{/each}}
                     </ul>
                 </div>
             </article>
 
-            <article class="case-detail__row case-detail__row--visuals">
+            <article class="case-detail__row">
                 <div class="case-detail__tag">визуализация</div>
-                <div class="case-detail__content case-detail__content--visuals">
+                <div class="case-detail__content">
                     <div class="case-detail__visuals-viewport case-detail__visuals-slider swiper">
                         <div class="case-detail__visuals-track swiper-wrapper">
                             {{#each caseDetail.visualizations}}
                             <div class="case-detail__visual-slide swiper-slide">
                                 <figure class="case-detail__visual-card">
-                                    <div class="case-detail__visual-image case-detail__visual-image--{{@index}}">
+                                    <div class="case-detail__visual-image">
                                         <img src="{{ this.image }}" alt="{{ this.alt }}">
                                     </div>
                                     <figcaption class="case-detail__visual-caption">{{ this.caption }}</figcaption>

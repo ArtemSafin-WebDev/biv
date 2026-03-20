@@ -6,15 +6,15 @@ export default function caseSliders() {
   const caseDetailSection = document.querySelector<HTMLElement>(".case-detail");
 
   if (caseDetailSection) {
-    const visualsContainer =
-      caseDetailSection.querySelector<HTMLElement>(".case-detail__visuals-slider");
+    const visualsContainer = caseDetailSection.querySelector<HTMLElement>(
+      ".case-detail__visuals-slider"
+    );
 
     if (visualsContainer) {
       const visualsOptions: SwiperOptions = {
         modules: [Navigation],
         slidesPerView: "auto",
         speed: 600,
-        spaceBetween: 30,
         navigation: {
           prevEl: caseDetailSection.querySelector<HTMLButtonElement>(
             ".case-detail__control--prev"
@@ -34,8 +34,9 @@ export default function caseSliders() {
     document.querySelector<HTMLElement>(".case-projects");
 
   if (caseProjectsSection) {
-    const projectsContainer =
-      caseProjectsSection.querySelector<HTMLElement>(".case-projects__slider");
+    const projectsContainer = caseProjectsSection.querySelector<HTMLElement>(
+      ".case-projects__slider"
+    );
 
     if (projectsContainer) {
       const projectsWrapper =
@@ -52,7 +53,8 @@ export default function caseSliders() {
           let cloneIndex = 0;
 
           while (projectsWrapper.children.length < 4) {
-            const sourceSlide = initialSlides[cloneIndex % initialSlides.length];
+            const sourceSlide =
+              initialSlides[cloneIndex % initialSlides.length];
             const clonedSlide = sourceSlide.cloneNode(true) as HTMLElement;
 
             clonedSlide.dataset.clone = "true";
