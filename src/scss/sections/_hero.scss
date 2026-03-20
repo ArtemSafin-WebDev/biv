@@ -15,6 +15,14 @@
     @include desktop {
       margin-bottom: 0;
     }
+
+    @include mobile {
+      background: conic-gradient(
+        from 180deg at 50% 79.62%,
+        #17a5e4 0deg,
+        #0d5b7e 360deg
+      );
+    }
   }
 
   .hero__inner {
