@@ -2,6 +2,11 @@
     <div class="cases-catalog__accordion-content">
         <div class="cases-catalog__accordion-head">
             <div class="cases-catalog__accordion-title">{{ heading }}</div>
+            <div class="cases-catalog__accordion-icon" aria-hidden="true">
+                <svg width="14" height="14">
+                    <use xlink:href="#arrows/right"></use>
+                </svg>
+            </div>
         </div>
         <div class="cases-catalog__accordion-dropdown js-accordion-dropdown">
             <div class="cases-catalog__accordion-inner">
@@ -10,11 +15,14 @@
                         {{ description }}
                     </p>
                     <a href="#" class="cases-catalog__accordion-link">Узнать про кейс</a>
+                    <div class="cases-catalog__accordion-image cases-catalog__accordion-image--mobile">
+                        <img src="{{ image }}" alt="{{ heading }}">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="cases-catalog__accordion-image">
+    <div class="cases-catalog__accordion-image cases-catalog__accordion-image--desktop">
         <img src="{{ image }}" alt="{{ heading }}">
     </div>
     <button class="cases-catalog__accordion-toggle js-accordion-btn" type="button"
