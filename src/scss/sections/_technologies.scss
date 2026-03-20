@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer sections {
   .technologies {
     background-color: var(--primary-color);
@@ -263,7 +265,7 @@
     }
   }
 
-  @media (max-width: 1024px) and (min-width: 577px) {
+  @include tablet-only {
     .technologies {
       overflow: hidden;
     }
@@ -434,7 +436,7 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @include mobile {
     .technologies {
       overflow: hidden;
       width: 100%;

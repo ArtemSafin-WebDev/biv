@@ -1,18 +1,20 @@
+@use "mixins" as *;
+
 @layer sections {
   .services {
     padding-top: 11rem;
     padding-bottom: 3.7rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-bottom: 3rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       padding-top: 8rem;
       padding-bottom: 4rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 5rem;
       padding-bottom: 2rem;
     }
@@ -21,15 +23,15 @@
   .services__list {
     margin-top: 3.4rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-top: 3rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       margin-top: 3.1rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 3rem;
     }
   }
@@ -58,17 +60,17 @@
     grid-template-areas: "content image";
     position: relative;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       gap: 4rem;
       grid-template-columns: 1fr minmax(0, 41.5rem);
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       gap: 13.1rem;
       grid-template-columns: minmax(0, 49.3rem) minmax(0, 36rem);
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: block;
       padding: 2rem 0;
     }
@@ -76,11 +78,11 @@
     &--reverse {
       grid-template-columns: minmax(0, 56rem) 1fr;
       grid-template-areas: "image content";
-      @media (max-width: 1366px) {
+      @include desktop {
         grid-template-columns: minmax(0, 41.5rem) 1fr;
       }
 
-      @media (max-width: 1024px) and (min-width: 577px) {
+      @include tablet-only {
         grid-template-columns: minmax(0, 36rem) minmax(0, 49.3rem);
       }
     }
@@ -103,17 +105,17 @@
     position: relative;
     transform: translateZ(0);
 
-    @media (max-width: 1366px) {
+    @include desktop {
       height: 11.3rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       height: 9.8rem;
       border-radius: 13rem;
       mix-blend-mode: luminosity;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       height: 0;
       border-radius: 0;
       mix-blend-mode: normal;
@@ -130,18 +132,18 @@
       transition: filter 0.2s;
       object-position: 50% var(--y-offset, 50%);
 
-      @media (max-width: 1024px) and (min-width: 577px) {
+      @include tablet-only {
         filter: none;
       }
 
-      @media (max-width: 576px) {
+      @include mobile {
         filter: none;
       }
     }
   }
 
   .services__accordion-image--desktop {
-    @media (max-width: 576px) {
+    @include mobile {
       display: none;
     }
   }
@@ -149,7 +151,7 @@
   .services__accordion-image--mobile {
     display: none;
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: block;
       width: 100%;
       aspect-ratio: 320 / 252;
@@ -165,11 +167,11 @@
     height: 44rem;
     border-radius: 4rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       height: 32.5rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       height: 28rem;
       border-radius: 3rem;
       mix-blend-mode: normal;
@@ -190,7 +192,7 @@
     display: flex;
     flex-direction: column;
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: block;
     }
 
@@ -203,7 +205,7 @@
       transition: flex-grow 0.8s;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       &::before,
       &::after {
         display: none;
@@ -212,7 +214,7 @@
   }
 
   .services__accordion-head {
-    @media (max-width: 576px) {
+    @include mobile {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -223,7 +225,7 @@
   .services__accordion-icon {
     display: none;
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 4rem;
       height: 4rem;
       flex-shrink: 0;
@@ -269,7 +271,7 @@
     }
     margin-top: -0.7rem;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       max-width: 49.3rem;
       font-size: 4rem;
       line-height: 90%;
@@ -278,7 +280,7 @@
       margin-top: 0;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       max-width: calc(100% - 6rem);
       font-size: 2.4rem;
       line-height: 100%;
@@ -307,7 +309,7 @@
   }
 
   .services__accordion-body {
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 1.2rem;
     }
   }
@@ -322,12 +324,12 @@
     opacity: 0;
     transition: opacity 0.2s;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       max-width: 49.3rem;
       font-size: 1.6rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 0;
       max-width: 100%;
       font-size: 1.4rem;
@@ -340,11 +342,11 @@
         position: relative;
         padding-left: 2.5rem;
 
-        @media (max-width: 1024px) and (min-width: 577px) {
+        @include tablet-only {
           padding-left: 2.4rem;
         }
 
-        @media (max-width: 576px) {
+        @include mobile {
           padding-left: 2.1rem;
         }
 
@@ -355,13 +357,13 @@
           left: 0.5rem;
           font-size: 1.4em;
 
-          @media (max-width: 1024px) and (min-width: 577px) {
+          @include tablet-only {
             top: 0.1rem;
             left: 0.3rem;
             font-size: 1.1em;
           }
 
-          @media (max-width: 576px) {
+          @include mobile {
             left: 0.3rem;
           }
         }
@@ -378,11 +380,11 @@
     margin-top: 3rem;
     align-self: flex-start;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       margin-top: 3.1rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 2rem;
       width: 100%;
       padding: 1rem 2rem;

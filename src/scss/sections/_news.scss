@@ -1,19 +1,21 @@
+@use "mixins" as *;
+
 @layer sections {
   .news {
     padding-top: 11rem;
     padding-bottom: 8rem;
     background-color: white;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-bottom: 11rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       padding-top: 8rem;
       padding-bottom: 8rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 5rem;
       padding-bottom: 4rem;
     }
@@ -26,17 +28,17 @@
     gap: 3.2rem;
     margin-bottom: 3.1rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-bottom: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-bottom: 3.8rem;
     }
   }
 
   .news__slider {
-    @media (max-width: 576px) {
+    @include mobile {
       overflow: visible;
     }
   }
@@ -46,11 +48,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       gap: 2rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: flex;
       gap: 0;
     }
@@ -59,7 +61,7 @@
   .news__item {
     display: flex;
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 30rem;
       margin-right: 2rem;
       flex-shrink: 0;
@@ -89,7 +91,7 @@
     transform: translateZ(0);
     overflow: hidden;
 
-    @media (max-width: 576px) {
+    @include mobile {
       aspect-ratio: 300 / 218;
     }
   }
@@ -113,7 +115,7 @@
     line-height: 100%;
     letter-spacing: -0.072rem;
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: 1.8rem;
       font-style: normal;
       font-weight: 700;
@@ -121,7 +123,7 @@
       letter-spacing: -0.054rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.6rem;
       line-height: 100%;
       letter-spacing: -0.048rem;
@@ -131,7 +133,7 @@
   .news__card-title {
     margin-top: 1.5rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 0.8rem;
     }
   }
@@ -139,7 +141,7 @@
   .news__card-date {
     margin-top: 1.5rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 0.8rem;
     }
   }
@@ -147,7 +149,7 @@
   .news__slider-controls {
     display: none;
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 2.4rem;
       display: flex;
       align-items: center;
@@ -181,7 +183,7 @@
       pointer-events: none;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:not(.swiper-button-disabled):hover {
         background-color: var(--text-color);
 
@@ -193,13 +195,13 @@
   }
 
   .news__more-link {
-    @media (max-width: 1366px) {
+    @include desktop {
       padding: 1.2rem 1.8rem;
       border-radius: 3rem;
       line-height: normal;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: none;
     }
   }

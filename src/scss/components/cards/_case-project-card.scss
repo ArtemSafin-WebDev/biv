@@ -1,10 +1,12 @@
+@use "mixins" as *;
+
 @layer components {
   .case-project-card {
     display: flex;
     flex-direction: column;
     color: #0c151f;
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:hover {
         .case-project-card__image {
           transform: scale(1.03);
@@ -36,13 +38,13 @@
     line-height: 100%;
     letter-spacing: -0.072rem;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       font-size: 1.8rem;
       line-height: 90%;
       letter-spacing: -0.054rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 0.8rem;
       font-size: 1.6rem;
       line-height: 100%;

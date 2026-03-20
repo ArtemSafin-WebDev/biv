@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer sections {
   .career {
     position: relative;
@@ -35,16 +37,16 @@
     gap: 3.2rem;
     justify-content: space-between;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       min-height: 80rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       min-height: auto;
       padding: 8rem 0;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 5rem;
       padding-bottom: 2rem;
       flex-direction: column;
@@ -59,22 +61,22 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    @media (max-width: 576px) {
+    @include mobile {
       display: contents;
     }
   }
 
   .career__right {
     width: 91rem;
-    @media (max-width: 1366px) {
+    @include desktop {
       width: 85rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       width: 51.4rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: contents;
     }
   }
@@ -86,11 +88,11 @@
     border-radius: 2.4rem;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(8px);
-    @media (max-width: 1366px) {
+    @include desktop {
       padding: 4rem 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding: 2rem;
       border-radius: 2rem;
     }
@@ -117,7 +119,7 @@
     font-weight: 400;
     line-height: 100%;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding: 1rem 0;
       font-size: 2.4rem;
       font-style: normal;
@@ -125,7 +127,7 @@
       line-height: 100%;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 400;
@@ -152,7 +154,7 @@
   }
 
   .career__btn {
-    @media (max-width: 576px) {
+    @include mobile {
       order: 40;
       margin-top: 3rem;
       align-self: stretch;

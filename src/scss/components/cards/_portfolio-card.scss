@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer components {
   .portfolio-card {
     display: flex;
@@ -13,26 +15,26 @@
       color 0.2s,
       background-color 0.2s;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       aspect-ratio: 415 / 557;
       padding: 2rem;
       padding-top: 3rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       aspect-ratio: 320 / 440;
       border-radius: 2rem;
       padding: 3rem 1rem 1rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding: 1rem;
       padding-top: 2rem;
       border-radius: 2.4rem;
       aspect-ratio: 320 / 414;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:hover {
         background-color: var(--primary-color);
 
@@ -57,16 +59,16 @@
     justify-content: space-between;
     gap: 3.2rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       gap: 2.4rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       gap: 2rem;
       padding-inline: 1rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 1.6rem;
     }
   }
@@ -77,13 +79,13 @@
     font-weight: 400;
     line-height: 110%;
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: 1.6rem;
       line-height: 120%;
       letter-spacing: -0.016rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.4rem;
       font-style: normal;
       font-weight: 400;
@@ -117,11 +119,11 @@
     margin-top: auto;
     transform: translateZ(0);
 
-    @media (max-width: 1366px) {
+    @include desktop {
       aspect-ratio: 375 / 412;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       aspect-ratio: 1;
     }
   }

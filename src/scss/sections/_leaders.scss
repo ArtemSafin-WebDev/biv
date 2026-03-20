@@ -1,17 +1,19 @@
+@use "mixins" as *;
+
 @layer sections {
   .leaders {
     background-color: var(--primary-color);
     color: white;
     overflow: hidden;
-    @media (max-width: 1366px) {
+    @include desktop {
       background-color: #1caded;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       min-height: 82.6rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       min-height: 68rem;
     }
   }
@@ -27,15 +29,15 @@
   }
 
   .leaders__heading {
-    @media (max-width: 1366px) {
+    @include desktop {
       max-width: 55rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       max-width: 54.7rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       max-width: none;
     }
   }
@@ -50,18 +52,18 @@
     max-width: 82rem;
     justify-self: flex-start;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       gap: 3.2rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       gap: 2rem;
       align-self: flex-start;
       margin-top: 8.8rem;
       max-width: 81.9rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 2rem;
       align-self: stretch;
       justify-self: stretch;
@@ -80,13 +82,13 @@
     margin-top: -16.3rem;
     margin-right: calc(((100svw - 100%) / 2 * -1) - 12.4rem);
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-top: -13.2rem;
       margin-bottom: -14.3rem;
       margin-right: calc(((100svw - 100%) / 2 * -1) - 14.8rem);
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       width: 100svw;
       margin: 0;
       margin-left: calc((100svw - 100%) / -2);
@@ -97,7 +99,7 @@
   }
 
   .leaders__grid {
-    @media (max-width: 1024px) {
+    @include tablet {
       display: flex;
       flex-direction: column;
       width: 132rem;
@@ -106,7 +108,7 @@
       margin-bottom: -14rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: max(60rem, calc(100svw + 24rem));
       margin-top: 19.5rem;
       margin-left: -16rem;
@@ -119,7 +121,7 @@
     flex-direction: row;
     justify-content: flex-end;
 
-    @media (max-width: 1024px) {
+    @include tablet {
       width: 100%;
     }
   }
@@ -133,11 +135,11 @@
     background: rgba(255, 255, 255, 0.1);
     transform: translateZ(0);
 
-    @media (max-width: 1366px) {
+    @include desktop {
       width: 22rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 10rem;
     }
 
@@ -154,13 +156,13 @@
   .leaders__circle[data-leaders-mobile] {
     display: none;
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: block;
     }
   }
 
   .leaders__circle[data-leaders-desktop] {
-    @media (max-width: 576px) {
+    @include mobile {
       display: none;
     }
   }
@@ -168,13 +170,13 @@
   .leaders__show-more {
     align-self: flex-start;
 
-    @media (max-width: 1024px) {
+    @include tablet {
       padding: 1.2rem 2rem;
       font-size: 2rem;
       line-height: 120%;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 100%;
       padding: 1rem 2rem;
       font-size: 1.4rem;

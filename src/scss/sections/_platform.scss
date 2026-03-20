@@ -1,14 +1,16 @@
+@use "mixins" as *;
+
 @layer sections {
   .platform {
     padding-top: 6.7rem;
     padding-bottom: 8rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-bottom: 4rem;
       padding-top: 7rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       padding-bottom: 4rem;
     }
   }
@@ -26,14 +28,14 @@
     align-self: center;
     margin-top: 1rem;
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 400;
       line-height: 120%;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       align-self: center;
       max-width: 24rem;
     }
@@ -41,11 +43,11 @@
 
   .platform__slider {
     margin-top: 4rem;
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-top: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 1.6rem;
     }
   }
@@ -56,12 +58,12 @@
     align-items: center;
     gap: 1.5rem;
     justify-content: center;
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-top: 4rem;
       gap: 1rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 3rem;
     }
   }
@@ -86,7 +88,7 @@
       transition: fill 0.2s;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:not(.swiper-button-disabled):hover {
         background-color: var(--text-color);
         svg {
@@ -109,7 +111,7 @@
     align-items: baseline;
     justify-content: center;
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 400;
@@ -118,7 +120,7 @@
       text-transform: uppercase;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       min-width: 4rem;
     }
   }
@@ -144,12 +146,12 @@
       transform-style: preserve-3d;
       backface-visibility: hidden;
       margin: 0 2rem;
-      @media (max-width: 1366px) {
+      @include desktop {
         width: 41.5rem;
         margin: 0 1rem;
       }
 
-      @media (max-width: 576px) {
+      @include mobile {
         width: 20rem;
         margin: 0 0.5rem;
       }
@@ -168,7 +170,7 @@
     color: #e7f5ff;
     --scale-factor: 1;
 
-    @media (max-width: 576px) {
+    @include mobile {
       --scale-factor: 0.55;
     }
 

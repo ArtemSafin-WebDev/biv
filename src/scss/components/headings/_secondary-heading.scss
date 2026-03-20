@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer components {
   .secondary-heading {
     font-size: 8rem;
@@ -10,11 +12,11 @@
       text-wrap: balance;
     }
 
-    @media (max-width: 1366px) {
+    @include desktop {
       line-height: 94%;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: 6rem;
       font-style: normal;
       font-weight: 400;
@@ -23,7 +25,7 @@
       text-transform: uppercase;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 4rem;
       font-style: normal;
       font-weight: 400;

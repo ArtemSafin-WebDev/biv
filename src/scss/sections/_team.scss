@@ -1,19 +1,21 @@
+@use "mixins" as *;
+
 @layer sections {
   .team {
     padding-top: 10rem;
     padding-bottom: 5rem;
     background-color: #f9fcff;
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-top: 10rem;
       padding-bottom: 4rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       padding-top: 8rem;
       padding-bottom: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 7rem;
       padding-bottom: 4rem;
     }
@@ -25,15 +27,15 @@
     justify-content: space-between;
     gap: 3.2rem;
     margin-bottom: 4rem;
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-bottom: 7rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       margin-bottom: 5rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: contents;
     }
   }
@@ -45,7 +47,7 @@
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "stack";
     align-items: flex-end;
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 4rem;
     }
   }
@@ -55,7 +57,7 @@
   }
 
   .team__btn {
-    @media (max-width: 576px) {
+    @include mobile {
       order: 30;
       margin-top: 2rem;
       align-self: stretch;

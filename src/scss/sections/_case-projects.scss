@@ -1,25 +1,27 @@
+@use "mixins" as *;
+
 @layer sections {
   .case-projects {
     padding-top: 11rem;
     padding-bottom: 8rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-bottom: 6rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       padding-top: 8rem;
       padding-bottom: 6.4rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 5rem;
       padding-bottom: 4rem;
     }
   }
 
   .case-projects .container {
-    @media (max-width: 576px) {
+    @include mobile {
       display: flex;
       flex-direction: column;
     }
@@ -32,15 +34,15 @@
     gap: 2rem;
     margin-bottom: 6rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-bottom: 3.1rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       margin-bottom: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: contents;
       margin-bottom: 0;
     }
@@ -50,7 +52,7 @@
     margin: 0;
     line-height: 94%;
 
-    @media (max-width: 576px) {
+    @include mobile {
       order: 1;
       margin-bottom: 2.8rem;
     }
@@ -61,7 +63,7 @@
     align-items: center;
     gap: 1.3rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       order: 3;
       margin-top: 2.4rem;
       justify-content: flex-start;
@@ -93,7 +95,7 @@
       cursor: default;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:not(.swiper-button-disabled):hover {
         background-color: var(--text-color);
         svg {
@@ -114,17 +116,17 @@
     box-sizing: border-box;
     margin-right: 2.5rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       width: calc((100% - 4rem) / 3);
       margin-right: 2rem;
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       width: 32rem;
       margin-right: 1.2rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 30rem;
       margin-right: 2rem;
     }
@@ -137,7 +139,7 @@
   .case-projects__slider {
     overflow: visible;
 
-    @media (max-width: 576px) {
+    @include mobile {
       order: 2;
     }
   }

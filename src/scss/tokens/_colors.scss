@@ -1,10 +1,12 @@
+@use "mixins" as *;
+
 @layer tokens {
   :root {
     --text-color: #002435;
     --primary-color: #17a5e4;
     --bg-color: #f9fcff;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       --primary-color: #1caded;
     }
   }

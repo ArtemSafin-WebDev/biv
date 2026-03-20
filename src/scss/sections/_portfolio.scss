@@ -1,18 +1,20 @@
+@use "mixins" as *;
+
 @layer sections {
   .portfolio {
     padding-top: 11rem;
     padding-bottom: 10rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-bottom: 8rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       padding-top: 8rem;
       padding-bottom: 8rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 5rem;
       padding-bottom: 3rem;
     }
@@ -25,21 +27,21 @@
     justify-content: space-between;
     margin-bottom: 3.4rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-bottom: 4rem;
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       margin-bottom: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: contents;
     }
   }
 
   .portfolio__slider {
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 3rem;
     }
     .swiper {
@@ -48,20 +50,20 @@
 
     .swiper-wrapper {
       gap: 1.2rem;
-      @media (min-width: 577px) {
+      @include above-mobile {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      @media (max-width: 1366px) {
+      @include desktop {
         gap: 2rem;
       }
 
-      @media (max-width: 1024px) {
+      @include tablet {
         gap: 1.2rem;
       }
 
-      @media (max-width: 576px) {
+      @include mobile {
         gap: 0;
       }
     }
@@ -72,7 +74,7 @@
       height: auto;
       box-sizing: border-box;
 
-      @media (max-width: 576px) {
+      @include mobile {
         width: 30rem;
         margin-right: 1rem;
         &:last-child {
@@ -83,7 +85,7 @@
   }
 
   .portfolio__btn {
-    @media (max-width: 1366px) {
+    @include desktop {
       display: none;
     }
   }
@@ -96,7 +98,7 @@
   .portfolio__slider-controls {
     display: none;
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 2.4rem;
       display: flex;
       align-items: center;
@@ -130,7 +132,7 @@
       pointer-events: none;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:not(.swiper-button-disabled):hover {
         background-color: var(--text-color);
 

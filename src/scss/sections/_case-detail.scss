@@ -1,14 +1,16 @@
+@use "mixins" as *;
+
 @layer sections {
   .case-detail-nav {
     margin-bottom: 3rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-bottom: 0;
       padding-top: 6rem;
       padding-bottom: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       padding-top: 3rem;
       padding-bottom: 1rem;
     }
@@ -24,13 +26,13 @@
     align-items: center;
     gap: 0.8rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       font-size: 1.8rem;
       line-height: 94%;
       letter-spacing: -0.036rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.6rem;
       letter-spacing: -0.032rem;
     }
@@ -54,7 +56,7 @@
     flex-direction: column;
     gap: 5rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 2rem;
     }
   }
@@ -69,11 +71,11 @@
     gap: 1rem;
     align-items: start;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       grid-template-columns: repeat(6, minmax(0, 1fr));
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       display: flex;
       flex-direction: column;
       gap: 1.6rem;
@@ -97,7 +99,7 @@
     color: #0084bf;
     grid-column: 1 / 3;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       grid-column: 1 / 2;
       padding: 0.8rem 1rem;
       padding-top: 0.5rem;
@@ -106,7 +108,7 @@
       letter-spacing: -0.036rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       grid-column: auto;
       font-size: 1.4rem;
       letter-spacing: -0.028rem;
@@ -117,11 +119,11 @@
     width: 100%;
     grid-column: 3 / -1;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       grid-column: 2 / -1;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       grid-column: auto;
     }
   }
@@ -131,7 +133,7 @@
     flex-direction: column;
     gap: 5rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 1.2rem;
     }
   }
@@ -144,7 +146,7 @@
     letter-spacing: -0.128rem;
     text-wrap: balance;
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 2rem;
       letter-spacing: -0.04rem;
     }
@@ -157,12 +159,12 @@
     line-height: 94%;
     letter-spacing: -0.048rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       font-size: 1.8rem;
       letter-spacing: -0.036rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.6rem;
       line-height: 100%;
       letter-spacing: -0.032rem;
@@ -177,7 +179,7 @@
     letter-spacing: -0.08rem;
     margin-bottom: 2rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 2rem;
       letter-spacing: -0.04rem;
       margin-bottom: 1.2rem;
@@ -192,12 +194,12 @@
     letter-spacing: -0.044rem;
     margin-bottom: 2rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       font-size: 1.8rem;
       letter-spacing: -0.036rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.6rem;
       letter-spacing: -0.032rem;
       margin-bottom: 1.2rem;
@@ -210,11 +212,11 @@
     gap: 1.6rem;
     padding-left: 23rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-left: 21.6rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 1.2rem;
       padding-left: 0;
     }
@@ -230,14 +232,14 @@
     line-height: 94%;
     letter-spacing: -0.044rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       max-width: 66.6rem;
       padding-left: 3.3rem;
       font-size: 1.8rem;
       letter-spacing: -0.036rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       max-width: none;
       padding-left: 2rem;
       font-size: 1.6rem;
@@ -254,7 +256,7 @@
       border-radius: 50%;
       background-color: var(--text-color);
 
-      @media (max-width: 576px) {
+      @include mobile {
         top: 0.3rem;
         width: 1rem;
       }
@@ -278,7 +280,7 @@
         top: 0;
       }
 
-      @media (max-width: 576px) {
+      @include mobile {
         padding-left: 2.4rem;
       }
     }
@@ -289,13 +291,13 @@
     flex-direction: column;
     gap: 4rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 1.6rem;
     }
   }
 
   .case-detail__model-block {
-    @media (max-width: 576px) {
+    @include mobile {
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
@@ -308,7 +310,7 @@
   }
 
   .case-detail__model-block + .case-detail__model-block {
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 2rem;
     }
   }
@@ -318,11 +320,11 @@
     max-width: 90.6rem;
     overflow: hidden;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       max-width: 85.4rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       max-width: 32rem;
     }
 
@@ -361,11 +363,11 @@
     width: 90rem;
     margin-right: 3.7rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-right: 3rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 32rem;
       margin-right: 2rem;
     }
@@ -386,7 +388,7 @@
     flex-direction: column;
     gap: 1.6rem;
 
-    @media (max-width: 576px) {
+    @include mobile {
       gap: 1.2rem;
     }
   }
@@ -395,7 +397,7 @@
     aspect-ratio: 904 / 298;
     display: block;
 
-    @media (max-width: 576px) {
+    @include mobile {
       aspect-ratio: auto;
     }
 
@@ -405,7 +407,7 @@
       height: 100%;
       object-fit: cover;
 
-      @media (max-width: 576px) {
+      @include mobile {
         height: auto;
       }
     }
@@ -418,12 +420,12 @@
     line-height: 94%;
     letter-spacing: -0.044rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       font-size: 1.8rem;
       letter-spacing: -0.036rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 1.4rem;
       letter-spacing: -0.028rem;
     }
@@ -435,16 +437,16 @@
     gap: 1.2rem;
     margin-top: 1.2rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-top: 2.4rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       margin-top: 1.2rem;
     }
   }
 
-  @media (max-width: 1024px) and (min-width: 577px) {
+  @include tablet-only {
     .case-detail-nav {
       padding-top: 3rem;
       padding-bottom: 3rem;
@@ -524,7 +526,7 @@
       cursor: default;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:not(.swiper-button-disabled):hover {
         background-color: var(--text-color);
         svg {

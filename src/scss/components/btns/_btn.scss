@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer components {
   .btn {
     flex-shrink: 0;
@@ -16,14 +18,14 @@
       background-color 0.2s,
       color 0.2s;
 
-    @media (hover: hover) and (pointer: fine) {
+    @include hover-device {
       &:hover {
         border-color: #45B7E9;
         background-color: #45B7E9;
       }
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 400;
@@ -33,7 +35,7 @@
     &--outline {
       background-color: transparent;
       border-color: var(--text-color);
-      @media (hover: hover) and (pointer: fine) {
+      @include hover-device {
         &:hover {
           border-color: var(--text-color);
           background-color: #C3ECFF;
@@ -45,7 +47,7 @@
       background-color: white;
       border-color: white;
       color: var(--text-color);
-        @media (hover: hover) and (pointer: fine) {
+        @include hover-device {
           &:hover {
             border-color: #C3ECFF;
             background-color: #C3ECFF;

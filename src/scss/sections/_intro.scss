@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer sections {
   .intro-spacer {
     min-height: 200vh;
@@ -22,11 +24,11 @@
       object-fit: cover;
       clip-path: circle(36rem at 50% 50%);
 
-      @media (max-width: 1366px) {
+      @include desktop {
         clip-path: circle(28rem at 50% 50%);
       }
 
-      @media (max-width: 576px) {
+      @include mobile {
         object-position: 55% 50%;
         clip-path: circle(
           calc(
@@ -57,12 +59,12 @@
     transform: translateY(-50%);
     opacity: 0;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       left: calc(100% + 4rem);
       width: 29.2rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       left: calc(100% + 2.3rem);
       width: 16.6rem;
     }
@@ -82,11 +84,11 @@
     place-items: center;
     margin: auto;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       width: 56rem;
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       width: 100%;
     }
   }
@@ -94,10 +96,10 @@
   .intro__logo {
     position: relative;
     width: 28rem;
-    @media (max-width: 1366px) {
+    @include desktop {
       width: 21rem;
     }
-    @media (max-width: 576px) {
+    @include mobile {
       width: 12rem;
     }
     img {

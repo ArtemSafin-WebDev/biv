@@ -1,9 +1,11 @@
+@use "mixins" as *;
+
 @layer sections {
   .contact-us {
     padding-top: 6rem;
     background-color: #eeeeee;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       padding-bottom: 5rem;
     }
   }
@@ -44,7 +46,7 @@
     align-self: center;
     margin-top: -3rem;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       font-size: 14rem;
       letter-spacing: -0.42rem;
       margin-top: 0;
@@ -57,7 +59,7 @@
     align-self: center;
     width: 100%;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       margin-top: 6.9rem;
     }
   }
@@ -88,7 +90,7 @@
       border-color: var(--text-color);
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       height: 3rem;
       line-height: 171.4286%;
       border-bottom-color: #b3b3b3;
@@ -103,7 +105,7 @@
     height: 7rem;
     padding-top: 0.4rem;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       height: 7.2rem;
       padding-top: 0;
     }
@@ -112,7 +114,7 @@
   .contact-us__form-policy {
     margin-top: 2.7rem;
 
-    @media (max-width: 1366px) {
+    @include desktop {
       margin-top: 2rem;
     }
   }
@@ -151,7 +153,7 @@
       }
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       border-color: rgba(0, 0, 0, 0.8);
     }
   }
@@ -167,14 +169,14 @@
     text-align: left;
     a {
       font-weight: 700;
-      @media (hover: hover) and (pointer: fine) {
+      @include hover-device {
         &:hover {
           color: #7D838A;
         }
       }
     }
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       align-self: flex-start;
       color: rgba(0, 0, 0, 0.8);
     }
@@ -184,7 +186,7 @@
     margin-top: 1.2rem;
     width: 100%;
 
-    @media (max-width: 1024px) and (min-width: 577px) {
+    @include tablet-only {
       height: 4.8rem;
       border-radius: 2.4rem;
       font-size: 1.6rem;
@@ -195,7 +197,7 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @include mobile {
     .contact-us {
       padding-top: 4.6rem;
       padding-bottom: 0;

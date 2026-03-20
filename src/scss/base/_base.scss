@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer base {
   html {
     font-size: 62.5%;
@@ -8,15 +10,15 @@
     }
     font-size: clamp(7.42px, calc(1px + 0.47vw), 125px);
 
-    @media (max-width: 1366px) {
+    @include desktop {
       font-size: clamp(5.81px, calc(1px + 0.66vw), 135px);
     }
 
-    @media (max-width: 1024px) {
+    @include tablet {
       font-size: clamp(5.81px, calc(1px + 0.88vw), 135px);
     }
 
-    @media (max-width: 576px) {
+    @include mobile {
       font-size: 10px;
     }
   }
