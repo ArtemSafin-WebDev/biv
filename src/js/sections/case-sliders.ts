@@ -43,7 +43,6 @@ export default function caseSliders() {
         modules: [Navigation],
         slidesPerView: "auto",
         speed: 600,
-        loop: true,
         watchOverflow: false,
         navigation: {
           prevEl: caseProjectsSection.querySelector<HTMLButtonElement>(
