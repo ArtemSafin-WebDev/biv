@@ -178,13 +178,22 @@
     }
   }
 
-  .case-detail__sublist {
-    margin-top: 0.2rem;
-    margin-left: 3.3rem;
-    list-style: decimal;
+  .case-detail__list-item > ol {
+    list-style: none;
+    counter-reset: sublist;
 
     li {
+      position: relative;
       margin-top: 0.2rem;
+      padding-left: 2.8rem;
+      counter-increment: sublist;
+
+      &::before {
+        content: counter(sublist) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
     }
   }
 

@@ -49,9 +49,9 @@
                     <ul class="case-detail__list">
                         {{#each caseDetail.technologies}}
                         <li class="case-detail__list-item">
-                            <span>{{ this.text }}</span>
+                            <p>{{ this.text }}</p>
                             {{#if this.orderedItems}}
-                            <ol class="case-detail__sublist">
+                            <ol>
                                 {{#each this.orderedItems}}
                                 <li>{{ this }}</li>
                                 {{/each}}
