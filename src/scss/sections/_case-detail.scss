@@ -134,6 +134,7 @@
     @media (max-width: 1366px) {
       grid-column: 1 / 2;
       padding: 0.8rem 1rem;
+      padding-top: 0.5rem;
       font-size: 1.8rem;
       line-height: 94%;
       letter-spacing: -0.036rem;
@@ -363,6 +364,70 @@
 
     @media (max-width: 1366px) {
       margin-top: 2.4rem;
+    }
+  }
+
+  @media (max-width: 1024px) and (min-width: 577px) {
+    .hero__inner {
+      padding-top: 20rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero__logo {
+      width: 20rem;
+    }
+
+    .case-detail-nav {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .case-detail__stack {
+      gap: 3rem;
+    }
+
+    .case-detail__row {
+      gap: 2rem;
+    }
+
+    .case-detail__content-project {
+      gap: 3rem;
+    }
+
+    .case-detail__project-title {
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
+
+    .case-detail__section-title {
+      font-size: 3rem;
+      letter-spacing: -0.06rem;
+    }
+
+    .case-detail__list {
+      padding-left: 0;
+    }
+
+    .case-detail__list-item {
+      max-width: none;
+      padding-left: 3.2rem;
+    }
+
+    .case-detail__content-models {
+      gap: 3rem;
+    }
+
+    .case-detail__model-image {
+      max-width: 65rem;
+    }
+
+    .case-detail__visual-slide {
+      width: 65rem;
+      margin-right: 2rem;
+    }
+
+    .case-detail__visual-controls {
+      margin-top: 2.7rem;
     }
   }
 

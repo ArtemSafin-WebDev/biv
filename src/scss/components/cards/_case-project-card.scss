@@ -35,5 +35,11 @@
     font-weight: 700;
     line-height: 100%;
     letter-spacing: -0.072rem;
+
+    @media (max-width: 1024px) and (min-width: 577px) {
+      font-size: 1.8rem;
+      line-height: 90%;
+      letter-spacing: -0.054rem;
+    }
   }
 }
