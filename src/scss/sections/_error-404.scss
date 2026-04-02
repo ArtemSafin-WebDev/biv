@@ -28,7 +28,6 @@
   }
 
   .error-404__title {
-    width: 141.4rem;
     font-size: 8rem;
     font-weight: 400;
     line-height: 94%;
@@ -39,7 +38,6 @@
 
   .error-404__text {
     margin-top: 2.7rem;
-    width: 63.1rem;
     font-size: 4rem;
     font-weight: 400;
     line-height: 94%;
@@ -80,11 +78,7 @@
     aspect-ratio: 1;
     border-radius: 50%;
     opacity: var(--opacity);
-    background: linear-gradient(
-      180deg,
-      #ffffff 36.5385%,
-      #0088ec 100%
-    );
+    background: linear-gradient(180deg, #ffffff 36.5385%, #0088ec 100%);
   }
 
   .error-404__circle:nth-child(1) {
