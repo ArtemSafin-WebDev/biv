@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 @layer sections {
   .not-found-page {
     background-color: #17a5e4;
@@ -17,6 +19,10 @@
     overflow: hidden;
     color: #ffffff;
     background-color: #17a5e4;
+
+    @include desktop-only {
+      padding-top: 16rem;
+    }
   }
 
   .error-404__content {
@@ -34,6 +40,11 @@
     letter-spacing: -0.16rem;
     text-align: center;
     text-transform: uppercase;
+
+    @include desktop-only {
+      font-size: 6rem;
+      letter-spacing: -0.12rem;
+    }
   }
 
   .error-404__text {
@@ -43,6 +54,10 @@
     line-height: 94%;
     letter-spacing: -0.08rem;
     text-align: center;
+
+    @include desktop-only {
+      margin-top: 2rem;
+    }
   }
 
   .error-404__home-link {
@@ -88,6 +103,13 @@
     --top: 34.6rem;
     --rotate: 0deg;
     --opacity: 0.8;
+
+    @include desktop-only {
+      --wrapper-size: 42rem;
+      --inner-size: 42rem;
+      --left: -7.8rem;
+      --top: 23.9rem;
+    }
   }
 
   .error-404__circle:nth-child(2) {
@@ -97,6 +119,13 @@
     --top: 61rem;
     --rotate: 0deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 29.8rem;
+      --inner-size: 29.8rem;
+      --left: 20.4rem;
+      --top: 44.3rem;
+    }
   }
 
   .error-404__circle:nth-child(3) {
@@ -106,6 +135,13 @@
     --top: 31.2rem;
     --rotate: 41.53deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 37.7651rem;
+      --inner-size: 26.753rem;
+      --left: 37.821rem;
+      --top: 31.171rem;
+    }
   }
 
   .error-404__circle:nth-child(4) {
@@ -115,6 +151,13 @@
     --top: 52.2rem;
     --rotate: 44.16deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 28.6642rem;
+      --inner-size: 20.2708rem;
+      --left: 56.7rem;
+      --top: 45.147rem;
+    }
   }
 
   .error-404__circle:nth-child(5) {
@@ -124,6 +167,13 @@
     --top: 45.4rem;
     --rotate: 44.16deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 15.5949rem;
+      --inner-size: 11.0284rem;
+      --left: 75.155rem;
+      --top: 40.6rem;
+    }
   }
 
   .error-404__circle:nth-child(6) {
@@ -133,6 +183,13 @@
     --top: 50.1rem;
     --rotate: 15deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 23.2427rem;
+      --inner-size: 18.9776rem;
+      --left: 85.386rem;
+      --top: 43.743rem;
+    }
   }
 
   .error-404__circle:nth-child(7) {
@@ -142,6 +199,13 @@
     --top: 73.5412rem;
     --rotate: 15deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 16.3568rem;
+      --inner-size: 13.3552rem;
+      --left: 103.147rem;
+      --top: 59.417rem;
+    }
   }
 
   .error-404__circle:nth-child(8) {
@@ -151,6 +215,13 @@
     --top: 58.1053rem;
     --rotate: 15deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 16.3568rem;
+      --inner-size: 13.3552rem;
+      --left: 113.562rem;
+      --top: 49.096rem;
+    }
   }
 
   .error-404__circle:nth-child(9) {
@@ -160,5 +231,12 @@
     --top: 64.085rem;
     --rotate: 15deg;
     --opacity: 0.6;
+
+    @include desktop-only {
+      --wrapper-size: 11.6433rem;
+      --inner-size: 9.5067rem;
+      --left: 121.744rem;
+      --top: 53.094rem;
+    }
   }
 }
