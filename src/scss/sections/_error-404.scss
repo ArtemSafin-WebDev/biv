@@ -27,6 +27,10 @@
     @include tablet-only {
       padding-top: 17rem;
     }
+
+    @include mobile {
+      padding-top: 17rem;
+    }
   }
 
   .error-404__content {
@@ -44,6 +48,7 @@
     letter-spacing: -0.16rem;
     text-align: center;
     text-transform: uppercase;
+    text-wrap: balance;
 
     @include desktop-only {
       font-size: 6rem;
@@ -53,6 +58,11 @@
     @include tablet-only {
       font-size: 4rem;
       letter-spacing: -0.08rem;
+    }
+
+    @include mobile {
+      font-size: 2.6rem;
+      letter-spacing: -0.052rem;
     }
   }
 
@@ -73,9 +83,21 @@
       font-size: 2rem;
       letter-spacing: -0.04rem;
     }
+
+    @include mobile {
+      margin-top: 1.4rem;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+    }
   }
 
-  .error-404__home-link {
+  a.error-404__home-link,
+  a.error-404__home-link:visited,
+  a.error-404__home-link:hover,
+  a.error-404__home-link:active {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-decoration-color: #ffffff !important;
     text-decoration-line: underline;
     text-decoration-thickness: 0.1rem;
     text-underline-offset: 0.3rem;
@@ -132,6 +154,10 @@
       --left: -6.7rem;
       --top: 22.8rem;
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   .error-404__circle:nth-child(2) {
@@ -154,6 +180,10 @@
       --inner-size: 21.7rem;
       --left: 13.8rem;
       --top: 37.6rem;
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 
@@ -178,6 +208,13 @@
       --left: 26.47rem;
       --top: 28.087rem;
     }
+
+    @include mobile {
+      --wrapper-size: 27.4587rem;
+      --inner-size: 19.4519rem;
+      --left: -8.9rem;
+      --top: 26.7rem;
+    }
   }
 
   .error-404__circle:nth-child(4) {
@@ -200,6 +237,13 @@
       --inner-size: 20.2708rem;
       --left: 38.3rem;
       --top: 46.9rem;
+    }
+
+    @include mobile {
+      --wrapper-size: 28.6642rem;
+      --inner-size: 20.2708rem;
+      --left: -10.371rem;
+      --top: 45.413rem;
     }
   }
 
@@ -224,6 +268,13 @@
       --left: 52.3rem;
       --top: 39.9rem;
     }
+
+    @include mobile {
+      --wrapper-size: 15.5949rem;
+      --inner-size: 11.0284rem;
+      --left: 8.8rem;
+      --top: 47.5rem;
+    }
   }
 
   .error-404__circle:nth-child(6) {
@@ -246,6 +297,13 @@
       --inner-size: 18.9776rem;
       --left: 63.4rem;
       --top: 34.6rem;
+    }
+
+    @include mobile {
+      --wrapper-size: 23.2427rem;
+      --inner-size: 18.9776rem;
+      --left: 9.9rem;
+      --top: 33.8rem;
     }
   }
 
@@ -270,6 +328,13 @@
       --left: 70.6rem;
       --top: 52.4rem;
     }
+
+    @include mobile {
+      --wrapper-size: 16.3568rem;
+      --inner-size: 13.3552rem;
+      --left: 21.93rem;
+      --top: 50.913rem;
+    }
   }
 
   .error-404__circle:nth-child(8) {
@@ -293,6 +358,13 @@
       --left: 84.6rem;
       --top: 46.4rem;
     }
+
+    @include mobile {
+      --wrapper-size: 16.3568rem;
+      --inner-size: 13.3552rem;
+      --left: 14.8rem;
+      --top: 57.1rem;
+    }
   }
 
   .error-404__circle:nth-child(9) {
@@ -315,6 +387,13 @@
       --inner-size: 9.5067rem;
       --left: 95.144rem;
       --top: 52.894rem;
+    }
+
+    @include mobile {
+      --wrapper-size: 11.6433rem;
+      --inner-size: 9.5067rem;
+      --left: 27.6rem;
+      --top: 2.5rem;
     }
   }
 }
