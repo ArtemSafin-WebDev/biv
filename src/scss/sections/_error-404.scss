@@ -23,6 +23,10 @@
     @include desktop-only {
       padding-top: 16rem;
     }
+
+    @include tablet-only {
+      padding-top: 17rem;
+    }
   }
 
   .error-404__content {
@@ -45,6 +49,11 @@
       font-size: 6rem;
       letter-spacing: -0.12rem;
     }
+
+    @include tablet-only {
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
   }
 
   .error-404__text {
@@ -57,6 +66,12 @@
 
     @include desktop-only {
       margin-top: 2rem;
+    }
+
+    @include tablet-only {
+      margin-top: 2.5rem;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
     }
   }
 
@@ -110,6 +125,13 @@
       --left: -7.8rem;
       --top: 23.9rem;
     }
+
+    @include tablet-only {
+      --wrapper-size: 30.5rem;
+      --inner-size: 30.5rem;
+      --left: -6.7rem;
+      --top: 22.8rem;
+    }
   }
 
   .error-404__circle:nth-child(2) {
@@ -125,6 +147,13 @@
       --inner-size: 29.8rem;
       --left: 20.4rem;
       --top: 44.3rem;
+    }
+
+    @include tablet-only {
+      --wrapper-size: 21.7rem;
+      --inner-size: 21.7rem;
+      --left: 13.8rem;
+      --top: 37.6rem;
     }
   }
 
@@ -142,6 +171,13 @@
       --left: 37.821rem;
       --top: 31.171rem;
     }
+
+    @include tablet-only {
+      --wrapper-size: 27.4587rem;
+      --inner-size: 19.4519rem;
+      --left: 26.47rem;
+      --top: 28.087rem;
+    }
   }
 
   .error-404__circle:nth-child(4) {
@@ -157,6 +193,13 @@
       --inner-size: 20.2708rem;
       --left: 56.7rem;
       --top: 45.147rem;
+    }
+
+    @include tablet-only {
+      --wrapper-size: 28.6642rem;
+      --inner-size: 20.2708rem;
+      --left: 38.3rem;
+      --top: 46.9rem;
     }
   }
 
@@ -174,6 +217,13 @@
       --left: 75.155rem;
       --top: 40.6rem;
     }
+
+    @include tablet-only {
+      --wrapper-size: 15.5949rem;
+      --inner-size: 11.0284rem;
+      --left: 52.3rem;
+      --top: 39.9rem;
+    }
   }
 
   .error-404__circle:nth-child(6) {
@@ -189,6 +239,13 @@
       --inner-size: 18.9776rem;
       --left: 85.386rem;
       --top: 43.743rem;
+    }
+
+    @include tablet-only {
+      --wrapper-size: 23.2427rem;
+      --inner-size: 18.9776rem;
+      --left: 63.4rem;
+      --top: 34.6rem;
     }
   }
 
@@ -206,6 +263,13 @@
       --left: 103.147rem;
       --top: 59.417rem;
     }
+
+    @include tablet-only {
+      --wrapper-size: 16.3568rem;
+      --inner-size: 13.3552rem;
+      --left: 70.6rem;
+      --top: 52.4rem;
+    }
   }
 
   .error-404__circle:nth-child(8) {
@@ -222,6 +286,13 @@
       --left: 113.562rem;
       --top: 49.096rem;
     }
+
+    @include tablet-only {
+      --wrapper-size: 16.3568rem;
+      --inner-size: 13.3552rem;
+      --left: 84.6rem;
+      --top: 46.4rem;
+    }
   }
 
   .error-404__circle:nth-child(9) {
@@ -237,6 +308,13 @@
       --inner-size: 9.5067rem;
       --left: 121.744rem;
       --top: 53.094rem;
+    }
+
+    @include tablet-only {
+      --wrapper-size: 11.6433rem;
+      --inner-size: 9.5067rem;
+      --left: 95.144rem;
+      --top: 52.894rem;
     }
   }
 }
