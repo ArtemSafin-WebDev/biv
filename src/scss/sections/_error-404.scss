@@ -6,7 +6,7 @@
   }
 
   .page-main--404 {
-    min-block-size: 100dvh;
+    min-block-size: 100vh;
   }
 
   .error-404 {
@@ -129,8 +129,8 @@
     justify-content: center;
     transform: rotate(var(--rotate));
     transform-origin: center center;
-    animation: error-404-circle-float var(--float-duration) ease-in-out var(--float-delay) infinite
-      alternate;
+    animation: error-404-circle-float var(--float-duration) ease-in-out
+      var(--float-delay) infinite alternate;
     will-change: transform;
   }
 
