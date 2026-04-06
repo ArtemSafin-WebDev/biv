@@ -102,7 +102,7 @@ export default function leaders() {
       });
     });
 
-    scheduleNext();
+    //scheduleNext();
   }
 
   function setup() {
@@ -110,7 +110,7 @@ export default function leaders() {
     init();
     const swappable = circles.length > 0 && ALL_LOGOS.length > circles.length;
     if (btn) btn.hidden = !swappable;
-    if (swappable) scheduleNext();
+    //if (swappable) scheduleNext();
   }
 
   setup();
