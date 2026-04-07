@@ -42,7 +42,7 @@
   .page-header__menu {
     display: contents;
 
-    @include desktop {
+    @include tablet {
       position: fixed;
       left: 0;
       top: var(--header-height, 0);
@@ -76,7 +76,7 @@
       padding: 0.5rem var(--container-padding) 4.3rem;
     }
 
-    @include desktop {
+    @include tablet {
       &.active {
         opacity: 1;
         visibility: visible;
@@ -89,7 +89,7 @@
   .page-header__burger {
     display: none;
 
-    @include desktop {
+    @include tablet {
       width: 9rem;
       height: 4.5rem;
       display: flex;
@@ -159,7 +159,7 @@
     gap: 4rem;
     row-gap: 1rem;
 
-    @include desktop {
+    @include tablet {
       flex-direction: column;
       flex-wrap: nowrap;
       gap: 3rem;
@@ -178,7 +178,7 @@
     font-weight: 400;
     line-height: 90%;
 
-    @include desktop {
+    @include tablet {
       font-size: 4rem;
       line-height: 100%;
       letter-spacing: -0.08rem;
@@ -205,7 +205,7 @@
   }
 
   .page-header__nav {
-    @include desktop {
+    @include tablet {
       grid-area: auto;
       width: max-content;
       align-self: center;
@@ -240,7 +240,7 @@
   .page-header__contacts {
     display: none;
 
-    @include desktop {
+    @include tablet {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -269,7 +269,7 @@
     grid-area: cta;
     justify-self: flex-end;
 
-    @include desktop {
+    @include tablet {
       min-width: 14rem;
       padding-inline: 2rem;
     }
