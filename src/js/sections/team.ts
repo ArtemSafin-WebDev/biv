@@ -18,7 +18,7 @@ export default function team() {
   }
 
   let current = 0;
-  let scheduled: gsap.core.Tween | null = null;
+  //let scheduled: gsap.core.Tween | null = null;
 
   gsap.set(slides, { autoAlpha: 0 });
   gsap.set(slides[0], { autoAlpha: 1 });
