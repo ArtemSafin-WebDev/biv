@@ -1,0 +1,20 @@
+<section class="news-detail">
+    <div class="container">
+        <h1 class="news-detail__title">{{ newsDetail.title }}</h1>
+        <div class="news-detail__meta">
+            <time class="news-detail__date" datetime="2026-02-26">{{ newsDetail.date }}</time>
+            <ul class="news-detail__tags" aria-label="Разделы новости">
+                {{#each newsDetail.tags}}
+                <li class="news-detail__tag">{{ this }}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="news-detail__body">
+            <img class="news-detail__image" src="{{ newsDetail.image }}" alt="{{ newsDetail.alt }}" width="4096"
+                height="2895">
+            <div class="news-detail__content">
+                {{{ newsDetail.content }}}
+            </div>
+        </div>
+    </div>
+</section>

@@ -47,7 +47,7 @@ export default {
         tags: ["веб-разработка"],
       },
       {
-        href: "#",
+        href: "/news-detail.html",
         image: "/images/news/news-catalog-2.webp",
         alt: "Сертификат РБК",
         title:

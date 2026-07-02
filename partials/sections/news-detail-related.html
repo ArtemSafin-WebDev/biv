@@ -1,0 +1,31 @@
+<section class="news-detail-related">
+    <div class="container">
+        <div class="news-detail-related__top">
+            <h2 class="news-detail-related__heading secondary-heading">Другие новости</h2>
+            <div class="news-detail-related__controls">
+                <button class="news-detail-related__control news-detail-related__control--prev" type="button"
+                    aria-label="Предыдущая новость">
+                    <svg aria-hidden="true">
+                        <use xlink:href="#arrows/left"></use>
+                    </svg>
+                </button>
+                <button class="news-detail-related__control news-detail-related__control--next" type="button"
+                    aria-label="Следующая новость">
+                    <svg aria-hidden="true">
+                        <use xlink:href="#arrows/right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="news-detail-related__slider swiper">
+            <ul class="news-detail-related__list swiper-wrapper">
+                {{#each newsDetailRelatedCards}}
+                <li class="news-detail-related__item swiper-slide">
+                    {{> components/cards/news-catalog-card }}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <button class="news-detail-related__more" type="button">Показать еще</button>
+    </div>
+</section>
