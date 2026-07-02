@@ -1,0 +1,12 @@
+<a href="{{ href }}" class="news-catalog-card">
+    <span class="news-catalog-card__image-wrapper">
+        <img src="{{ image }}" alt="{{ alt }}" class="news-catalog-card__image {{ imageModifier }}">
+    </span>
+    <span class="news-catalog-card__title">{{ title }}</span>
+    <span class="news-catalog-card__date">{{ date }}</span>
+    <span class="news-catalog-card__tags">
+        {{#each tags}}
+        <span class="news-catalog-card__tag">{{ this }}</span>
+        {{/each}}
+    </span>
+</a>

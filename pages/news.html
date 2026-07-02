@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body class="news-page">
+  {{> layout/header }}
+  <main class="page-main">
+    {{> sections/news-catalog-hero }}
+    {{> sections/news-catalog }}
+    {{> sections/contact-us }}
+  </main>
+  {{> layout/footer }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<section class="news-catalog">
+    <div class="container">
+        <ul class="news-catalog__filters" aria-label="Разделы новостей">
+            {{#each newsCatalogFilters}}
+            <li class="news-catalog__filter-item">
+                <a href="#" class="news-catalog__filter{{#if active}} news-catalog__filter--active{{/if}}">
+                    {{ label }}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        <ul class="news-catalog__list">
+            {{#each newsCatalogCards}}
+            <li class="news-catalog__item">
+                {{> components/cards/news-catalog-card }}
+            </li>
+            {{/each}}
+        </ul>
+        <button class="news-catalog__more" type="button">Показать еще</button>
+    </div>
+</section>
