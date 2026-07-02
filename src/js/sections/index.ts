@@ -1,6 +1,7 @@
 import intro from "./intro";
 import leaders from "./leaders";
 import news from "./news";
+import newsCatalog from "./news-catalog";
 import platform from "./platform";
 import portfolio from "./portfolio";
 import services from "./services";
@@ -14,6 +15,7 @@ export default function sections() {
   platform();
   services();
   news();
+  newsCatalog();
   portfolio();
   technologies();
   team();

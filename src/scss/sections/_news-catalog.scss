@@ -182,7 +182,7 @@
     }
 
     @include mobile {
-      grid-template-columns: minmax(0, 32rem);
+      grid-template-columns: minmax(0, 1fr);
       gap: 2.4rem;
     }
   }
@@ -193,6 +193,10 @@
     @include mobile {
       &:nth-child(n + 4) {
         display: none;
+      }
+
+      .news-catalog--expanded &:nth-child(n + 4) {
+        display: flex;
       }
     }
   }
@@ -315,7 +319,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 32rem;
+      width: 100%;
       min-height: 4rem;
       margin-top: 2.4rem;
       padding: 1rem 2rem;
@@ -327,6 +331,10 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      .news-catalog--expanded & {
+        display: none;
+      }
     }
   }
 }
