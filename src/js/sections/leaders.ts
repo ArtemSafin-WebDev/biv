@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-const SWAP_INTERVAL = 4;
+//const SWAP_INTERVAL = 4;
 const FADE_DURATION = 0.4;
 const STAGGER_DELAY = 0.07;
 
@@ -56,10 +56,10 @@ export default function leaders() {
     });
   }
 
-  function scheduleNext() {
-    scheduled?.kill();
-    scheduled = gsap.delayedCall(SWAP_INTERVAL, swapAll);
-  }
+  // function scheduleNext() {
+  //   scheduled?.kill();
+  //   scheduled = gsap.delayedCall(SWAP_INTERVAL, swapAll);
+  // }
 
   function swapAll() {
     midSwap?.kill();
@@ -102,7 +102,7 @@ export default function leaders() {
       });
     });
 
-    scheduleNext();
+    //scheduleNext();
   }
 
   function setup() {
@@ -110,7 +110,7 @@ export default function leaders() {
     init();
     const swappable = circles.length > 0 && ALL_LOGOS.length > circles.length;
     if (btn) btn.hidden = !swappable;
-    if (swappable) scheduleNext();
+    //if (swappable) scheduleNext();
   }
 
   setup();

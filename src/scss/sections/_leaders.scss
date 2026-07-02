@@ -112,7 +112,7 @@
       width: max(60rem, calc(100svw + 24rem));
       margin-top: 19.5rem;
       margin-left: -16rem;
-      margin-bottom: 0;
+      margin-bottom: -4rem;
     }
   }
 
@@ -140,7 +140,7 @@
     }
 
     @include mobile {
-      width: 10rem;
+      width: 12rem;
     }
 
     img {

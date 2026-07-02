@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-const SWAP_INTERVAL = 5;
+//const SWAP_INTERVAL = 5;
 const FADE_DURATION = 0.6;
 
 export default function team() {
@@ -18,15 +18,15 @@ export default function team() {
   }
 
   let current = 0;
-  let scheduled: gsap.core.Tween | null = null;
+  //let scheduled: gsap.core.Tween | null = null;
 
   gsap.set(slides, { autoAlpha: 0 });
   gsap.set(slides[0], { autoAlpha: 1 });
 
-  function scheduleNext() {
-    scheduled?.kill();
-    scheduled = gsap.delayedCall(SWAP_INTERVAL, showNext);
-  }
+  // function scheduleNext() {
+  //   scheduled?.kill();
+  //   scheduled = gsap.delayedCall(SWAP_INTERVAL, showNext);
+  // }
 
   function showNext() {
     const prev = current;
@@ -35,10 +35,10 @@ export default function team() {
     gsap.to(slides[prev], { autoAlpha: 0, duration: FADE_DURATION, ease: "power2.inOut" });
     gsap.to(slides[current], { autoAlpha: 1, duration: FADE_DURATION, ease: "power2.inOut" });
 
-    scheduleNext();
+    //scheduleNext();
   }
 
-  scheduleNext();
+  //scheduleNext();
 
   btn?.addEventListener("click", (e) => {
     e.preventDefault();
