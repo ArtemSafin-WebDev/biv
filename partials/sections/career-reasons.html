@@ -1,0 +1,83 @@
+<section class="career-reasons" aria-labelledby="career-reasons-title">
+    <div class="container">
+        <div class="career-reasons__header">
+            <div class="career-reasons__index" aria-hidden="true">(2)</div>
+
+            <div class="career-reasons__intro">
+                <h2 class="career-reasons__heading" id="career-reasons-title">{{careerReasons.title}}</h2>
+                <p class="career-reasons__description">{{careerReasons.description}}</p>
+            </div>
+        </div>
+
+        <div class="career-reasons__mosaic">
+            <div class="career-reasons__tile career-reasons__tile--tablet-extra" aria-hidden="true">
+                <img src="/images/career-reasons/tablet-extra.webp" alt="">
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--team" aria-hidden="true">
+                <img src="/images/career-reasons/team.webp" alt="">
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--gradient-top" aria-hidden="true">
+                <img src="/images/career-reasons/gradient.webp" alt="">
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--empty" aria-hidden="true"></div>
+
+            <div class="career-reasons__tile career-reasons__tile--team-copy" aria-hidden="true">
+                <picture>
+                    <source media="(min-width: 1367px)" srcset="/images/career-reasons/woman.webp">
+                    <img src="/images/career-reasons/team.webp" alt="">
+                </picture>
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--event" aria-hidden="true">
+                <picture>
+                    <source media="(min-width: 1367px)" srcset="/images/career-reasons/event.webp">
+                    <img src="/images/career-reasons/speaker.webp" alt="">
+                </picture>
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--diamonds" aria-hidden="true">
+                <svg viewBox="0 0 160 160">
+                    <use xlink:href="#career-reasons/diamonds"></use>
+                </svg>
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--gradient-bottom" aria-hidden="true">
+                <img src="/images/career-reasons/wave.webp" alt="">
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--conversation" aria-hidden="true">
+                <picture>
+                    <source media="(min-width: 1367px)" srcset="/images/career-reasons/employee.webp">
+                    <img src="/images/career-reasons/conversation.webp" alt="">
+                </picture>
+            </div>
+
+            <div class="career-reasons__tile career-reasons__tile--database" aria-hidden="true">
+                <svg viewBox="0 0 160 160">
+                    <use xlink:href="#career-reasons/database"></use>
+                </svg>
+            </div>
+
+            <ul class="career-reasons__stats">
+                {{#each careerReasons.stats}}
+                    <li class="career-reasons__stat">
+                        <div class="career-reasons__tile career-reasons__stat-card{{#if light}} career-reasons__stat-card--light{{/if}}">
+                            <strong class="career-reasons__value">{{value}}</strong>
+                            <p class="career-reasons__stat-label">{{label}}</p>
+                        </div>
+
+                        {{#if mobileDuplicate}}
+                            <div class="career-reasons__tile career-reasons__stat-card career-reasons__stat-card--mobile-copy" aria-hidden="true">
+                                <strong class="career-reasons__value">{{value}}</strong>
+                                <p class="career-reasons__stat-label">{{label}}</p>
+                            </div>
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>

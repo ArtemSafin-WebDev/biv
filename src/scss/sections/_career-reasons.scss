@@ -1,0 +1,462 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-reasons {
+    overflow: clip;
+    padding-block-start: 10rem;
+    background-color: var(--career-reasons-bg);
+  }
+
+  .career-reasons__header {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .career-reasons__index {
+    grid-column: 1;
+    padding-inline-start: 0;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+  }
+
+  .career-reasons__intro {
+    z-index: 1;
+    grid-column: 2 / span 2;
+    width: 50rem;
+    margin-inline-start: 9.6rem;
+  }
+
+  .career-reasons__heading {
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+  }
+
+  .career-reasons__description {
+    width: 42rem;
+    margin-block-start: 1rem;
+    font-size: 2rem;
+    line-height: 120%;
+  }
+
+  .career-reasons__mosaic {
+    display: grid;
+    grid-template-columns: repeat(5, 34.8rem);
+    grid-auto-rows: 34.8rem;
+    width: max-content;
+    margin-block-start: -41.6rem;
+    margin-block-end: -3.7rem;
+    margin-inline-start: auto;
+    margin-inline-end: -7rem;
+  }
+
+  .career-reasons__tile {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--career-reasons-card-color);
+
+    img,
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .career-reasons__tile--tablet-extra {
+    display: none;
+  }
+
+  .career-reasons__tile--team {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .career-reasons__tile--gradient-top {
+    grid-column: 5;
+    grid-row: 1;
+
+    img {
+      position: relative;
+      left: -16.22%;
+      top: -9.29%;
+      width: 116.36%;
+      height: 155%;
+      max-width: none;
+    }
+  }
+
+  .career-reasons__tile--empty {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .career-reasons__tile--team-copy {
+    grid-column: 5;
+    grid-row: 2;
+  }
+
+  .career-reasons__tile--event {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  .career-reasons__tile--diamonds {
+    display: grid;
+    grid-column: 4;
+    grid-row: 3;
+    place-items: center;
+    color: white;
+
+    svg {
+      width: 17.4rem;
+      height: 17.4rem;
+    }
+  }
+
+  .career-reasons__tile--gradient-bottom {
+    grid-column: 1;
+    grid-row: 4;
+
+    img {
+      position: relative;
+      left: -104.03%;
+      width: 205.69%;
+      max-width: none;
+    }
+  }
+
+  .career-reasons__tile--conversation {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  .career-reasons__tile--database {
+    display: grid;
+    grid-column: 5;
+    grid-row: 4;
+    place-items: center;
+    color: white;
+
+    svg {
+      width: 20.4rem;
+      height: 20.4rem;
+    }
+  }
+
+  .career-reasons__stats,
+  .career-reasons__stat {
+    display: contents;
+  }
+
+  .career-reasons__stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .career-reasons__stat:nth-child(1) .career-reasons__stat-card {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .career-reasons__stat:nth-child(2) .career-reasons__stat-card {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .career-reasons__stat:nth-child(3) .career-reasons__stat-card {
+    grid-column: 5;
+    grid-row: 3;
+  }
+
+  .career-reasons__stat:nth-child(4) .career-reasons__stat-card {
+    grid-column: 3;
+    grid-row: 4;
+  }
+
+  .career-reasons__stat:nth-child(5) .career-reasons__stat-card {
+    grid-column: 4;
+    grid-row: 4;
+  }
+
+  .career-reasons__value {
+    font-size: 6.4rem;
+    line-height: 90%;
+    letter-spacing: -0.192rem;
+  }
+
+  .career-reasons__stat-card--light .career-reasons__value {
+    color: #e7f5ff;
+  }
+
+  .career-reasons__stat-label {
+    max-width: 27.4rem;
+    font-size: 2.2rem;
+    line-height: 110%;
+    letter-spacing: -0.022rem;
+  }
+
+  .career-reasons__stat:nth-child(1) .career-reasons__stat-label,
+  .career-reasons__stat:nth-child(3) .career-reasons__stat-label {
+    max-width: 22.5rem;
+  }
+
+  .career-reasons__stat-card--mobile-copy {
+    display: none;
+  }
+
+  @include desktop {
+    .career-reasons {
+      padding-block-start: 8rem;
+    }
+
+    .career-reasons__header {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .career-reasons__index {
+      padding-inline-start: 1rem;
+    }
+
+    .career-reasons__intro {
+      margin-inline-start: 0.5rem;
+    }
+
+    .career-reasons__mosaic {
+      grid-template-columns: repeat(5, 26rem);
+      grid-auto-rows: 26rem;
+      margin-block-start: -28.9rem;
+      margin-block-end: -2.5rem;
+      margin-inline-end: -7rem;
+    }
+
+    .career-reasons__tile--diamonds svg,
+    .career-reasons__tile--database svg {
+      width: 16rem;
+      height: 16rem;
+    }
+
+    .career-reasons__stat-label {
+      max-width: 27.4rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.018rem;
+    }
+
+    .career-reasons__stat:nth-child(1) .career-reasons__stat-label,
+    .career-reasons__stat:nth-child(3) .career-reasons__stat-label {
+      max-width: 22.5rem;
+    }
+  }
+
+  @include tablet {
+    .career-reasons {
+      padding-block-start: 7rem;
+    }
+
+    .career-reasons__index,
+    .career-reasons__heading {
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    .career-reasons__intro {
+      margin-inline-start: 0.4rem;
+    }
+
+    .career-reasons__description {
+      width: 34.1rem;
+      margin-block-start: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .career-reasons__mosaic {
+      grid-template-columns: repeat(5, 20rem);
+      grid-auto-rows: 20rem;
+      margin-block-start: -30.7rem;
+      margin-block-end: -2.1rem;
+      margin-inline-end: -5.3rem;
+    }
+
+    .career-reasons__tile--tablet-extra {
+      display: block;
+      grid-column: 5;
+      grid-row: 1;
+    }
+
+    .career-reasons__tile--team,
+    .career-reasons__tile--gradient-top {
+      grid-row: 2;
+    }
+
+    .career-reasons__tile--empty,
+    .career-reasons__tile--team-copy,
+    .career-reasons__stat:nth-child(1) .career-reasons__stat-card {
+      grid-row: 3;
+    }
+
+    .career-reasons__tile--event,
+    .career-reasons__tile--diamonds,
+    .career-reasons__stat:nth-child(2) .career-reasons__stat-card,
+    .career-reasons__stat:nth-child(3) .career-reasons__stat-card {
+      grid-row: 4;
+    }
+
+    .career-reasons__tile--gradient-bottom,
+    .career-reasons__tile--conversation,
+    .career-reasons__tile--database,
+    .career-reasons__stat:nth-child(4) .career-reasons__stat-card,
+    .career-reasons__stat:nth-child(5) .career-reasons__stat-card {
+      grid-row: 5;
+    }
+
+    .career-reasons__tile--diamonds svg,
+    .career-reasons__tile--database svg {
+      width: 11rem;
+      height: 11rem;
+    }
+
+    .career-reasons__value {
+      font-size: 4rem;
+      letter-spacing: -0.12rem;
+    }
+
+    .career-reasons__stat-label,
+    .career-reasons__stat:nth-child(3) .career-reasons__stat-label {
+      max-width: 13.5rem;
+      font-size: 1.6rem;
+      letter-spacing: -0.016rem;
+    }
+
+    .career-reasons__stat:nth-child(1) .career-reasons__stat-label {
+      max-width: 20.1rem;
+    }
+  }
+
+  @include mobile {
+    .career-reasons {
+      padding-block-start: 5rem;
+    }
+
+    .career-reasons__header {
+      display: block;
+    }
+
+    .career-reasons__index {
+      display: none;
+    }
+
+    .career-reasons__intro {
+      width: auto;
+      margin: 0;
+    }
+
+    .career-reasons__heading {
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
+
+    .career-reasons__description {
+      width: 32rem;
+      font-size: 1.4rem;
+    }
+
+    .career-reasons__mosaic {
+      grid-template-columns: repeat(2, 20rem);
+      grid-auto-rows: 20rem;
+      margin-block-start: 1.7rem;
+      margin-block-end: -3.2rem;
+      margin-inline: -4rem;
+    }
+
+    .career-reasons__tile--team {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .career-reasons__tile--gradient-top {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .career-reasons__tile--team-copy {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .career-reasons__tile--conversation {
+      display: block;
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    .career-reasons__tile--tablet-extra,
+    .career-reasons__tile--empty,
+    .career-reasons__tile--event,
+    .career-reasons__tile--diamonds,
+    .career-reasons__tile--gradient-bottom,
+    .career-reasons__tile--database {
+      display: none;
+    }
+
+    .career-reasons__stat:nth-child(1) .career-reasons__stat-card {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .career-reasons__stat:nth-child(2) .career-reasons__stat-card {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .career-reasons__stat:nth-child(3) .career-reasons__stat-card {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    .career-reasons__stat:nth-child(4) .career-reasons__stat-card {
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    .career-reasons__stat:nth-child(4) .career-reasons__stat-card--mobile-copy {
+      display: flex;
+      grid-column: 1;
+      grid-row: 5;
+    }
+
+    .career-reasons__stat:nth-child(5) .career-reasons__stat-card {
+      grid-column: 2;
+      grid-row: 5;
+    }
+
+    .career-reasons__stat-card {
+      padding: 1.5rem;
+    }
+
+    .career-reasons__stat-label,
+    .career-reasons__stat:nth-child(3) .career-reasons__stat-label {
+      max-width: 13.5rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
+
+    .career-reasons__stat:nth-child(1) .career-reasons__stat-label {
+      max-width: 14.5rem;
+    }
+  }
+}
