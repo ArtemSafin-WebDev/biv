@@ -1,0 +1,332 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-about {
+    background-color: var(--bg-color);
+    padding-block: 10rem 6rem;
+
+    @include desktop {
+      padding-block: 8rem 5rem;
+    }
+
+    @include tablet {
+      padding-block: 7rem 4rem;
+    }
+
+    @include mobile {
+      padding-block: 5rem 3rem;
+    }
+  }
+
+  .career-about__content {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    row-gap: 4.9rem;
+  }
+
+  .career-about__index {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+  }
+
+  .career-about__intro {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    width: 54.9rem;
+    margin-inline-start: 9.6rem;
+  }
+
+  .career-about__heading {
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+  }
+
+  .career-about__description {
+    max-width: 54.9rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    line-height: 120%;
+  }
+
+  .career-about__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 1.8rem;
+    line-height: 90%;
+  }
+
+  .career-about__stats {
+    display: contents;
+  }
+
+  .career-about__stat:nth-child(1) {
+    grid-column: 4;
+    grid-row: 1;
+    padding-inline-start: 1.2rem;
+  }
+
+  .career-about__stat:nth-child(2) {
+    grid-column: 5;
+    grid-row: 1;
+    padding-inline-start: 1.7rem;
+  }
+
+  .career-about__stat:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+    padding-block-start: 2.5rem;
+    padding-inline-start: 1rem;
+  }
+
+  .career-about__stat:nth-child(4) {
+    grid-column: 4;
+    grid-row: 2;
+    padding-block-start: 2.5rem;
+    padding-inline-start: 1.2rem;
+  }
+
+  .career-about__stat:nth-child(5) {
+    grid-column: 5;
+    grid-row: 2;
+    padding-inline-start: 1.7rem;
+  }
+
+  .career-about__stat-kicker {
+    width: 26.5rem;
+  }
+
+  .career-about__value {
+    display: flex;
+    align-items: baseline;
+    color: transparent;
+    font-size: 12rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: 0;
+    white-space: nowrap;
+    -webkit-text-stroke: 0.15rem var(--primary-color);
+  }
+
+  .career-about__stat-kicker + .career-about__value {
+    margin-top: 0.45rem;
+  }
+
+  .career-about__number {
+    display: inline-grid;
+
+    &::before,
+    .career-about__number-current {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &::before {
+      content: attr(data-count-reserve);
+      visibility: hidden;
+    }
+  }
+
+  .career-about__number-current {
+    justify-self: end;
+  }
+
+  .career-about__stat-label {
+    max-width: 18.1rem;
+  }
+
+  .career-about__stat:nth-child(4) .career-about__stat-label {
+    max-width: 14.9rem;
+  }
+
+  .career-about__stat:nth-child(5) .career-about__stat-label {
+    max-width: 26.5rem;
+  }
+
+  @include desktop {
+    .career-about__content {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      row-gap: 6.4rem;
+    }
+
+    .career-about__intro {
+      grid-column: 2 / span 2;
+      margin-inline-start: 0.5rem;
+    }
+
+    .career-about__description {
+      max-width: 52.8rem;
+    }
+
+    .career-about__stat:nth-child(3) {
+      grid-column: 1;
+      padding-inline-start: 1rem;
+    }
+
+    .career-about__stat:nth-child(4) {
+      grid-column: 2;
+      padding-inline-start: 0.5rem;
+    }
+
+    .career-about__stat:nth-child(1) {
+      grid-column: 3;
+      grid-row: 2;
+      padding-block-start: 2.5rem;
+      padding-inline-start: 1.1rem;
+    }
+
+    .career-about__stat:nth-child(2) {
+      grid-column: 4;
+      padding-inline-start: 1.5rem;
+    }
+
+    .career-about__stat:nth-child(5) {
+      grid-column: 4;
+      padding-inline-start: 1.5rem;
+    }
+
+  }
+
+  @include tablet {
+    .career-about__content {
+      row-gap: 4rem;
+    }
+
+    .career-about__intro {
+      margin-inline-start: 0.4rem;
+    }
+
+    .career-about__heading,
+    .career-about__index {
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    .career-about__description {
+      max-width: 43.9rem;
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+    .career-about__stat {
+      gap: 0;
+      font-size: 1.6rem;
+    }
+
+    .career-about__value {
+      font-size: 9rem;
+    }
+
+    .career-about__stat:nth-child(3) {
+      padding-block-start: 2.3rem;
+      padding-inline-start: 0.2rem;
+    }
+
+    .career-about__stat:nth-child(4) {
+      padding-block-start: 2.3rem;
+      padding-inline-start: 0.4rem;
+    }
+
+    .career-about__stat:nth-child(1) {
+      padding-block-start: 2.3rem;
+      padding-inline-start: 0.6rem;
+    }
+
+    .career-about__stat:nth-child(2),
+    .career-about__stat:nth-child(5) {
+      padding-inline-start: 0.7rem;
+    }
+
+    .career-about__stat-kicker + .career-about__value {
+      margin-top: 0.85rem;
+    }
+  }
+
+  @include mobile {
+    .career-about__content {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 0.8rem;
+      row-gap: 2.1rem;
+    }
+
+    .career-about__index {
+      display: none;
+    }
+
+    .career-about__intro {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      width: auto;
+      margin-inline-start: 0;
+    }
+
+    .career-about__heading {
+      font-size: 4rem;
+      line-height: 110%;
+      letter-spacing: -0.08rem;
+    }
+
+    .career-about__description {
+      max-width: none;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .career-about__stat {
+      padding: 0;
+      font-size: 1.4rem;
+    }
+
+    .career-about__stat:nth-child(n) {
+      padding: 0;
+    }
+
+    .career-about__stat:nth-child(3) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .career-about__stat:nth-child(1) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .career-about__stat:nth-child(4) {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .career-about__stat:nth-child(2) {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    .career-about__stat:nth-child(5) {
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    .career-about__value {
+      font-size: 6rem;
+      -webkit-text-stroke-width: 0.1rem;
+    }
+
+    .career-about__stat-label,
+    .career-about__stat:nth-child(4) .career-about__stat-label {
+      max-width: 14.9rem;
+    }
+
+    .career-about__stat:nth-child(5) .career-about__stat-label {
+      max-width: 14rem;
+    }
+  }
+}

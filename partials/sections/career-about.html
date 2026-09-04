@@ -1,0 +1,35 @@
+<section class="career-about js-career-about-counters" aria-labelledby="career-about-title">
+    <div class="container">
+        <div class="career-about__content">
+            <div class="career-about__index" aria-hidden="true">(1)</div>
+
+            <div class="career-about__intro">
+                <h2 class="career-about__heading" id="career-about-title">{{careerAbout.title}}</h2>
+                <p class="career-about__description">{{careerAbout.description}}</p>
+            </div>
+
+            <ul class="career-about__stats">
+                {{#each careerAbout.stats}}
+                    <li class="career-about__stat">
+                        {{#if kicker}}
+                            <div class="career-about__stat-kicker">{{kicker}}</div>
+                        {{/if}}
+
+                        {{#if count}}
+                            <div class="career-about__value" aria-label="{{count}}{{suffix}}">
+                                <span class="career-about__number" data-count-reserve="{{count}}">
+                                    <span class="career-about__number-current js-career-about-counter" data-count="{{count}}" aria-hidden="true">{{count}}</span>
+                                </span>
+                                <span class="career-about__suffix" aria-hidden="true">{{suffix}}</span>
+                            </div>
+                        {{else}}
+                            <div class="career-about__value">{{displayValue}}</div>
+                        {{/if}}
+
+                        <p class="career-about__stat-label">{{label}}</p>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>
