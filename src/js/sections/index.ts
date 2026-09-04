@@ -9,6 +9,7 @@ import services from "./services";
 import team from "./team";
 import technologies from "./technologies";
 import caseSliders from "./case-sliders";
+import careerHero from "./career-hero";
 
 export default function sections() {
   intro();
@@ -22,4 +23,5 @@ export default function sections() {
   technologies();
   team();
   caseSliders();
+  careerHero();
 }

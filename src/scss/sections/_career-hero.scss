@@ -1,0 +1,292 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-hero-spacer {
+    min-height: 200svh;
+    background-color: var(--primary-color);
+  }
+
+  .career-hero {
+    position: sticky;
+    top: var(--header-height);
+    overflow: hidden;
+    color: #fff;
+    background-color: var(--primary-color);
+  }
+
+  .career-hero__bg {
+    position: absolute;
+    inset: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgb(0 97 178 / 30%);
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: -28.46%;
+      width: 105.57%;
+      max-width: none;
+      height: 140.57%;
+      object-fit: cover;
+      object-position: center;
+
+      @include desktop {
+        top: -16.86%;
+        width: 100%;
+        height: 118.43%;
+      }
+
+      @media (width: 1025px) {
+        left: 50%;
+        top: 0;
+        width: 112.59%;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+
+      @include tablet {
+        left: 50%;
+        top: 0;
+        width: 112.59%;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+
+      @include mobile {
+        left: 0;
+        width: 100%;
+        transform: none;
+        object-position: right center;
+      }
+    }
+  }
+
+  .career-hero__stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    block-size: calc(100svh - var(--header-height));
+  }
+
+  .career-hero__disc,
+  .career-hero__title {
+    grid-area: 1 / 1;
+  }
+
+  .career-hero__disc {
+    z-index: 1;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    width: 70rem;
+    aspect-ratio: 1;
+    transform: translateY(4.65rem);
+  }
+
+  .career-hero__shape,
+  .career-hero__nav,
+  .career-hero__logo {
+    grid-area: 1 / 1;
+  }
+
+  .career-hero__shape {
+    z-index: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .career-hero__nav {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+  }
+
+  .career-hero__links {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 18.6rem 9.4rem 17.6rem;
+  }
+
+  .career-hero__link-item--employees,
+  .career-hero__link-item--contacts {
+    justify-self: end;
+  }
+
+  .career-hero__link {
+    display: block;
+    font-size: 2.6rem;
+    line-height: normal;
+    white-space: nowrap;
+    text-underline-offset: 0.4rem;
+
+    @include hover-device {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:focus-visible {
+      border-radius: 0.2rem;
+      outline: 0.2rem solid currentColor;
+      outline-offset: 0.4rem;
+    }
+  }
+
+  .career-hero__logo {
+    z-index: 2;
+    width: 21.7rem;
+    aspect-ratio: 1;
+  }
+
+  .career-hero__title {
+    z-index: 2;
+    align-self: start;
+    margin-top: 1rem;
+    font-size: 30rem;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: -0.9rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include desktop {
+      margin-top: 1.4rem;
+      font-size: 20rem;
+      letter-spacing: -0.6rem;
+    }
+
+    @media (width: 1025px) {
+      margin-top: 2rem;
+      font-size: 23.2rem;
+      letter-spacing: -0.7rem;
+    }
+
+    @include tablet {
+      font-size: 18rem;
+      letter-spacing: -0.54rem;
+    }
+
+    @include mobile {
+      margin-top: 9.2rem;
+      font-size: 8rem;
+      letter-spacing: -0.24rem;
+    }
+  }
+
+  .career-hero__disc {
+    @include desktop {
+      width: 60rem;
+      transform: translateY(2.8rem);
+    }
+
+    @media (width: 1025px) {
+      width: 77.25rem;
+      transform: translateY(2.83rem);
+    }
+
+    @include tablet {
+      transform: translateY(2.2rem);
+    }
+
+    @include mobile {
+      width: 33.6rem;
+      transform: translateY(1.3rem);
+    }
+  }
+
+  .career-hero__links {
+    @include desktop {
+      padding: 16.6rem 6rem 17.4rem;
+    }
+
+    @media (width: 1025px) {
+      padding: 21.37rem 7.73rem 21.9rem;
+    }
+
+    @include mobile {
+      grid-template-columns: max-content max-content max-content;
+      grid-template-rows: max-content max-content max-content;
+      align-items: center;
+      padding: 2rem 1.1rem 3rem;
+    }
+  }
+
+  .career-hero__link-item {
+    @include mobile {
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  .career-hero__link-item--employees {
+    @include mobile {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  .career-hero__link-item--offices {
+    @include mobile {
+      grid-column: 1;
+      grid-row: 2;
+      justify-self: start;
+    }
+  }
+
+  .career-hero__link-item--vacancies {
+    @include mobile {
+      grid-column: 3;
+      grid-row: 2;
+      justify-self: end;
+    }
+  }
+
+  .career-hero__link-item--contacts {
+    @include mobile {
+      grid-column: 2;
+      grid-row: 3;
+    }
+  }
+
+  .career-hero__link {
+    @media (width: 1025px) {
+      font-size: 3.35rem;
+    }
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  .career-hero__logo {
+    @include desktop {
+      width: 21rem;
+    }
+
+    @media (width: 1025px) {
+      width: 27.04rem;
+    }
+
+    @include mobile {
+      width: 11.6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .career-hero__shape {
+      will-change: auto;
+    }
+  }
+}
