@@ -14,6 +14,7 @@ import careerAbout from "./career-about";
 import careerInterview from "./career-interview";
 import careerOffices from "./career-offices";
 import careerBlog from "./career-blog";
+import careerStories from "./career-stories";
 
 export default function sections() {
   intro();
@@ -29,6 +30,7 @@ export default function sections() {
   caseSliders();
   careerHero();
   careerAbout();
+  careerStories();
   careerInterview();
   careerOffices();
   careerBlog();

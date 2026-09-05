@@ -1,0 +1,221 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-stories {
+    // Interpolate the 1024 / 1366 Figma sizes, capped by the 1920 composition.
+    --stories-focus-size: min(70rem, calc(43.57vw + 3.89rem));
+    --stories-side-width: min(51.3rem, calc(35.09vw - 11.93rem));
+    --stories-side-photo: min(28rem, calc(17.54vw - 3.96rem));
+    --stories-side-padding: clamp(1rem, calc(2.925vw - 2rem), 2rem);
+    overflow: clip;
+    padding-block: clamp(7rem, calc(2.925vw + 4rem), 9rem) 6rem;
+    background-color: var(--bg-color);
+
+    @include mobile {
+      --stories-focus-size: min(33rem, calc(100vw - 3rem));
+      padding-block: 5rem 3rem;
+    }
+  }
+
+  .career-stories__title {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 4rem, 8.3em);
+    margin-inline: auto;
+    font-size: clamp(7rem, calc(8.72vw - 2rem), 14rem);
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: uppercase;
+    pointer-events: none;
+
+    @include mobile {
+      width: min(33.5rem, calc(100% - 2rem));
+      font-size: 4rem;
+    }
+  }
+
+  .career-stories__stage {
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+    width: min(171rem, calc(100% - 8rem));
+    margin-inline: auto;
+    margin-block-start: -2.3rem;
+    touch-action: pan-y;
+
+    @include mobile {
+      width: var(--stories-focus-size);
+      margin-block-start: -1.3rem;
+    }
+  }
+
+  .career-stories__focus {
+    display: grid;
+    grid-area: 1 / 1;
+    width: var(--stories-focus-size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--career-stories-focus-color);
+    pointer-events: none;
+  }
+
+  .career-stories__label {
+    display: block;
+    grid-area: 1 / 1;
+    align-self: start;
+    width: 56.3%;
+    margin-block-start: 5.29%;
+    margin-inline-start: 5.43%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include mobile {
+      width: 65%;
+      margin-block-start: 6.09%;
+      margin-inline-start: 4.01%;
+      transform: rotate(-4.44deg);
+    }
+  }
+
+  .career-stories__slider {
+    grid-area: 1 / 1;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+    // The circle below remains still while mobile portraits slide inside it.
+    @include mobile {
+      width: 74.57%;
+      border-radius: 50%;
+      overflow: hidden;
+      isolation: isolate;
+    }
+  }
+
+  .career-stories__list {
+    display: grid;
+    place-items: center;
+    height: auto;
+
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  .career-stories__slide {
+    grid-area: 1 / 1;
+    width: var(--stories-focus-size);
+    height: auto;
+    aspect-ratio: 1;
+    visibility: hidden;
+    pointer-events: none;
+
+    &:first-child {
+      visibility: visible;
+    }
+
+    @include mobile {
+      width: 100%;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  .career-stories__controls {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-block-start: 1.2rem;
+    }
+  }
+
+  .career-stories__arrow {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    aspect-ratio: 1;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    background-color: white;
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+      fill: currentColor;
+    }
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--text-color);
+      outline-offset: 0.4rem;
+    }
+  }
+
+  .career-stories__counter {
+    font-size: 1.6rem;
+    line-height: 94%;
+    letter-spacing: -0.032rem;
+  }
+
+  .career-stories__details {
+    width: var(--stories-focus-size);
+    margin: clamp(2rem, calc(1.805vw - 0.465rem), 3rem) auto 0;
+
+    @include mobile {
+      width: calc(100% - 4rem);
+      max-width: 48rem;
+      margin-block-start: 1.2rem;
+    }
+  }
+
+  .career-stories__text {
+    font-size: clamp(1.6rem, calc(0.585vw + 1rem), 1.8rem);
+    line-height: clamp(1.76rem, calc(1.872vw - 0.156rem), 2.4rem);
+    letter-spacing: -0.03em;
+
+    @include mobile {
+      font-size: 1.4rem;
+      line-height: 110%;
+    }
+  }
+
+  .career-stories__link {
+    justify-self: start;
+    width: fit-content;
+    margin-block-start: 1.2rem;
+    padding: 1rem clamp(1rem, calc(4.99rem - 2.92vw), 2rem);
+    background-color: white;
+    font-size: clamp(1.6rem, calc(1.17vw + 0.4rem), 2rem);
+    line-height: normal;
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--text-color);
+      outline-offset: 0.4rem;
+    }
+
+    @include mobile {
+      width: 100%;
+      margin-block-start: 1.8rem;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  .career-stories__status {
+    // Keep announcements available without affecting the composition.
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

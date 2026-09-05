@@ -1,6 +1,43 @@
+const careerStoryText =
+  "Всегда хотела создавать технологии, которые меняют жизнь к лучшему. Пришла в компанию 4 года назад как junior-разработчик после университета. Меня сразу погрузили в реальный проект с поддержкой наставника. Уже через год я вела свой первый серьёзный модуль, а ещё через два — возглавила новое направление. Самое крутое достижение — видеть, как нашим продуктом ежедневно пользуются тысячи людей. Тем, кто ищет себя, советую не бояться пробовать. Здесь точно помогут раскрыть ваш потенциал и поверят в вас, даже когда вы сами ещё сомневаетесь";
+
+const careerStoryPhotos = [
+  {
+    image: "/images/career-stories/1.webp",
+    imageWidth: 800,
+    imageHeight: 1200,
+    portrait: "woman",
+    imageAlt: "Сотрудница с короткими кудрявыми волосами",
+  },
+  {
+    image: "/images/career-stories/2.webp",
+    imageWidth: 800,
+    imageHeight: 1200,
+    portrait: "man",
+    imageAlt: "Сотрудник в сером свитере",
+  },
+  {
+    image: "/images/career-stories/3.webp",
+    imageWidth: 1200,
+    imageHeight: 1200,
+    portrait: "profile",
+    imageAlt: "Сотрудник с кудрявыми волосами в профиль",
+  },
+];
+
 export default {
   "/career.html": {
     title: "Карьера",
+    careerStories: {
+      title: "истории сотрудников",
+      // Временные данные: три фотографии и текст из макета повторены дважды.
+      items: Array.from({ length: 6 }, (_, index) => ({
+        ...careerStoryPhotos[index % careerStoryPhotos.length],
+        text: careerStoryText,
+        href: "#",
+        number: index + 1,
+      })),
+    },
     careerAbout: {
       title: "о компании",
       description:

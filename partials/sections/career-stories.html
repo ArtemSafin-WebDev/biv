@@ -1,0 +1,42 @@
+<section class="career-stories js-career-stories" id="employees" aria-labelledby="career-stories-title" aria-roledescription="карусель">
+    <h2 class="career-stories__title" id="career-stories-title">{{careerStories.title}}</h2>
+
+    <div class="career-stories__stage">
+        <div class="career-stories__focus" aria-hidden="true">
+            <picture class="career-stories__label">
+                <source media="(max-width: 576px)" srcset="/images/career-stories/label-mobile.svg">
+                <img src="/images/career-stories/label.svg" alt="" width="394" height="391">
+            </picture>
+        </div>
+
+        <div class="career-stories__slider swiper">
+            <ul class="career-stories__list swiper-wrapper">
+                {{#each careerStories.items}}
+                    <li class="career-stories__slide swiper-slide" data-story-index="{{@index}}" role="group" aria-roledescription="слайд" aria-label="История {{number}} из {{../careerStories.items.length}}">
+                        {{> components/cards/career-story-card }}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="career-stories__controls">
+        <button class="career-stories__arrow career-stories__arrow--prev" type="button" aria-label="Предыдущая история">
+            <svg width="40" height="40" aria-hidden="true"><use xlink:href="#arrows/left"></use></svg>
+        </button>
+        <span class="career-stories__counter" aria-hidden="true">1/{{careerStories.items.length}}</span>
+        <button class="career-stories__arrow career-stories__arrow--next" type="button" aria-label="Следующая история">
+            <svg width="40" height="40" aria-hidden="true"><use xlink:href="#arrows/right"></use></svg>
+        </button>
+    </div>
+
+    <div class="career-stories__details">
+        {{#each careerStories.items}}
+            <div class="career-stories__story" data-story-index="{{@index}}"{{#unless @first}} hidden{{/unless}}>
+                <p class="career-stories__text">{{text}}</p>
+                <a class="btn btn--outline career-stories__link" href="{{href}}">Читать историю</a>
+            </div>
+        {{/each}}
+    </div>
+    <span class="career-stories__status" role="status" aria-live="polite" aria-atomic="true"></span>
+</section>

@@ -1,0 +1,111 @@
+@use "mixins" as *;
+
+@layer components {
+  .career-story-card {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    pointer-events: none;
+
+    &[aria-disabled="false"] .career-story-card__background,
+    &[aria-disabled="false"] .career-story-card__portrait {
+      pointer-events: auto;
+    }
+
+    &[aria-disabled="true"] {
+      cursor: default;
+    }
+
+    &:focus-visible .career-story-card__background {
+      outline: 0.2rem solid var(--text-color);
+      outline-offset: 0.5rem;
+    }
+
+    &[aria-current="true"] .career-story-card__background {
+      pointer-events: none;
+    }
+
+    &[aria-current="true"]:focus-visible .career-story-card__portrait {
+      outline: 0.2rem solid var(--text-color);
+      outline-offset: 0.5rem;
+    }
+  }
+
+  .career-story-card__background {
+    grid-area: 1 / 1;
+    width: var(--stories-side-width);
+    padding-block: var(--stories-side-padding);
+    aspect-ratio: auto;
+    border-radius: 50rem;
+    background-color: var(--career-stories-card-color);
+    opacity: 0;
+
+    &::before {
+      display: block;
+      width: var(--stories-side-photo);
+      aspect-ratio: 1;
+      content: "";
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .career-story-card__portrait {
+    position: relative;
+    display: block;
+    grid-area: 1 / 1;
+    width: 74.57%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 50%;
+    background-color: var(--career-stories-card-color);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .career-story-card__image {
+    // Two registered layers allow a smooth luminosity-to-colour transition.
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    pointer-events: none;
+  }
+
+  .career-story-card--woman .career-story-card__image {
+    object-position: center 34.84%;
+  }
+
+  .career-story-card__image--tinted {
+    mix-blend-mode: luminosity;
+  }
+
+  .career-story-card__play {
+    z-index: 1;
+    grid-area: 1 / 1;
+    width: 16.43%;
+    height: auto;
+    aspect-ratio: 1;
+    fill: white;
+    color: white;
+    pointer-events: none;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .career-story-card {
+      transition: none;
+    }
+  }
+}
