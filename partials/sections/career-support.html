@@ -1,0 +1,14 @@
+<section class="career-support" aria-labelledby="career-support-title">
+    <div class="container">
+        <div class="career-support__header">
+            <div class="career-support__index" aria-hidden="true">(6)</div>
+            <h2 class="career-support__title" id="career-support-title">{{careerSupport.title}}</h2>
+        </div>
+
+        <ul class="career-support__grid">
+            {{#each careerSupport.items}}
+                {{> components/cards/career-support-card }}
+            {{/each}}
+        </ul>
+    </div>
+</section>

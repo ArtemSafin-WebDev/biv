@@ -1,0 +1,416 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-support {
+    overflow: clip;
+    padding-block: 10rem;
+    background-color: var(--career-support-bg);
+    color: white;
+
+    @include desktop {
+      padding-block: 8rem;
+    }
+
+    @include tablet {
+      padding-block: 7rem 5rem;
+    }
+
+    @include mobile {
+      padding-block: 5rem 2rem;
+    }
+  }
+
+  .career-support__header {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: start;
+    margin-block-end: 4rem;
+
+    @include desktop {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @include mobile {
+      display: block;
+      margin-block-end: 3rem;
+    }
+  }
+
+  .career-support__index {
+    grid-column: 1;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+
+    @include desktop {
+      padding-inline-start: 1rem;
+    }
+
+    @include tablet {
+      padding-inline-start: 0;
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .career-support__title {
+    grid-column: 2 / span 3;
+    margin-inline-start: 9.6rem;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+
+    @include desktop {
+      margin-inline-start: 0.5rem;
+    }
+
+    @include tablet {
+      margin-inline-start: 0.4rem;
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    @include mobile {
+      width: 32rem;
+      margin-inline-start: 0;
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
+  }
+
+  .career-support__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+
+    &::before {
+      grid-row: span 2;
+      content: "";
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: 1.9rem;
+      row-gap: 1.9rem;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      gap: 1rem;
+    }
+
+    @include mobile {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .career-support-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 3rem;
+    border-radius: 2rem;
+    background-color: var(--career-support-card-color);
+    color: var(--career-support-text-color);
+
+    &:nth-child(-n + 4) {
+      aspect-ratio: 325 / 420;
+    }
+
+    &:nth-child(n + 5) {
+      aspect-ratio: 1;
+    }
+
+    @include desktop {
+      padding: 2rem;
+
+      &:nth-child(-n + 4) {
+        aspect-ratio: 307 / 380;
+      }
+
+      &:nth-child(n + 5) {
+        aspect-ratio: 307 / 325;
+      }
+    }
+
+    @include tablet {
+      &:nth-child(-n + 4) {
+        aspect-ratio: 238 / 300;
+      }
+
+      &:nth-child(n + 5) {
+        aspect-ratio: 238 / 250;
+      }
+    }
+
+    @include mobile {
+      aspect-ratio: 320 / 190 !important;
+    }
+  }
+
+  .career-support-card__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .career-support-card__title,
+  .career-support-card__description {
+    max-width: 100%;
+    font-size: 2rem;
+    line-height: 120%;
+  }
+
+  .career-support-card__title {
+    max-width: 24rem;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  .career-support-card__description {
+    font-size: 1.8rem;
+  }
+
+  .career-support-card__image {
+    position: absolute;
+    z-index: 0;
+    display: block;
+    max-width: none;
+  }
+
+  .career-support-card--health .career-support-card__image {
+    bottom: -6.3rem;
+    left: -6.2rem;
+    width: 26.2rem;
+  }
+
+  .career-support-card--photo {
+    padding: 0;
+
+    .career-support-card__image {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .career-support-card--lunch .career-support-card__image {
+    right: -5rem;
+    bottom: -5rem;
+    width: 22.5rem;
+  }
+
+  .career-support-card--gifts {
+    display: flex;
+    flex-direction: column;
+
+    .career-support-card__image {
+      position: static;
+      order: 1;
+      width: calc(100% + 6rem);
+      height: auto;
+      aspect-ratio: 325 / 258;
+      margin-block-start: auto;
+      margin-block-end: -3rem;
+      margin-inline: -3rem;
+      object-fit: cover;
+      object-position: center 43%;
+    }
+  }
+
+  .career-support-card--events {
+    color: white;
+
+    .career-support-card__image {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .career-support-card--schedule .career-support-card__image {
+    right: 2.4rem;
+    bottom: -1.2rem;
+    width: 17.4rem;
+  }
+
+  .career-support-card.career-support-card--mentor {
+    display: flex;
+    grid-column: span 2;
+    flex-direction: column;
+    aspect-ratio: 670 / 325;
+  }
+
+  .career-support-card__avatars {
+    display: flex;
+    align-self: flex-end;
+    margin-block-start: auto;
+    margin-inline-end: 1rem;
+
+    img {
+      width: 12rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    img + img {
+      margin-inline-start: -4.2rem;
+    }
+  }
+
+  @include desktop {
+    .career-support-card--health .career-support-card__image {
+      bottom: -6.5rem;
+      left: -3.8rem;
+      width: 23.2rem;
+    }
+
+    .career-support-card--lunch .career-support-card__image {
+      right: -2.1rem;
+      bottom: -5.7rem;
+      width: 18rem;
+    }
+
+    .career-support-card--schedule .career-support-card__image {
+      right: 0.6rem;
+    }
+
+    .career-support-card--gifts .career-support-card__image {
+      width: calc(100% + 4rem);
+      aspect-ratio: 307 / 218;
+      margin-block-end: -2rem;
+      margin-inline: -2rem;
+    }
+
+    .career-support-card.career-support-card--mentor {
+      aspect-ratio: 633 / 325;
+    }
+
+    .career-support-card__avatars {
+      margin-inline-end: 0;
+    }
+  }
+
+  @include tablet {
+    .career-support-card__title {
+      font-size: 1.8rem;
+    }
+
+    .career-support-card__description {
+      font-size: 1.6rem;
+    }
+
+    .career-support-card--health .career-support-card__image {
+      bottom: -3.8rem;
+      left: -0.5rem;
+      width: 17.1rem;
+    }
+
+    .career-support-card--lunch .career-support-card__image {
+      right: -3.4rem;
+      bottom: -3.9rem;
+      width: 13.5rem;
+    }
+
+    .career-support-card--schedule .career-support-card__image {
+      right: 2rem;
+      bottom: -0.9rem;
+      width: 9.7rem;
+    }
+
+    .career-support-card--gifts .career-support-card__image {
+      aspect-ratio: 238 / 138;
+    }
+
+    .career-support-card.career-support-card--mentor {
+      aspect-ratio: 486 / 250;
+    }
+
+    .career-support-card__avatars img {
+      width: 8.3rem;
+    }
+
+    .career-support-card__avatars img + img {
+      margin-inline-start: -2.9rem;
+    }
+  }
+
+  @include mobile {
+    .career-support-card {
+      padding: 2rem;
+    }
+
+    .career-support-card__title {
+      font-size: 1.8rem;
+    }
+
+    .career-support-card__description {
+      font-size: 1.4rem;
+    }
+
+    .career-support-card--health .career-support-card__image {
+      bottom: -0.5rem;
+      left: 2rem;
+      width: 9.9rem;
+    }
+
+    .career-support-card--lunch .career-support-card__image {
+      right: -1.3rem;
+      bottom: -1rem;
+      width: 9.3rem;
+    }
+
+    .career-support-card--gifts {
+      aspect-ratio: 320 / 292 !important;
+
+      .career-support-card__description {
+        font-size: 1.6rem;
+      }
+
+      .career-support-card__image {
+        aspect-ratio: 320 / 162;
+      }
+    }
+
+    .career-support-card--schedule .career-support-card__image {
+      right: 0;
+      bottom: -0.2rem;
+    }
+
+    .career-support-card.career-support-card--mentor {
+      grid-column: auto;
+    }
+
+    .career-support-card__avatars {
+      margin-inline-end: 2rem;
+
+      img {
+        width: 5.4rem;
+      }
+
+      img + img {
+        margin-inline-start: -1.9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<section class="career-offices js-career-offices" id="offices" aria-labelledby="career-offices-title">
+    <div class="container">
+        <div class="career-offices__layout">
+            <div class="career-offices__index" aria-hidden="true">(5)</div>
+
+            <div class="career-offices__intro">
+                <h2 class="career-offices__heading" id="career-offices-title">{{careerOffices.title}}</h2>
+                <p class="career-offices__description">{{careerOffices.description}}</p>
+            </div>
+
+            <div class="career-offices__slider swiper">
+                <ul class="career-offices__list swiper-wrapper">
+                    {{#each careerOffices.items}}
+                        <li class="career-offices__item swiper-slide">
+                            <figure class="career-offices__card">
+                                <div class="career-offices__image">
+                                    <img src="{{image}}" alt="{{imageAlt}}">
+                                </div>
+                                <figcaption class="career-offices__caption">{{caption}}</figcaption>
+                            </figure>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="career-offices__controls">
+                <button class="career-offices__arrow career-offices__arrow--prev" type="button" aria-label="Предыдущий офис">
+                    <svg width="40" height="40" aria-hidden="true">
+                        <use xlink:href="#arrows/left"></use>
+                    </svg>
+                </button>
+                <button class="career-offices__arrow career-offices__arrow--next" type="button" aria-label="Следующий офис">
+                    <svg width="40" height="40" aria-hidden="true">
+                        <use xlink:href="#arrows/right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

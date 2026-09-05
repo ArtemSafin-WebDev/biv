@@ -12,6 +12,8 @@ import caseSliders from "./case-sliders";
 import careerHero from "./career-hero";
 import careerAbout from "./career-about";
 import careerInterview from "./career-interview";
+import careerOffices from "./career-offices";
+import careerBlog from "./career-blog";
 
 export default function sections() {
   intro();
@@ -28,4 +30,6 @@ export default function sections() {
   careerHero();
   careerAbout();
   careerInterview();
+  careerOffices();
+  careerBlog();
 }

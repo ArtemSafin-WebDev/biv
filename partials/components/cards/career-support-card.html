@@ -1,0 +1,20 @@
+<li class="career-support-card career-support-card--{{type}}">
+    {{#if image}}
+        <img class="career-support-card__image" src="{{image}}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    {{/if}}
+
+    {{#if title}}
+        <div class="career-support-card__content">
+            <h3 class="career-support-card__title">{{title}}</h3>
+            <p class="career-support-card__description">{{description}}</p>
+        </div>
+    {{/if}}
+
+    {{#if avatars}}
+        <div class="career-support-card__avatars" aria-hidden="true">
+            {{#each avatars}}
+                <img src="{{this}}" alt="" loading="lazy" decoding="async">
+            {{/each}}
+        </div>
+    {{/if}}
+</li>

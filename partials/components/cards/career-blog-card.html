@@ -1,0 +1,18 @@
+<article class="career-blog-card career-blog-card--{{type}}">
+    <picture class="career-blog-card__media">
+        {{#if mobileImage}}
+            <source media="(max-width: 576px)" srcset="{{mobileImage}}">
+        {{/if}}
+        <img class="career-blog-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy" decoding="async">
+    </picture>
+
+    <h3 class="career-blog-card__title">
+        {{#if mobileTitle}}
+            <span class="career-blog-card__title-desktop">{{title}}</span>
+            <span class="career-blog-card__title-mobile">{{mobileTitle}}</span>
+        {{else}}
+            {{title}}
+        {{/if}}
+    </h3>
+    <time class="career-blog-card__date" datetime="{{isoDate}}">{{date}}</time>
+</article>

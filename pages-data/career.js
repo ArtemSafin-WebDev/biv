@@ -98,6 +98,114 @@ export default {
         },
       ],
     },
+    careerOffices: {
+      title: "наши офисы",
+      description:
+        "Работа в BIV компании предполагает офисный формат. Для этого мы обустраивает комфортные зоны, заботимся об условиях. Офис — это место, куда хочется приходить. У нас 5 филиалов: Москва, Казань, Рыбинск, Санкт-Петербург, Череповец.",
+      items: [
+        {
+          image: "/images/career-offices/1.webp",
+          imageAlt: "Зона отдыха в офисе BIV",
+          caption: "Обед в нашем кафе в г.. Рыбинск",
+        },
+        {
+          image: "/images/career-offices/2.webp",
+          imageAlt: "Рабочее пространство офиса BIV",
+          caption:
+            "Где рождаются идеи: от мозгового штурма до тихой фокусировки",
+        },
+        {
+          image: "/images/career-offices/3.webp",
+          imageAlt: "Общая зона офиса BIV",
+          caption:
+            "Сердце офиса. Перезагрузка за кружкой кофе и разговором не о работе",
+        },
+        {
+          image: "/images/career-offices/4.webp",
+          imageAlt: "Переговорная зона офиса BIV",
+          caption: "Вид, который вдохновляет каждый день",
+        },
+      ],
+    },
+    careerSupport: {
+      title: "поддержка и забота",
+      items: [
+        {
+          type: "health",
+          title: "ДМС со стоматологией после ИС",
+          description: "Чтобы заботиться о здоровье было легко и комфортно",
+          image: "/images/career-support/umbrella.webp",
+        },
+        {
+          type: "photo",
+          image: "/images/career-support/balloons.webp",
+        },
+        {
+          type: "lunch",
+          title: "Вкусные оплачиваемые обеды",
+          description:
+            "Чтобы подзарядиться полезной энергией на весь день, не думая о бытовых вопросах",
+          image: "/images/career-support/meal.webp",
+        },
+        {
+          type: "gifts",
+          title: "Подарки на значимые события",
+          description:
+            "Чтобы подчеркнуть: мы рядом и помним о ваших важных днях",
+          image: "/images/career-support/gifts.webp",
+        },
+        {
+          type: "events",
+          title: "Дополнительные выходные на важные события",
+          description: "Чтобы быть рядом с близкими в ключевые моменты",
+          image: "/images/career-support/event.webp",
+        },
+        {
+          type: "schedule",
+          title: "Гибкий график работы",
+          description:
+            "Чтобы выстроить идеальный баланс между работой и личной жизнью",
+          image: "/images/career-support/headphones.webp",
+        },
+        {
+          type: "mentor",
+          title: "Индивидуальный план развития и наставник",
+          description: "Чтобы ты чётко видел свои цели и траекторию роста",
+          avatars: [
+            "/images/career-support/mentor-1.webp",
+            "/images/career-support/mentor-2.webp",
+            "/images/career-support/mentor-3.webp",
+          ],
+        },
+      ],
+    },
+    careerBlog: {
+      title: "блог сотрудников",
+      moreLink: {
+        label: "Больше новостей",
+        href: "/news.html",
+      },
+      items: [
+        {
+          type: "football",
+          image: "/images/career-blog/football.webp",
+          imageAlt: "Команда BIV на турнире по футболу",
+          title: "Турнир по футболу",
+          date: "13.01.2026",
+          isoDate: "2026-01-13",
+        },
+        {
+          type: "birthday",
+          image: "/images/career-blog/birthday.webp",
+          imageAlt: "Событие из жизни команды BIV",
+          title: "День рождения компании",
+          mobileImage: "/images/career-blog/conference.webp",
+          mobileTitle: "Конференция 2025",
+          date: "10.01.2026",
+          isoDate: "2026-01-10",
+        },
+      ],
+    },
     careerApplication: {
       titleLines: ["не нашёл свою вакансию?", "отправь резюме"],
       button: {

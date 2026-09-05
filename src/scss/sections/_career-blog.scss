@@ -1,0 +1,273 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-blog {
+    overflow: clip;
+    padding-block: 6.7rem;
+    background-color: var(--bg-color);
+
+    @include desktop {
+      padding-block: 6.7rem 4.4rem;
+    }
+
+    @include tablet {
+      padding-block: 5.7rem 4rem;
+    }
+
+    @include mobile {
+      padding-block: 5rem 4rem;
+    }
+  }
+
+  .career-blog__header {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: start;
+
+    @include desktop {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .career-blog__index {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .career-blog__title {
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    margin-inline-start: 9.6rem;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+
+    @include desktop {
+      grid-column: 1 / span 3;
+      margin-inline-start: 0;
+    }
+
+    @include tablet {
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    @include mobile {
+      width: 32rem;
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
+  }
+
+  .career-blog__more-link {
+    grid-column: 5;
+    grid-row: 1;
+    justify-self: end;
+    margin-block-start: 1.7rem;
+    padding: 1.2rem 1.8rem;
+    line-height: normal;
+
+    @include desktop {
+      grid-column: 4;
+    }
+
+    @include tablet {
+      margin-block-start: 1.3rem;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .career-blog__slider {
+    min-width: 0;
+    margin-block-start: 6.4rem;
+
+    @include desktop {
+      margin-block-start: 4rem;
+    }
+
+    @include tablet {
+      margin-block-start: 3rem;
+    }
+
+    @include mobile {
+      margin-block-start: 3rem;
+      overflow: visible;
+    }
+  }
+
+  .career-blog__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+
+    @include tablet {
+      gap: 1rem;
+    }
+
+    @include mobile {
+      display: flex;
+      gap: 0;
+    }
+  }
+
+  .career-blog__item {
+    min-width: 0;
+    height: auto;
+
+    @include mobile {
+      width: 30rem;
+      flex-shrink: 0;
+    }
+  }
+
+  .career-blog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1.5rem;
+
+    @include mobile {
+      gap: 0.8rem;
+    }
+  }
+
+  .career-blog-card__media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 900 / 428;
+    overflow: hidden;
+    border-radius: 2rem;
+
+    @include desktop {
+      aspect-ratio: 632 / 340;
+    }
+
+    @include tablet {
+      aspect-ratio: 488 / 223;
+    }
+
+    @include mobile {
+      aspect-ratio: 300 / 218;
+    }
+  }
+
+  .career-blog-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .career-blog-card--football .career-blog-card__image {
+    @include desktop {
+      transform: scale(1.28);
+      transform-origin: center top;
+    }
+
+    @include tablet {
+      transform-origin: center;
+    }
+
+    @include mobile {
+      transform: none;
+    }
+  }
+
+  .career-blog-card--birthday .career-blog-card__image {
+    object-position: center 36%;
+
+    @include mobile {
+      object-position: center;
+    }
+  }
+
+  .career-blog-card__title,
+  .career-blog-card__date {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.072rem;
+
+    @include tablet {
+      font-size: 1.8rem;
+      line-height: 90%;
+      letter-spacing: -0.054rem;
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
+      line-height: 100%;
+      letter-spacing: -0.048rem;
+    }
+  }
+
+  .career-blog-card__title-mobile {
+    display: none;
+
+    @include mobile {
+      display: inline;
+    }
+  }
+
+  .career-blog-card__title-desktop {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .career-blog__controls {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      margin-block-start: 3rem;
+      margin-inline-start: 0.4rem;
+    }
+  }
+
+  .career-blog__arrow {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    color: var(--text-color);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+
+    @include hover-device {
+      &:hover {
+        color: white;
+        background-color: var(--text-color);
+      }
+    }
+  }
+}

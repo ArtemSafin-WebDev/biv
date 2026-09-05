@@ -1,0 +1,32 @@
+<section class="career-blog js-career-blog" aria-labelledby="career-blog-title">
+    <div class="container">
+        <div class="career-blog__header">
+            <div class="career-blog__index" aria-hidden="true">(7)</div>
+            <h2 class="career-blog__title" id="career-blog-title">{{careerBlog.title}}</h2>
+            <a class="btn career-blog__more-link" href="{{careerBlog.moreLink.href}}">{{careerBlog.moreLink.label}}</a>
+        </div>
+
+        <div class="career-blog__slider swiper">
+            <ul class="career-blog__list swiper-wrapper">
+                {{#each careerBlog.items}}
+                    <li class="career-blog__item swiper-slide">
+                        {{> components/cards/career-blog-card }}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="career-blog__controls">
+            <button class="career-blog__arrow career-blog__arrow--prev" type="button" aria-label="Предыдущая новость">
+                <svg width="40" height="40" aria-hidden="true">
+                    <use xlink:href="#arrows/left"></use>
+                </svg>
+            </button>
+            <button class="career-blog__arrow career-blog__arrow--next" type="button" aria-label="Следующая новость">
+                <svg width="40" height="40" aria-hidden="true">
+                    <use xlink:href="#arrows/right"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
