@@ -5,6 +5,22 @@ import { MOBILE_BREAKPOINT } from "../../constants/breakpoints";
 
 type Direction = -1 | 1;
 
+interface StoryGeometry {
+  step: number;
+  photoScale: number;
+  photoX: number;
+}
+
+interface StoryDrag {
+  pointerId: number;
+  startX: number;
+  startY: number;
+  direction: Direction;
+  progress: number;
+  dragging: boolean;
+  geometry: StoryGeometry;
+}
+
 interface StorySlide {
   element: HTMLElement;
   button: HTMLButtonElement;
@@ -31,7 +47,8 @@ class CareerStoriesSlider extends Component {
   private animation: gsap.core.Timeline | null = null;
   private activeIndex = 0;
   private queuedDirection: Direction | null = null;
-  private pointerStart: { x: number; y: number } | null = null;
+  private pointer: StoryDrag | null = null;
+  private dragAnimation: gsap.core.Tween | null = null;
   private suppressClick = false;
 
   constructor(element: HTMLElement) {
@@ -62,8 +79,10 @@ class CareerStoriesSlider extends Component {
     this.element.addEventListener("click", this.handleClick);
     this.element.addEventListener("keydown", this.handleKeydown);
     this.stage.addEventListener("pointerdown", this.handlePointerDown);
-    this.stage.addEventListener("pointerup", this.handlePointerUp);
-    this.stage.addEventListener("pointercancel", this.handlePointerCancel);
+    window.addEventListener("pointermove", this.handlePointerMove, { passive: false });
+    window.addEventListener("pointerup", this.handlePointerUp);
+    window.addEventListener("pointercancel", this.handlePointerCancel);
+    window.addEventListener("blur", this.handlePointerCancel);
     this.mobile.addEventListener("change", this.setupMode);
     this.reducedMotion.addEventListener("change", this.setupMode);
     this.setupMode();
@@ -77,8 +96,10 @@ class CareerStoriesSlider extends Component {
     this.element.removeEventListener("click", this.handleClick);
     this.element.removeEventListener("keydown", this.handleKeydown);
     this.stage?.removeEventListener("pointerdown", this.handlePointerDown);
-    this.stage?.removeEventListener("pointerup", this.handlePointerUp);
-    this.stage?.removeEventListener("pointercancel", this.handlePointerCancel);
+    window.removeEventListener("pointermove", this.handlePointerMove);
+    window.removeEventListener("pointerup", this.handlePointerUp);
+    window.removeEventListener("pointercancel", this.handlePointerCancel);
+    window.removeEventListener("blur", this.handlePointerCancel);
     this.stopAnimation();
     this.swiper?.destroy(true, true);
     this.swiper = null;
@@ -103,6 +124,9 @@ class CareerStoriesSlider extends Component {
   }
 
   private stopAnimation() {
+    this.releasePointer();
+    this.dragAnimation?.kill();
+    this.dragAnimation = null;
     this.animation?.kill();
     this.animation = null;
     this.queuedDirection = null;
@@ -152,7 +176,7 @@ class CareerStoriesSlider extends Component {
     this.updateAccessibility();
   };
 
-  private geometry() {
+  private geometry(): StoryGeometry | null {
     const slide = this.slides[0];
     if (!this.stage || !slide) return null;
     const stageWidth = this.stage.getBoundingClientRect().width;
@@ -195,8 +219,9 @@ class CareerStoriesSlider extends Component {
       else this.swiper.slidePrev();
       return;
     }
+    if (this.pointer) return;
     // Keep one requested step, so fast clicks never interrupt a photo in transit.
-    if (this.animation) {
+    if (this.animation || this.dragAnimation) {
       this.queuedDirection = direction;
       return;
     }
@@ -317,7 +342,7 @@ class CareerStoriesSlider extends Component {
     else if (event.target.closest(".career-stories__arrow--next")) this.move(1);
     else {
       const slide = event.target.closest<HTMLElement>(".career-stories__slide");
-      if (!slide || this.animation || this.swiper?.animating) return;
+      if (!slide || this.animation || this.dragAnimation || this.swiper?.animating) return;
       const index = this.slides.findIndex((item) => item.element === slide);
       const offset = this.offset(index);
       if (offset === 0) {
@@ -340,22 +365,124 @@ class CareerStoriesSlider extends Component {
 
   private handlePointerDown = (event: PointerEvent) => {
     this.suppressClick = false;
-    if (this.mobile.matches || !event.isPrimary || event.button !== 0) return;
-    this.pointerStart = { x: event.clientX, y: event.clientY };
+    if (
+      this.mobile.matches || !event.isPrimary || event.button !== 0 ||
+      this.pointer || this.animation || this.dragAnimation || this.slides.length < 2
+    ) return;
+    const geometry = this.geometry();
+    if (!geometry || geometry.step <= 0) return;
+    this.pointer = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      direction: 1,
+      progress: 0,
+      dragging: false,
+      geometry,
+    };
   };
+
+  private handlePointerMove = (event: PointerEvent) => {
+    const pointer = this.pointer;
+    if (!pointer || event.pointerId !== pointer.pointerId) return;
+    const x = event.clientX - pointer.startX;
+    const y = event.clientY - pointer.startY;
+    if (!pointer.dragging) {
+      if (Math.max(Math.abs(x), Math.abs(y)) < 6) return;
+      if (Math.abs(y) > Math.abs(x)) {
+        this.releasePointer();
+        return;
+      }
+      pointer.dragging = true;
+      this.suppressClick = true;
+      this.stage?.classList.add("is-dragging");
+    }
+
+    if (event.cancelable) event.preventDefault();
+    if (Math.abs(x) >= 6) pointer.direction = x < 0 ? 1 : -1;
+    pointer.progress = gsap.utils.clamp(-1, 1, -x / pointer.geometry.step);
+    this.renderDrag(pointer);
+  };
+
+  private renderDrag({ progress, geometry }: StoryDrag) {
+    const direction = progress < 0 ? -1 : 1;
+    const amount = Math.abs(progress);
+    this.slides.forEach((slide, index) => {
+      const from = this.offset(index);
+      const to = from - direction;
+      const relevant = Math.abs(from) <= 1 || Math.abs(to) <= 1;
+      const entering = Math.abs(from) > 1;
+      const leaving = Math.abs(to) > 1;
+      const focus = from === 0 ? 1 - amount : to === 0 ? amount : 0;
+      // Retire the outer neighbour before revealing its replacement.
+      const opacity = !relevant ? 0 : entering
+        ? gsap.utils.clamp(0, 1, (amount - 0.25) * 2)
+        : leaving ? gsap.utils.clamp(0, 1, 1 - amount * 4) : 1;
+      gsap.set(slide.element, {
+        x: (from - progress) * geometry.step,
+        autoAlpha: opacity,
+      });
+      gsap.set(slide.background, { opacity: 1 - focus });
+      gsap.set(slide.portrait, {
+        x: geometry.photoX * (1 - focus),
+        scale: geometry.photoScale + (1 - geometry.photoScale) * focus,
+      });
+      gsap.set(slide.color, { opacity: focus });
+      gsap.set(slide.play, { opacity: Math.max(0, (focus - 0.65) / 0.35) });
+    });
+  }
 
   private handlePointerUp = (event: PointerEvent) => {
-    if (!this.pointerStart) return;
-    const x = event.clientX - this.pointerStart.x;
-    const y = event.clientY - this.pointerStart.y;
-    this.pointerStart = null;
-    if (Math.abs(x) < 40 || Math.abs(x) <= Math.abs(y)) return;
-    this.suppressClick = true;
-    this.move(x < 0 ? 1 : -1);
+    const pointer = this.pointer;
+    if (!pointer || event.pointerId !== pointer.pointerId) return;
+    // Fast swipes can release beyond the last delivered pointermove event.
+    this.handlePointerMove(event);
+    if (this.pointer !== pointer) return;
+    this.releasePointer();
+    if (!pointer.dragging) return;
+
+    // Once a horizontal swipe starts, releasing always selects its neighbour.
+    this.settleDrag(pointer, pointer.direction);
   };
 
-  private handlePointerCancel = () => {
-    this.pointerStart = null;
+  private releasePointer() {
+    this.pointer = null;
+    this.stage?.classList.remove("is-dragging");
+  }
+
+  private settleDrag(pointer: StoryDrag, target: Direction) {
+    const finish = () => {
+      this.dragAnimation = null;
+      this.activeIndex = this.wrap(this.activeIndex + target);
+      this.renderDesktop();
+      this.updateContent();
+      // A drag can move the focused card into a hidden slot.
+      const focused = this.slides.find((slide) => slide.button === document.activeElement);
+      if (focused?.element.getAttribute("aria-hidden") === "true") {
+        this.slides[this.activeIndex]?.button.focus({ preventScroll: true });
+      }
+      const queued = this.queuedDirection;
+      this.queuedDirection = null;
+      if (queued) this.move(queued);
+    };
+    if (this.reducedMotion.matches) {
+      finish();
+      return;
+    }
+    this.dragAnimation = gsap.to(pointer, {
+      progress: target,
+      duration: 0.2 + Math.abs(target - pointer.progress) * 0.35,
+      ease: "power3.out",
+      onUpdate: () => this.renderDrag(pointer),
+      onComplete: finish,
+    });
+  }
+
+  private handlePointerCancel = (event: PointerEvent | Event) => {
+    const pointer = this.pointer;
+    if (!pointer || (event instanceof PointerEvent && event.pointerId !== pointer.pointerId)) return;
+    this.releasePointer();
+    if (pointer.dragging) this.settleDrag(pointer, pointer.direction);
   };
 }
 

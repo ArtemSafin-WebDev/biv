@@ -44,6 +44,12 @@
     margin-inline: auto;
     margin-block-start: -2.3rem;
     touch-action: pan-y;
+    user-select: none;
+
+    &.is-dragging,
+    &.is-dragging * {
+      cursor: grabbing;
+    }
 
     @include mobile {
       width: var(--stories-focus-size);
@@ -194,6 +200,13 @@
     background-color: white;
     font-size: clamp(1.6rem, calc(1.17vw + 0.4rem), 2rem);
     line-height: normal;
+
+    @include hover-device {
+      &:hover {
+        background-color: var(--text-color);
+        color: white;
+      }
+    }
 
     &:focus-visible {
       outline: 0.2rem solid var(--text-color);
