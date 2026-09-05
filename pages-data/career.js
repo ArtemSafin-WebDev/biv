@@ -98,6 +98,13 @@ export default {
         },
       ],
     },
+    careerApplication: {
+      titleLines: ["не нашёл свою вакансию?", "отправь резюме"],
+      button: {
+        label: "Заполнить форму",
+        href: "#",
+      },
+    },
     careerHeroLinks: [
       {
         title: "Вакансии",

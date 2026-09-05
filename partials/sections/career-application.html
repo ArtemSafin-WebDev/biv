@@ -1,0 +1,22 @@
+<section class="career-application" aria-labelledby="career-application-title">
+    <div class="career-application__background" aria-hidden="true">
+        <img src="/images/career-application/bg.webp" alt="">
+    </div>
+
+    <div class="container">
+        <div class="career-application__content">
+            <h2 class="career-application__title" id="career-application-title">
+                {{#each careerApplication.titleLines}}
+                    <span>{{this}}</span>
+                {{/each}}
+            </h2>
+
+            <a class="career-application__button" href="{{careerApplication.button.href}}">
+                <span>{{careerApplication.button.label}}</span>
+                <svg class="career-application__button-icon" width="28" height="29" aria-hidden="true">
+                    <use xlink:href="#career-application/arrow"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
