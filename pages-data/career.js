@@ -63,6 +63,51 @@ export default {
         },
       ],
     },
+    careerTeam: {
+      title: "Команда — это не только работа",
+      items: [
+        {
+          image: "/images/career-team/1.webp",
+          imageAlt: "Команда BIV на праздничном мероприятии",
+        },
+        {
+          image: "/images/career-team/2.webp",
+          imageAlt: "Награждение сотрудника BIV",
+        },
+        {
+          image: "/images/career-team/3.webp",
+          imageAlt: "Общая встреча команды BIV",
+        },
+        {
+          image: "/images/career-team/4.webp",
+          imageAlt: "Сотрудники BIV на неформальной встрече",
+        },
+        {
+          image: "/images/career-team/5.webp",
+          imageAlt: "Команда BIV на корпоративном мероприятии",
+        },
+        {
+          image: "/images/career-team/6.webp",
+          imageAlt: "Друзья общаются на вечеринке",
+        },
+        {
+          image: "/images/career-team/7.webp",
+          imageAlt: "Команда BIV на празднике",
+        },
+        {
+          image: "/images/career-team/8.webp",
+          imageAlt: "Команда BIV играет в лазертаг",
+        },
+        {
+          image: "/images/career-team/9.webp",
+          imageAlt: "Творческое выступление сотрудников BIV",
+        },
+        {
+          image: "/images/career-team/10.webp",
+          imageAlt: "Сотрудники BIV отмечают событие в офисе",
+        },
+      ],
+    },
     careerInterview: {
       title: "этапы собеседования",
       shortTitle: "этапы",

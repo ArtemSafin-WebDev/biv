@@ -2,8 +2,11 @@
 
 @layer sections {
   .career-team {
+    position: relative;
+    isolation: isolate;
     overflow: clip;
-    padding-block-start: 6.5rem;
+    padding-block-start: 12rem;
+    color: white;
     background-color: var(--career-team-bg);
 
     @include desktop {
@@ -20,53 +23,273 @@
   }
 
   .career-team__title {
-    margin-inline-start: calc(25% + 3rem);
-    color: white;
-    font-size: 6rem;
+    position: sticky;
+    z-index: 0;
+    top: 12rem;
+    width: 175.7rem;
+    margin-inline: auto;
+    font-size: 14rem;
     font-weight: 400;
     line-height: 110%;
-    letter-spacing: -0.12rem;
+    letter-spacing: -0.28rem;
+    text-align: center;
     text-transform: uppercase;
-    white-space: nowrap;
 
     @include desktop {
-      width: 61rem;
-      margin-inline-start: 26.8vw;
-      white-space: normal;
+      width: 122.8rem;
+      font-size: 10rem;
+      letter-spacing: -0.2rem;
     }
 
     @include tablet {
-      width: 42.2rem;
-      margin-inline-start: 27rem;
-      font-size: 5rem;
-      line-height: 94%;
-      letter-spacing: -0.1rem;
+      width: 96.1rem;
+      font-size: 7rem;
+      letter-spacing: -0.14rem;
     }
 
     @include mobile {
-      width: 34rem;
-      margin-inline-start: 2rem;
-      font-size: 3.6rem;
-      line-height: 110%;
-      letter-spacing: -0.072rem;
+      width: 33.5rem;
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
     }
   }
 
-  .career-team__image {
-    width: 100%;
-    max-width: none;
-    margin-block-start: -2.5rem;
+  .career-team__gallery {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+    gap: 4rem 2rem;
+    margin-block: 0 -10.9rem;
+    padding-inline: 5rem;
+    list-style: none;
 
     @include desktop {
-      margin-block-start: -0.4rem;
+      gap: 1.6rem 2rem;
+      margin-block: 0 -6.9rem;
+      padding-inline: 4rem;
     }
 
     @include tablet {
-      margin-block-start: 1.4rem;
+      gap: 1.2rem;
+      margin-block: 0 -6.1rem;
+      padding-inline: 2rem;
     }
 
     @include mobile {
-      margin-block-start: -1.8rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.9rem 0;
+      margin-block: 0;
+      padding-inline: 0;
     }
+  }
+
+  .career-team__item {
+    min-width: 0;
+
+    &:nth-child(10n + 1) {
+      grid-column: 1;
+
+      .career-team__media {
+        aspect-ratio: 440 / 293;
+      }
+    }
+
+    &:nth-child(10n + 2) {
+      grid-column: 2;
+
+      .career-team__media {
+        aspect-ratio: 439 / 293;
+      }
+    }
+
+    &:nth-child(10n + 3) {
+      grid-column: 3 / -1;
+      width: calc((100% - 2rem) / 2);
+      justify-self: end;
+
+      .career-team__media {
+        aspect-ratio: 440 / 297;
+      }
+    }
+
+    &:nth-child(10n + 4) {
+      grid-column: 1 / span 2;
+
+      .career-team__media {
+        aspect-ratio: 900 / 517;
+      }
+
+      .career-team__image {
+        object-position: center bottom;
+      }
+    }
+
+    &:nth-child(10n + 5) {
+      grid-column: 3 / -1;
+      width: calc((100% - 2rem) / 2);
+      justify-self: start;
+
+      .career-team__media {
+        aspect-ratio: 440 / 251;
+      }
+
+      .career-team__image {
+        object-position: center top;
+      }
+    }
+
+    &:nth-child(10n + 6) {
+      grid-column: 4;
+
+      .career-team__media {
+        aspect-ratio: 440 / 295;
+      }
+
+      .career-team__image {
+        object-position: center top;
+      }
+    }
+
+    &:nth-child(10n + 7) {
+      grid-column: 3;
+
+      .career-team__media {
+        aspect-ratio: 440 / 295;
+      }
+    }
+
+    &:nth-child(10n + 8) {
+      grid-column: 1 / span 2;
+      width: calc((100% - 2rem) / 2);
+      justify-self: start;
+
+      .career-team__media {
+        aspect-ratio: 440 / 297;
+      }
+    }
+
+    &:nth-child(10n + 9) {
+      grid-column: 3 / -1;
+
+      .career-team__media {
+        aspect-ratio: 900 / 1006;
+      }
+
+      .career-team__image {
+        object-position: center bottom;
+      }
+    }
+
+    &:nth-child(10n) {
+      grid-column: 1 / span 2;
+      width: calc((100% - 2rem) / 2);
+      justify-self: end;
+
+      .career-team__media {
+        aspect-ratio: 440 / 671;
+      }
+    }
+
+    @include tablet {
+      &:nth-child(10n + 3),
+      &:nth-child(10n + 5),
+      &:nth-child(10n + 8),
+      &:nth-child(10n) {
+        width: calc((100% - 1.2rem) / 2);
+      }
+    }
+
+    @include mobile {
+      width: auto;
+      margin: 0;
+      justify-self: stretch;
+
+      &:nth-child(7n + 1) {
+        grid-column: 1;
+        width: 23.8rem;
+        margin-inline-start: -1.8rem;
+
+        .career-team__media {
+          aspect-ratio: 238 / 158;
+        }
+      }
+
+      &:nth-child(7n + 2) {
+        grid-column: 2;
+        width: 23.8rem;
+        margin-block-start: 5rem;
+        margin-inline-start: 0.1rem;
+
+        .career-team__media {
+          aspect-ratio: 238 / 158;
+        }
+      }
+
+      &:nth-child(7n + 3) {
+        grid-column: 1 / -1;
+        width: 40.3rem;
+        margin-inline-start: -1.8rem;
+        justify-self: start;
+
+        .career-team__media {
+          aspect-ratio: 403 / 231;
+        }
+      }
+
+      &:nth-child(7n + 4) {
+        grid-column: 1;
+        width: 18rem;
+
+        .career-team__media {
+          aspect-ratio: 180 / 275;
+        }
+      }
+
+      &:nth-child(7n + 5) {
+        grid-column: 2;
+        width: 23.8rem;
+        margin-block-start: 3.2rem;
+        margin-inline-start: 0.8rem;
+
+        .career-team__media {
+          aspect-ratio: 238 / 136;
+        }
+      }
+
+      &:nth-child(7n + 6) {
+        grid-column: 1 / -1;
+        width: 23.8rem;
+        justify-self: center;
+
+        .career-team__media {
+          aspect-ratio: 238 / 158;
+        }
+      }
+
+      &:nth-child(7n) {
+        grid-column: 1 / -1;
+        width: 28.4rem;
+        justify-self: center;
+
+        .career-team__media {
+          aspect-ratio: 284 / 317;
+        }
+      }
+    }
+  }
+
+  .career-team__media {
+    width: 100%;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--career-team-bg), black 8%);
+  }
+
+  .career-team__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

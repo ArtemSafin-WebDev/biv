@@ -1,10 +1,13 @@
 <section class="career-team" aria-labelledby="career-team-title">
-    <h2 class="career-team__title" id="career-team-title">Хотим с тобой работать</h2>
+    <h2 class="career-team__title" id="career-team-title">{{careerTeam.title}}</h2>
 
-    <picture>
-        <source media="(max-width: 576px)" srcset="/images/career-team/360.webp">
-        <source media="(max-width: 1024px)" srcset="/images/career-team/1025.webp">
-        <source media="(max-width: 1366px)" srcset="/images/career-team/1366.webp">
-        <img class="career-team__image" src="/images/career-team/1920.webp" alt="Команда BIV" width="1920" height="631">
-    </picture>
+    <ul class="career-team__gallery">
+        {{#each careerTeam.items}}
+            <li class="career-team__item">
+                <div class="career-team__media">
+                    <img class="career-team__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy" decoding="async">
+                </div>
+            </li>
+        {{/each}}
+    </ul>
 </section>
