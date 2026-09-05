@@ -1,0 +1,59 @@
+<section class="career-interview js-career-interview" aria-labelledby="career-interview-title">
+    <div class="container">
+        <div class="career-interview__layout">
+            <div class="career-interview__index" aria-hidden="true">(4)</div>
+
+            <div class="career-interview__intro">
+                <h2 class="career-interview__heading" id="career-interview-title">
+                    <span class="career-interview__heading-full">{{careerInterview.title}}</span>
+                    <span class="career-interview__heading-short">{{careerInterview.shortTitle}}</span>
+                </h2>
+                <p class="career-interview__description">{{careerInterview.description}}</p>
+            </div>
+
+            <div class="career-interview__slider">
+                <div class="career-interview__swiper swiper">
+                    <ul class="career-interview__list swiper-wrapper">
+                        <li class="career-interview__slide career-interview__video-slide swiper-slide">
+                            <a class="career-interview__video-link" href="{{careerInterview.video.href}}" aria-label="{{careerInterview.video.ariaLabel}}">
+                                <span class="career-interview__video-media">
+                                    <img src="{{careerInterview.video.image}}" alt="{{careerInterview.video.imageAlt}}">
+                                </span>
+                                <svg class="career-interview__play" width="50" height="51" aria-hidden="true">
+                                    <use xlink:href="#career-interview/play"></use>
+                                </svg>
+                            </a>
+                        </li>
+
+                        {{#each careerInterview.steps}}
+                            <li class="career-interview__slide career-interview__step-slide swiper-slide">
+                                <article class="career-interview__step">
+                                    <div class="career-interview__step-content">
+                                        <div class="career-interview__step-number">{{number}}</div>
+                                        <h3 class="career-interview__step-title">{{title}}</h3>
+                                        {{#if description}}
+                                            <p class="career-interview__step-description">{{description}}</p>
+                                        {{/if}}
+                                    </div>
+                                </article>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <div class="career-interview__controls">
+                    <button class="career-interview__arrow career-interview__arrow--prev" type="button" aria-label="Предыдущий этап">
+                        <svg width="40" height="40" aria-hidden="true">
+                            <use xlink:href="#arrows/left"></use>
+                        </svg>
+                    </button>
+                    <button class="career-interview__arrow career-interview__arrow--next" type="button" aria-label="Следующий этап">
+                        <svg width="40" height="40" aria-hidden="true">
+                            <use xlink:href="#arrows/right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

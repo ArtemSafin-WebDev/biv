@@ -1,0 +1,445 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-interview {
+    overflow: clip;
+    padding-block: 8rem 4.9rem;
+    color: white;
+    background-color: var(--primary-color);
+
+    @include desktop {
+      padding-block: 4.4rem 4.6rem;
+    }
+
+    @include tablet {
+      padding-block: 1.2rem 3.9rem;
+    }
+
+    @include mobile {
+      padding-block: 5rem 3.9rem;
+    }
+  }
+
+  .career-interview__layout {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 2.6rem;
+
+    @include desktop {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      column-gap: 1.9rem;
+    }
+
+    @include tablet {
+      column-gap: 1.1rem;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .career-interview__index {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+
+    @include desktop {
+      margin-block-start: 3.6rem;
+    }
+
+    @include tablet {
+      margin-block-start: 5.8rem;
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .career-interview__intro {
+    display: contents;
+
+    @include desktop {
+      display: flex;
+      grid-column: 2 / span 2;
+      grid-row: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 55.2rem;
+      margin-block-start: 3.6rem;
+    }
+
+    @include tablet {
+      width: 33.5rem;
+      margin-block-start: 5.8rem;
+    }
+
+    @include mobile {
+      width: auto;
+      margin-block-start: 0;
+    }
+  }
+
+  .career-interview__heading {
+    grid-column: 2 / -1;
+    grid-row: 1;
+    margin-inline-start: 8.6rem;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    @include desktop {
+      margin-inline-start: 0;
+      white-space: normal;
+    }
+
+    @include tablet {
+      font-size: 5rem;
+      letter-spacing: -0.1rem;
+    }
+
+    @include mobile {
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
+  }
+
+  .career-interview__heading-short {
+    display: none;
+
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  .career-interview__heading-full {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .career-interview__description {
+    grid-column: 1;
+    grid-row: 3;
+    width: 34.2rem;
+    margin-block-start: 2.5rem;
+    margin-inline-start: 0.6rem;
+    font-size: 2rem;
+    line-height: 120%;
+
+    @include desktop {
+      width: 33.5rem;
+      margin-block-start: 1rem;
+      margin-inline-start: 0;
+    }
+
+    @include tablet {
+      width: 31.5rem;
+      margin-block-start: 0.3rem;
+      font-size: 1.6rem;
+    }
+
+    @include mobile {
+      max-width: 31.5rem;
+      width: auto;
+      margin-block-start: 0.3rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .career-interview__slider,
+  .career-interview__swiper,
+  .career-interview__list {
+    display: contents;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .career-interview__slider {
+    @include mobile {
+      margin-block-start: 2.7rem;
+    }
+  }
+
+  .career-interview__swiper {
+    @include mobile {
+      overflow: hidden;
+    }
+  }
+
+  .career-interview__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  .career-interview__slide {
+    box-sizing: border-box;
+    width: 100%;
+    margin-block-start: 3.5rem;
+
+    @include desktop {
+      margin-block-start: 0;
+    }
+  }
+
+  .career-interview__step-slide {
+    @include desktop {
+      margin-block-start: -0.1rem;
+    }
+  }
+
+  .career-interview__video-slide {
+    grid-column: 1;
+    grid-row: 2;
+
+    @include desktop {
+      grid-column: 4;
+      grid-row: 1;
+    }
+  }
+
+  .career-interview__step-slide:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+
+    @include desktop {
+      grid-column: 1;
+    }
+  }
+
+  .career-interview__step-slide:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+
+    @include desktop {
+      grid-column: 2;
+    }
+  }
+
+  .career-interview__step-slide:nth-child(4) {
+    grid-column: 4;
+    grid-row: 2;
+
+    @include desktop {
+      grid-column: 3;
+    }
+  }
+
+  .career-interview__step-slide:nth-child(5) {
+    grid-column: 5;
+    grid-row: 2;
+
+    @include desktop {
+      grid-column: 4;
+    }
+  }
+
+  .career-interview__video-link,
+  .career-interview__step {
+    position: relative;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .career-interview__video-link {
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .career-interview__video-media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+
+    img {
+      position: absolute;
+      top: -25.66%;
+      left: 0;
+      width: 186.2%;
+      max-width: none;
+      height: 275.22%;
+    }
+  }
+
+  .career-interview__play {
+    position: relative;
+    z-index: 1;
+    width: 9.2rem;
+    height: 9.2rem;
+    box-sizing: border-box;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+    fill: white;
+
+    @include desktop {
+      width: 8.1rem;
+      height: 8.1rem;
+    }
+
+    @include tablet {
+      width: 5.9rem;
+      height: 5.9rem;
+    }
+
+    @include mobile {
+      width: 5.1rem;
+      height: 5.1rem;
+    }
+  }
+
+  .career-interview__step {
+    place-items: center;
+    border: 1px solid white;
+  }
+
+  .career-interview__step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 2.7rem);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .career-interview__step-number,
+  .career-interview__step-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  .career-interview__step-description {
+    max-width: 31.3rem;
+    font-size: 1.8rem;
+    line-height: 120%;
+  }
+
+  .career-interview__step-slide:last-child .career-interview__step-title {
+    font-size: 3.6rem;
+  }
+
+  @include desktop {
+    .career-interview__step-content {
+      width: 31.3rem;
+    }
+
+    .career-interview__step-description {
+      max-width: 24.3rem;
+      font-size: 1.6rem;
+    }
+
+    .career-interview__step-slide:nth-child(2) .career-interview__step-description {
+      max-width: 23.7rem;
+    }
+
+    .career-interview__step-slide:nth-child(4) .career-interview__step-description {
+      max-width: 23.9rem;
+    }
+  }
+
+  @include tablet {
+    .career-interview__step-content {
+      width: calc(100% - 2.9rem);
+      gap: 0.4rem;
+    }
+
+    .career-interview__step-number,
+    .career-interview__step-title,
+    .career-interview__step-slide:last-child .career-interview__step-title {
+      font-size: 2rem;
+    }
+
+    .career-interview__step-description {
+      max-width: 19.3rem;
+    }
+
+    .career-interview__step-slide:nth-child(2) .career-interview__step-description {
+      max-width: 15.9rem;
+    }
+
+    .career-interview__step-slide:nth-child(4) .career-interview__step-description {
+      max-width: 17.5rem;
+    }
+  }
+
+  @include mobile {
+    .career-interview__slide {
+      flex-shrink: 0;
+      margin-block-start: 0;
+    }
+
+    .career-interview__step-content {
+      width: calc(100% - 4rem);
+      gap: 1rem;
+    }
+
+    .career-interview__step-number,
+    .career-interview__step-title {
+      font-size: 2.8rem;
+    }
+
+    .career-interview__step-slide:last-child .career-interview__step-title {
+      font-size: 3.6rem;
+    }
+
+    .career-interview__step-description,
+    .career-interview__step-slide:nth-child(2) .career-interview__step-description,
+    .career-interview__step-slide:nth-child(4) .career-interview__step-description {
+      max-width: 27rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  .career-interview__controls {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-block-start: 1.2rem;
+    }
+  }
+
+  .career-interview__arrow {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: opacity 0.2s;
+
+    svg {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      fill: var(--text-color);
+    }
+
+    &.swiper-button-disabled {
+      pointer-events: none;
+    }
+  }
+}
