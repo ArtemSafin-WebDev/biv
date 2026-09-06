@@ -1,0 +1,265 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-application-modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--text-color);
+    background-color: #eeeeee;
+
+    &[open] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &::backdrop {
+      background-color: #eeeeee;
+    }
+  }
+
+  .career-application-modal__viewport {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .career-application-modal__circle {
+    position: relative;
+    width: 64rem;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 11rem;
+    border-radius: 50%;
+    background-color: white;
+    animation: career-application-modal-in 0.3s ease-out both;
+
+    @include mobile {
+      width: 52.1rem;
+      padding-top: 6.8rem;
+    }
+  }
+
+  .career-application-modal__close {
+    position: fixed;
+    top: 3rem;
+    right: var(--container-padding);
+    width: 4.2rem;
+    height: 4.2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--text-color);
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 0.2rem;
+    }
+
+    @include mobile {
+      top: 2rem;
+      right: 2rem;
+    }
+  }
+
+  .career-application-modal__close-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .career-application-modal__title {
+    width: 39.5rem;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 90%;
+    letter-spacing: -0.15rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-color);
+
+    @include mobile {
+      width: calc(100vw - 4rem);
+      max-width: 32rem;
+      font-size: 3.6rem;
+      letter-spacing: -0.108rem;
+    }
+  }
+
+  .career-application-modal__form {
+    width: 39.7rem;
+    margin-top: 4rem;
+
+    @include mobile {
+      width: calc(100vw - 4rem);
+      max-width: 32rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .career-application-modal__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+
+    @include mobile {
+      gap: 1rem;
+    }
+  }
+
+  .career-application-modal__form-input {
+    height: 2.4rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.028rem;
+    border-bottom: 1px solid #c1c1c1;
+    transition:
+      border-color 0.2s,
+      color 0.2s;
+
+    &::placeholder {
+      color: #c1c1c1;
+    }
+
+    &:focus {
+      border-color: var(--text-color);
+    }
+
+    @include mobile {
+      height: 3rem;
+      line-height: 171.4286%;
+      border-bottom-color: #b3b3b3;
+
+      &::placeholder {
+        color: rgba(77, 77, 77, 0.4);
+      }
+    }
+  }
+
+  textarea.career-application-modal__form-input {
+    height: 6.5rem;
+
+    @include mobile {
+      height: 7.2rem;
+    }
+  }
+
+  .career-application-modal__form-policy {
+    margin-top: 2.6rem;
+
+    @include mobile {
+      margin-top: 2rem;
+    }
+  }
+
+  .career-application-modal__form-policy-checkbox {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+  }
+
+  .career-application-modal__form-policy-checkbox-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .career-application-modal__form-policy-checkbox-mark {
+    flex-shrink: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(0, 36, 53, 0.8);
+
+    &::before {
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--text-color);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .career-application-modal__form-policy-checkbox-input:checked ~ &::before {
+      opacity: 1;
+    }
+
+    .career-application-modal__form-policy-checkbox-input:focus-visible ~ & {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 0.2rem;
+    }
+  }
+
+  .career-application-modal__form-policy-checkbox-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.024rem;
+    color: rgba(0, 36, 53, 0.8);
+
+    a {
+      font-weight: 700;
+
+      @include hover-device {
+        &:hover {
+          color: #7d838a;
+        }
+      }
+    }
+  }
+
+  .career-application-modal__form-submit {
+    width: 100%;
+    height: 4.8rem;
+    margin-top: 1.2rem;
+    padding-block: 0;
+    border-radius: 2.4rem;
+
+    @include mobile {
+      height: 4rem;
+      margin-top: 1.1rem;
+      padding-inline: 1.6rem;
+      font-size: 1.4rem;
+      line-height: 100%;
+      letter-spacing: -0.028rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .career-application-modal__circle {
+      animation: none;
+    }
+  }
+
+  @keyframes career-application-modal-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

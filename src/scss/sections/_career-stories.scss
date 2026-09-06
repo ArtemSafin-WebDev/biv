@@ -8,6 +8,7 @@
     --stories-side-photo: min(28rem, calc(17.54vw - 3.96rem));
     --stories-side-padding: clamp(1rem, calc(2.925vw - 2rem), 2rem);
     overflow: clip;
+    scroll-margin-block-start: var(--header-height);
     padding-block: clamp(7rem, calc(2.925vw + 4rem), 9rem) 6rem;
     background-color: var(--bg-color);
 

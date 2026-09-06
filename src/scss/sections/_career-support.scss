@@ -16,7 +16,7 @@
     }
 
     @include mobile {
-      padding-block: 5rem 2rem;
+      padding-block: 5rem 4rem;
     }
   }
 
@@ -66,6 +66,7 @@
     line-height: 110%;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+    text-wrap: balance;
 
     @include desktop {
       margin-inline-start: 0.5rem;
@@ -78,7 +79,6 @@
     }
 
     @include mobile {
-      width: 32rem;
       margin-inline-start: 0;
       font-size: 4rem;
       letter-spacing: -0.08rem;
@@ -361,7 +361,9 @@
     }
 
     .career-support-card__title {
+      max-width: 28rem;
       font-size: 1.8rem;
+      text-wrap: wrap;
     }
 
     .career-support-card__description {
@@ -369,15 +371,28 @@
     }
 
     .career-support-card--health .career-support-card__image {
-      bottom: -0.5rem;
+      top: 10.6rem;
+      bottom: auto;
       left: 2rem;
       width: 9.9rem;
+      height: 10.33rem;
+    }
+
+    .career-support-card--photo .career-support-card__image {
+      inset: auto;
+      top: 0;
+      left: -0.53rem;
+      width: 32.95rem;
+      height: auto;
+      object-fit: fill;
     }
 
     .career-support-card--lunch .career-support-card__image {
-      right: -1.3rem;
-      bottom: -1rem;
-      width: 9.3rem;
+      top: 9.32rem;
+      right: -1.92rem;
+      bottom: auto;
+      width: 10.53rem;
+      height: 11.87rem;
     }
 
     .career-support-card--gifts {
@@ -389,7 +404,17 @@
 
       .career-support-card__image {
         aspect-ratio: 320 / 162;
+        object-position: center 28%;
       }
+    }
+
+    .career-support-card--events .career-support-card__image {
+      inset: auto;
+      top: -0.34rem;
+      left: -2.3rem;
+      width: 38.54rem;
+      height: auto;
+      object-fit: fill;
     }
 
     .career-support-card--schedule .career-support-card__image {
@@ -399,13 +424,26 @@
 
     .career-support-card.career-support-card--mentor {
       grid-column: auto;
+
+      .career-support-card__title {
+        max-width: 24rem;
+      }
     }
 
     .career-support-card__avatars {
-      margin-inline-end: 2rem;
+      margin-inline-end: 0;
 
       img {
         width: 5.4rem;
+      }
+
+      img:first-child {
+        object-position: 64% center;
+      }
+
+      img:nth-child(2) {
+        width: 5.5rem;
+        height: 5.4rem;
       }
 
       img + img {

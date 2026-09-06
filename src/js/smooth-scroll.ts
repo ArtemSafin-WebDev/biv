@@ -11,7 +11,15 @@ if (!isTouch && !isBitrixAdmin) {
   const desktopQuery = window.matchMedia("(min-width: 1025px)");
 
   function init() {
-    const lenis = new Lenis();
+    const headerHeight =
+      document.querySelector<HTMLElement>(".page-header")?.getBoundingClientRect()
+        .height ?? 0;
+    const lenis = new Lenis({
+      anchors: {
+        offset: -headerHeight,
+        immediate: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      },
+    });
 
     lenis.on("scroll", ScrollTrigger.update);
 

@@ -1,0 +1,61 @@
+<dialog class="career-application-modal js-modal" id="career-application-modal"
+    aria-labelledby="career-application-modal-title">
+    <button class="career-application-modal__close" type="button" data-modal-close aria-label="Закрыть форму">
+        <svg class="career-application-modal__close-icon" width="25" height="25" aria-hidden="true">
+            <use xlink:href="#career-application/close"></use>
+        </svg>
+    </button>
+
+    <div class="career-application-modal__viewport">
+        <div class="career-application-modal__circle">
+            <h2 class="career-application-modal__title" id="career-application-modal-title">
+                хочу работать<br>в biv
+            </h2>
+
+            <form action="/" method="POST" class="career-application-modal__form js-form">
+                <div class="career-application-modal__form-fields">
+                    <div class="career-application-modal__form-field">
+                        <div class="career-application-modal__form-input-wrapper">
+                            <input type="text" class="career-application-modal__form-input" placeholder="Ваше имя*"
+                                name="your-name" autocomplete="name" required autofocus>
+                        </div>
+                    </div>
+                    <div class="career-application-modal__form-field">
+                        <div class="career-application-modal__form-input-wrapper">
+                            <input type="tel" class="career-application-modal__form-input" placeholder="телефон"
+                                name="your-phone" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="career-application-modal__form-field">
+                        <div class="career-application-modal__form-input-wrapper">
+                            <input type="email" class="career-application-modal__form-input" placeholder="Email"
+                                name="your-email" autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="career-application-modal__form-field">
+                        <div class="career-application-modal__form-input-wrapper">
+                            <textarea name="your-comment" class="career-application-modal__form-input"
+                                placeholder="Ваше сообщение"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-application-modal__form-policy">
+                    <label class="career-application-modal__form-policy-checkbox">
+                        <input type="checkbox" name="policy" value="Y"
+                            class="career-application-modal__form-policy-checkbox-input" required>
+                        <span class="career-application-modal__form-policy-checkbox-mark" aria-hidden="true"></span>
+                        <span class="career-application-modal__form-policy-checkbox-text">
+                            Нажимая на кнопку «Отправить», подтверждаю своё согласие с <a href="#">обработкой
+                                персональных данных</a> и положениями <a href="#">Политики конфиденциальности</a>
+                        </span>
+                    </label>
+                </div>
+
+                <button class="btn career-application-modal__form-submit" type="submit">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</dialog>

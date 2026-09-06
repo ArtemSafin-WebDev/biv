@@ -4,23 +4,24 @@
   .career-application {
     position: relative;
     display: flex;
-    aspect-ratio: 1920 / 600;
+    min-height: 60rem;
     overflow: clip;
+    scroll-margin-block-start: var(--header-height);
     padding-block-end: 3.6rem;
     color: white;
 
     @include desktop {
-      aspect-ratio: 1366 / 460;
+      min-height: 46rem;
       padding-block-end: 7rem;
     }
 
     @include tablet {
-      aspect-ratio: 1025 / 360;
+      min-height: 36rem;
       padding-block-end: 8.1rem;
     }
 
     @include mobile {
-      aspect-ratio: 360 / 455;
+      min-height: 45.5rem;
       padding-block-end: 3.1rem;
     }
   }
@@ -140,7 +141,7 @@
 
     @include mobile {
       grid-column: 1;
-      width: 100%;
+      width: calc(100% + var(--container-padding));
       margin-inline-start: 0;
       font-size: 3rem;
       letter-spacing: -0.06rem;
@@ -197,7 +198,8 @@
       grid-column: 1;
       width: 100%;
       margin-inline-start: 0;
-      padding-block: 1rem;
+      padding-block: 1.1rem;
+      padding-inline-end: 2.8rem;
       font-size: 1.4rem;
     }
   }
@@ -209,8 +211,8 @@
     transition: transform 0.2s;
 
     @include mobile {
-      width: 2rem;
-      height: 2rem;
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
 }

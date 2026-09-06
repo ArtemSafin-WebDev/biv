@@ -45,6 +45,7 @@ class CareerStoriesSlider extends Component {
   private readonly resizeObserver: ResizeObserver;
   private swiper: Swiper | null = null;
   private animation: gsap.core.Timeline | null = null;
+  private detailsHeightAnimation: gsap.core.Tween | null = null;
   private activeIndex = 0;
   private queuedDirection: Direction | null = null;
   private pointer: StoryDrag | null = null;
@@ -127,10 +128,16 @@ class CareerStoriesSlider extends Component {
     this.releasePointer();
     this.dragAnimation?.kill();
     this.dragAnimation = null;
+    this.detailsHeightAnimation?.kill();
+    this.detailsHeightAnimation = null;
     this.animation?.kill();
     this.animation = null;
     this.queuedDirection = null;
-    if (this.details) gsap.set(this.details, { clearProps: "opacity,transform" });
+    if (this.details) {
+      gsap.set(this.details, {
+        clearProps: "opacity,transform,height,overflow",
+      });
+    }
   }
 
   private resetStyles() {
@@ -163,7 +170,7 @@ class CareerStoriesSlider extends Component {
         on: {
           slideChange: (swiper) => {
             this.activeIndex = swiper.realIndex;
-            this.updateContent();
+            this.updateContent(!this.reducedMotion.matches);
             this.updateAccessibility();
           },
         },
@@ -286,7 +293,7 @@ class CareerStoriesSlider extends Component {
 
     if (this.details) {
       this.animation.to(this.details, { opacity: 0, y: "0.6rem", duration: 0.2 }, 0);
-      this.animation.call(() => this.updateContent(), [], 0.2);
+      this.animation.call(() => this.updateContent(true), [], 0.2);
       this.animation.to(this.details, { opacity: 1, y: 0, duration: 0.35 }, 0.4);
     }
   }
@@ -297,10 +304,40 @@ class CareerStoriesSlider extends Component {
     }
   }
 
-  private updateContent() {
+  private updateContent(animateHeight = false) {
+    const nextStory = this.stories[this.activeIndex];
+    const currentStory = this.stories.find((story) => !story.hidden);
+    const shouldAnimateHeight = Boolean(
+      animateHeight && this.details && nextStory && currentStory !== nextStory
+    );
+    const startHeight = shouldAnimateHeight
+      ? this.details?.getBoundingClientRect().height ?? 0
+      : 0;
+
+    this.detailsHeightAnimation?.kill();
+    this.detailsHeightAnimation = null;
+    if (this.details) {
+      gsap.set(this.details, shouldAnimateHeight
+        ? { height: startHeight, overflow: "hidden" }
+        : { clearProps: "height,overflow" });
+    }
+
     this.stories.forEach((story, index) => {
       story.hidden = index !== this.activeIndex;
     });
+
+    if (shouldAnimateHeight && this.details && nextStory) {
+      this.detailsHeightAnimation = gsap.to(this.details, {
+        height: nextStory.offsetHeight,
+        duration: 0.45,
+        ease: "power3.inOut",
+        onComplete: () => {
+          this.detailsHeightAnimation = null;
+          gsap.set(this.details, { clearProps: "height,overflow" });
+        },
+      });
+    }
+
     const counter = this.element.querySelector(".career-stories__counter");
     if (counter) counter.textContent = `${this.activeIndex + 1}/${this.slides.length}`;
     const status = this.element.querySelector(".career-stories__status");
@@ -455,7 +492,7 @@ class CareerStoriesSlider extends Component {
       this.dragAnimation = null;
       this.activeIndex = this.wrap(this.activeIndex + target);
       this.renderDesktop();
-      this.updateContent();
+      this.updateContent(!this.reducedMotion.matches);
       // A drag can move the focused card into a hidden slot.
       const focused = this.slides.find((slide) => slide.button === document.activeElement);
       if (focused?.element.getAttribute("aria-hidden") === "true") {

@@ -16,13 +16,12 @@ export default function careerOffices() {
 
     const options: SwiperOptions = {
       modules: [Navigation],
-      slidesPerView: "auto",
+      slidesPerView: 1,
       spaceBetween: 20,
       speed: 600,
-      autoHeight: true,
       breakpoints: {
         [MOBILE_BREAKPOINT + 1]: {
-          autoHeight: false,
+          slidesPerView: "auto",
         },
       },
       navigation: {

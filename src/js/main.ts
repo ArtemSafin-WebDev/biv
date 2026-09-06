@@ -3,6 +3,7 @@ import "../scss/style.scss";
 import "./smooth-scroll";
 import ui from "./ui";
 import sections from "./sections";
+import initForms from "./forms";
 
 import FormValidator from "./classes/facades/FormValidator";
 
@@ -18,3 +19,4 @@ window.innoApi = { Validator: FormValidator };
 
 ui();
 sections();
+initForms();

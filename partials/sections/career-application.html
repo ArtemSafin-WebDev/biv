@@ -1,4 +1,4 @@
-<section class="career-application" aria-labelledby="career-application-title">
+<section class="career-application" id="vacancies" aria-labelledby="career-application-title">
     <div class="career-application__background" aria-hidden="true">
         <img src="/images/career-application/bg.webp" alt="">
     </div>
@@ -11,12 +11,13 @@
                 {{/each}}
             </h2>
 
-            <a class="career-application__button" href="{{careerApplication.button.href}}">
+            <button class="career-application__button" type="button" data-modal-open="career-application-modal"
+                aria-controls="career-application-modal" aria-haspopup="dialog">
                 <span>{{careerApplication.button.label}}</span>
                 <svg class="career-application__button-icon" width="28" height="29" aria-hidden="true">
                     <use xlink:href="#career-application/arrow"></use>
                 </svg>
-            </a>
+            </button>
         </div>
     </div>
 </section>

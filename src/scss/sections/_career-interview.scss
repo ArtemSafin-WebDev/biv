@@ -174,7 +174,7 @@
 
   .career-interview__swiper {
     @include mobile {
-      overflow: hidden;
+      overflow: visible;
     }
   }
 
@@ -347,11 +347,13 @@
       font-size: 1.6rem;
     }
 
-    .career-interview__step-slide:nth-child(2) .career-interview__step-description {
+    .career-interview__step-slide:nth-child(2)
+      .career-interview__step-description {
       max-width: 23.7rem;
     }
 
-    .career-interview__step-slide:nth-child(4) .career-interview__step-description {
+    .career-interview__step-slide:nth-child(4)
+      .career-interview__step-description {
       max-width: 23.9rem;
     }
   }
@@ -372,11 +374,13 @@
       max-width: 19.3rem;
     }
 
-    .career-interview__step-slide:nth-child(2) .career-interview__step-description {
+    .career-interview__step-slide:nth-child(2)
+      .career-interview__step-description {
       max-width: 15.9rem;
     }
 
-    .career-interview__step-slide:nth-child(4) .career-interview__step-description {
+    .career-interview__step-slide:nth-child(4)
+      .career-interview__step-description {
       max-width: 17.5rem;
     }
   }
@@ -389,23 +393,57 @@
 
     .career-interview__step-content {
       width: calc(100% - 4rem);
-      gap: 1rem;
+      gap: 0.4rem;
     }
 
     .career-interview__step-number,
-    .career-interview__step-title {
-      font-size: 2.8rem;
-    }
-
+    .career-interview__step-title,
     .career-interview__step-slide:last-child .career-interview__step-title {
-      font-size: 3.6rem;
+      font-size: 2rem;
     }
 
-    .career-interview__step-description,
-    .career-interview__step-slide:nth-child(2) .career-interview__step-description,
-    .career-interview__step-slide:nth-child(4) .career-interview__step-description {
-      max-width: 27rem;
-      font-size: 1.6rem;
+    .career-interview__step-title,
+    .career-interview__step-description {
+      word-break: break-word;
+    }
+
+    .career-interview__step-slide:nth-child(2)
+      .career-interview__step-title {
+      max-width: 20.9rem;
+    }
+
+    .career-interview__step-slide:nth-child(3)
+      .career-interview__step-title {
+      max-width: 20.3rem;
+    }
+
+    .career-interview__step-slide:nth-child(4)
+      .career-interview__step-title {
+      max-width: 15.5rem;
+    }
+
+    .career-interview__step-slide:nth-child(5)
+      .career-interview__step-title {
+      max-width: 18.7rem;
+    }
+
+    .career-interview__step-description {
+      max-width: 19.3rem;
+      font-size: 1.4rem;
+    }
+
+    .career-interview__step-slide:nth-child(2)
+      .career-interview__step-description {
+      max-width: 15.9rem;
+    }
+
+    .career-interview__step-slide:nth-child(4)
+      .career-interview__step-description {
+      max-width: 17.5rem;
+    }
+
+    .career-interview__step-slide:last-child .career-interview__step-content {
+      gap: 1rem;
     }
   }
 
