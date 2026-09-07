@@ -1,4 +1,5 @@
 import Swiper from "swiper";
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import { Navigation } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 import { MOBILE_BREAKPOINT } from "../constants/breakpoints";
@@ -13,6 +14,19 @@ export default function careerOffices() {
       ".career-offices__slider"
     );
     if (!container) return;
+
+    Fancybox.bind(section, '[data-fancybox="career-offices"]', {
+      l10n: {
+        CLOSE: "Закрыть",
+        MODAL: "Фотографии наших офисов",
+        NEXT: "Следующая фотография",
+        PREV: "Предыдущая фотография",
+        TOGGLE_ZOOM: "Изменить масштаб",
+        TOGGLE_AUTOPLAY: "Слайд-шоу",
+        TOGGLE_FULLSCREEN: "На весь экран",
+        TOGGLE_THUMBS: "Миниатюры",
+      },
+    });
 
     const options: SwiperOptions = {
       modules: [Navigation],

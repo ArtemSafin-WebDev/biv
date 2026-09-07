@@ -2,3 +2,5 @@
 @import "swiper/css/effect-fade" layer(vendor);
 @import "swiper/css/effect-creative" layer(vendor);
 @import "lenis/dist/lenis.css" layer(vendor);
+// Fancybox relies on margins and button styles that the project reset clears.
+@import "@fancyapps/ui/dist/fancybox/fancybox.css" layer(overrides);

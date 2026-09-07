@@ -13,9 +13,9 @@
                     {{#each careerOffices.items}}
                         <li class="career-offices__item swiper-slide">
                             <figure class="career-offices__card">
-                                <div class="career-offices__image">
+                                <a class="career-offices__image" href="{{image}}" data-fancybox="career-offices" data-caption="{{caption}}" aria-label="Увеличить фото: {{imageAlt}}">
                                     <img src="{{image}}" alt="{{imageAlt}}">
-                                </div>
+                                </a>
                                 <figcaption class="career-offices__caption">{{caption}}</figcaption>
                             </figure>
                         </li>

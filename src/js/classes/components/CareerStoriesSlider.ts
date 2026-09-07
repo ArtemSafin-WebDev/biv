@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import Swiper from "swiper";
+import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 import Component from "../Component";
 import { MOBILE_BREAKPOINT } from "../../constants/breakpoints";
 
@@ -51,6 +52,7 @@ class CareerStoriesSlider extends Component {
   private pointer: StoryDrag | null = null;
   private dragAnimation: gsap.core.Tween | null = null;
   private suppressClick = false;
+  private videoPopup: ReturnType<typeof Fancybox.show>;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -91,6 +93,8 @@ class CareerStoriesSlider extends Component {
   }
 
   public destroy() {
+    this.videoPopup?.destroy();
+    this.videoPopup = undefined;
     this.resizeObserver.disconnect();
     this.mobile.removeEventListener("change", this.setupMode);
     this.reducedMotion.removeEventListener("change", this.setupMode);
@@ -383,7 +387,27 @@ class CareerStoriesSlider extends Component {
       const index = this.slides.findIndex((item) => item.element === slide);
       const offset = this.offset(index);
       if (offset === 0) {
-        // The video popup can subscribe to this event when it is implemented.
+        const button = this.slides[index]?.button;
+        const src = button?.dataset.videoSrc;
+        if (src && !this.videoPopup) {
+          this.videoPopup = Fancybox.show([
+            { src, type: "iframe", width: "120rem", aspectRatio: "16 / 9" },
+          ], {
+            triggerEl: button,
+            mainStyle: { "--f-html-padding": "0rem" },
+            l10n: { CLOSE: "Закрыть", MODAL: "Видео сотрудника" },
+            Carousel: {
+              Html: {
+                iframeAttr: {
+                  allow: "autoplay; fullscreen; picture-in-picture; encrypted-media",
+                  allowfullscreen: "true",
+                  title: "Видео сотрудника",
+                },
+              },
+            },
+            on: { destroy: () => { this.videoPopup = undefined; } },
+          });
+        }
         this.element.dispatchEvent(new CustomEvent("career-story:play", {
           bubbles: true,
           detail: { index },

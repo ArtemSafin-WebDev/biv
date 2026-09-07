@@ -37,6 +37,8 @@ export default {
       items: Array.from({ length: 6 }, (_, index) => ({
         ...careerStoryPhotos[index % careerStoryPhotos.length],
         href: "#",
+        // Временное видео Rutube; заменить на embed-ссылку истории сотрудника.
+        videoSrc: "https://rutube.ru/play/embed/da0cf5079b3ffab3cef0e436a3f9a0c7/?autoplay=1",
         number: index + 1,
       })),
     },
@@ -153,7 +155,8 @@ export default {
       description:
         "Привет, я Алина, тут расскажу о первых этапах собеседований и дам несколько рекомендаций, как лучше подготовиться",
       video: {
-        href: "#career-interview-video",
+        // Временное видео Rutube; заменить на embed-ссылку об этапах собеседования.
+        href: "https://rutube.ru/play/embed/da0cf5079b3ffab3cef0e436a3f9a0c7/?autoplay=1",
         ariaLabel: "Смотреть видео об этапах собеседования",
         image: "/images/career-interview/video-preview.webp",
         imageAlt: "Алина рассказывает об этапах собеседования",

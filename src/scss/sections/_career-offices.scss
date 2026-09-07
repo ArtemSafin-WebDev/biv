@@ -170,7 +170,7 @@
     }
 
     &:nth-child(4n) {
-      width: calc((100% - 6rem) / 4);
+      width: 65.9rem;
 
       .career-offices__image {
         aspect-ratio: 659 / 467;
@@ -241,8 +241,15 @@
   }
 
   .career-offices__image {
+    display: block;
     width: 100%;
     overflow: hidden;
+    cursor: zoom-in;
+
+    &:focus-visible {
+      outline: 0.2rem solid var(--text-color);
+      outline-offset: 0.4rem;
+    }
 
     img {
       width: 100%;
