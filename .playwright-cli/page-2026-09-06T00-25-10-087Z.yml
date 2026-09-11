@@ -1,0 +1,373 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "О компании" [ref=e10] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e11]:
+            - link "Услуги" [ref=e12] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e13]:
+            - link "Решения" [ref=e14] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e15]:
+            - link "Технологии" [ref=e16] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e17]:
+            - link "Кейсы" [ref=e18] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e19]:
+            - link "Карьера" [ref=e20] [cursor=pointer]:
+              - /url: /career.html
+          - listitem [ref=e21]:
+            - link "Блог" [ref=e22] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e23]:
+            - link "Контакты" [ref=e24] [cursor=pointer]:
+              - /url: "#"
+      - link "Связаться" [ref=e25] [cursor=pointer]:
+        - /url: "#"
+  - main [ref=e26]:
+    - region "карьера" [ref=e28]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - img
+          - navigation "Разделы страницы карьеры" [ref=e32]:
+            - list [ref=e33]:
+              - listitem [ref=e34]:
+                - link "Вакансии" [ref=e35] [cursor=pointer]:
+                  - /url: "#vacancies"
+              - listitem [ref=e36]:
+                - link "Сотрудники" [ref=e37] [cursor=pointer]:
+                  - /url: "#employees"
+              - listitem [ref=e38]:
+                - link "Офисы" [ref=e39] [cursor=pointer]:
+                  - /url: "#offices"
+              - listitem [ref=e40]:
+                - link "Контакты" [ref=e41] [cursor=pointer]:
+                  - /url: "#contacts"
+          - img "BIV" [ref=e43]
+        - heading "карьера" [level=1] [ref=e44]
+    - region "о компании" [ref=e45]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: (1)
+        - generic [ref=e49]:
+          - heading "о компании" [level=2] [ref=e50]
+          - paragraph [ref=e51]: Компания BIV аккредитованная российская компания, предоставляющая полный цикл цифровых услуг на рынке ИТ. 5 филиалов в городах России.
+        - list [ref=e52]:
+          - listitem [ref=e53]:
+            - generic "16+" [ref=e54]:
+              - generic [ref=e56]: "0"
+              - generic [ref=e57]: +
+            - paragraph [ref=e58]: лет на рынке ИТ
+          - listitem [ref=e59]:
+            - generic "250+" [ref=e60]:
+              - generic [ref=e62]: "0"
+              - generic [ref=e63]: +
+            - paragraph [ref=e64]: сотрудников
+          - listitem [ref=e65]:
+            - generic "750+" [ref=e66]:
+              - generic [ref=e68]: "0"
+              - generic [ref=e69]: +
+            - paragraph [ref=e70]: проектов
+          - listitem [ref=e71]:
+            - generic "25%" [ref=e72]:
+              - generic [ref=e74]: "0"
+              - generic [ref=e75]: "%"
+            - paragraph [ref=e76]: рост компании за 2025 год
+          - listitem [ref=e77]:
+            - generic [ref=e78]: Выбор
+            - generic [ref=e79]: РБК
+            - paragraph [ref=e80]: Топ-Работодатель по версии РБК-2025
+    - region "почему нас выбирают" [ref=e81]:
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - generic [ref=e84]: (2)
+          - generic [ref=e85]:
+            - heading "почему нас выбирают" [level=2] [ref=e86]
+            - paragraph [ref=e87]: По данным внутреннего исследования с несколькими вариантами выбора среди новых сотрудников BIV
+        - generic [ref=e88]:
+          - img [ref=e97]
+          - img [ref=e103]
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - generic [ref=e107]:
+                - strong [ref=e108]: 64%
+                - paragraph [ref=e109]: пришли по рекомендациям и положительным отзывам
+            - listitem [ref=e110]:
+              - generic [ref=e111]:
+                - strong [ref=e112]: 53%
+                - paragraph [ref=e113]: отметили тёплый приём и слаженную работу команды с первых дней
+            - listitem [ref=e114]:
+              - generic [ref=e115]:
+                - strong [ref=e116]: 47%
+                - paragraph [ref=e117]: вдохновились нашими идеями и продуктами
+            - listitem [ref=e118]:
+              - generic [ref=e119]:
+                - strong [ref=e120]: 53%
+                - paragraph [ref=e121]: видят здесь реальные возможности для карьеры
+            - listitem [ref=e122]:
+              - generic [ref=e123]:
+                - strong [ref=e124]: 41%
+                - paragraph [ref=e125]: почувствовали, что наши ценности совпадают с их личными
+    - region "истории сотрудников" [ref=e126]:
+      - heading "истории сотрудников" [level=2]
+      - list [ref=e129]:
+        - group "История 1 из 6":
+          - 'button "Смотреть видео: история 1 из 6"':
+            - generic [ref=e130] [cursor=pointer]:
+              - img
+              - img "Сотрудница с короткими кудрявыми волосами"
+            - img
+        - group "История 2 из 6":
+          - button "Следующая история (2 из 6)":
+            - generic [ref=e132] [cursor=pointer]:
+              - img
+              - img "Сотрудник в сером свитере"
+            - img
+        - group "История 6 из 6":
+          - button "Предыдущая история (6 из 6)":
+            - generic [ref=e134] [cursor=pointer]:
+              - img
+              - img "Сотрудник с кудрявыми волосами в профиль"
+            - img
+      - generic [ref=e136]:
+        - paragraph [ref=e137]: Всегда хотела создавать технологии, которые меняют жизнь к лучшему. Пришла в компанию 4 года назад как junior-разработчик после университета. Меня сразу погрузили в реальный проект с поддержкой наставника. Уже через год я вела свой первый серьёзный модуль, а ещё через два — возглавила новое направление. Самое крутое достижение — видеть, как нашим продуктом ежедневно пользуются тысячи людей. Тем, кто ищет себя, советую не бояться пробовать. Здесь точно помогут раскрыть ваш потенциал и поверят в вас, даже когда вы сами ещё сомневаетесь
+        - link "Читать историю" [ref=e138] [cursor=pointer]:
+          - /url: "#"
+      - status [ref=e139]: История 1 из 6
+    - region "Хотим с тобой работать" [ref=e140]:
+      - heading "Хотим с тобой работать" [level=2] [ref=e141]
+      - img "Команда BIV" [ref=e143]
+    - region "этапы собеседования" [ref=e144]:
+      - generic [ref=e146]:
+        - generic [ref=e147]: (4)
+        - generic [ref=e148]:
+          - heading "этапы собеседования" [level=2] [ref=e149]
+          - paragraph [ref=e150]: Привет, я Алина, тут расскажу о первых этапах собеседований и дам несколько рекомендаций, как лучше подготовиться
+        - list [ref=e153]:
+          - listitem [ref=e154]:
+            - link "Смотреть видео об этапах собеседования" [ref=e155] [cursor=pointer]:
+              - /url: "#career-interview-video"
+              - img "Алина рассказывает об этапах собеседования" [ref=e157]
+              - img [ref=e158]
+          - listitem [ref=e160]:
+            - article [ref=e161]:
+              - generic [ref=e162]:
+                - generic [ref=e163]: "1"
+                - heading "Отклик на вакансию" [level=3] [ref=e164]
+                - paragraph [ref=e165]: Вы отправляете резюме, наша hr-команда его изучает
+          - listitem [ref=e166]:
+            - article [ref=e167]:
+              - generic [ref=e168]:
+                - generic [ref=e169]: "2"
+                - heading "Знакомство с HR" [level=3] [ref=e170]
+                - paragraph [ref=e171]: Онлайн-созвон (30–40 минут). На этом этапе я или мои коллеги из филиалов с вами пообщаются
+          - listitem [ref=e172]:
+            - article [ref=e173]:
+              - generic [ref=e174]:
+                - generic [ref=e175]: "3"
+                - heading "Техническое интервью" [level=3] [ref=e176]
+                - paragraph [ref=e177]: Встреча с будущим руководителем и коллегами (1–1,5 часа). Обсуждаем профессиональные задачи
+          - listitem [ref=e178]:
+            - article [ref=e179]:
+              - generic [ref=e180]:
+                - generic [ref=e181]: "4"
+                - heading "Приглашение в команду" [level=3] [ref=e182]
+    - region "не нашёл свою вакансию? отправь резюме" [ref=e183]:
+      - generic [ref=e185]:
+        - heading "не нашёл свою вакансию? отправь резюме" [level=2] [ref=e186]:
+          - generic [ref=e187]: не нашёл свою вакансию?
+          - generic [ref=e188]: отправь резюме
+        - link "Заполнить форму" [ref=e189] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e190]: Заполнить форму
+          - img [ref=e191]
+    - region "наши офисы" [ref=e193]:
+      - generic [ref=e195]:
+        - generic [ref=e196]: (5)
+        - generic [ref=e197]:
+          - heading "наши офисы" [level=2] [ref=e198]
+          - paragraph [ref=e199]: "Работа в BIV компании предполагает офисный формат. Для этого мы обустраивает комфортные зоны, заботимся об условиях. Офис — это место, куда хочется приходить. У нас 5 филиалов: Москва, Казань, Рыбинск, Санкт-Петербург, Череповец."
+        - list [ref=e201]:
+          - listitem [ref=e202]:
+            - figure "Обед в нашем кафе в г.. Рыбинск" [ref=e203]:
+              - img "Зона отдыха в офисе BIV" [ref=e205]
+              - generic [ref=e206]: Обед в нашем кафе в г.. Рыбинск
+          - listitem [ref=e207]:
+            - 'figure "Где рождаются идеи: от мозгового штурма до тихой фокусировки" [ref=e208]':
+              - img "Рабочее пространство офиса BIV" [ref=e210]
+              - generic [ref=e211]: "Где рождаются идеи: от мозгового штурма до тихой фокусировки"
+          - listitem [ref=e212]:
+            - figure "Сердце офиса. Перезагрузка за кружкой кофе и разговором не о работе" [ref=e213]:
+              - img "Общая зона офиса BIV" [ref=e215]
+              - generic [ref=e216]: Сердце офиса. Перезагрузка за кружкой кофе и разговором не о работе
+          - listitem [ref=e217]:
+            - figure "Вид, который вдохновляет каждый день" [ref=e218]:
+              - img "Переговорная зона офиса BIV" [ref=e220]
+              - generic [ref=e221]: Вид, который вдохновляет каждый день
+        - generic [ref=e222]:
+          - button "Предыдущий офис" [disabled] [ref=e223]:
+            - img [ref=e224]
+          - button "Следующий офис" [ref=e226] [cursor=pointer]:
+            - img [ref=e227]
+    - region "поддержка и забота" [ref=e229]:
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - generic [ref=e232]: (6)
+          - heading "поддержка и забота" [level=2] [ref=e233]
+        - list [ref=e234]:
+          - listitem [ref=e235]:
+            - generic [ref=e236]:
+              - heading "ДМС со стоматологией после ИС" [level=3] [ref=e237]
+              - paragraph [ref=e238]: Чтобы заботиться о здоровье было легко и комфортно
+          - listitem [ref=e239]:
+            - img [ref=e240]
+          - listitem [ref=e241]:
+            - generic [ref=e242]:
+              - heading "Вкусные оплачиваемые обеды" [level=3] [ref=e243]
+              - paragraph [ref=e244]: Чтобы подзарядиться полезной энергией на весь день, не думая о бытовых вопросах
+          - listitem [ref=e245]:
+            - img [ref=e246]
+            - generic [ref=e247]:
+              - heading "Подарки на значимые события" [level=3] [ref=e248]
+              - paragraph [ref=e249]: "Чтобы подчеркнуть: мы рядом и помним о ваших важных днях"
+          - listitem [ref=e250]:
+            - img [ref=e251]
+            - generic [ref=e252]:
+              - heading "Дополнительные выходные на важные события" [level=3] [ref=e253]
+              - paragraph [ref=e254]: Чтобы быть рядом с близкими в ключевые моменты
+          - listitem [ref=e255]:
+            - generic [ref=e256]:
+              - heading "Гибкий график работы" [level=3] [ref=e257]
+              - paragraph [ref=e258]: Чтобы выстроить идеальный баланс между работой и личной жизнью
+          - listitem [ref=e259]:
+            - generic [ref=e260]:
+              - heading "Индивидуальный план развития и наставник" [level=3] [ref=e261]
+              - paragraph [ref=e262]: Чтобы ты чётко видел свои цели и траекторию роста
+    - region "блог сотрудников" [ref=e264]:
+      - generic [ref=e265]:
+        - generic [ref=e266]:
+          - heading "блог сотрудников" [level=2] [ref=e267]
+          - link "Больше новостей" [ref=e268] [cursor=pointer]:
+            - /url: /news.html
+        - list [ref=e270]:
+          - listitem [ref=e271]:
+            - article [ref=e272]:
+              - img "Команда BIV на турнире по футболу" [ref=e274]
+              - heading "Турнир по футболу" [level=3] [ref=e275]
+              - time [ref=e276]: 13.01.2026
+          - listitem [ref=e277]:
+            - article [ref=e278]:
+              - img "Событие из жизни команды BIV" [ref=e280]
+              - heading "День рождения компании" [level=3] [ref=e281]
+              - time [ref=e282]: 10.01.2026
+    - region "Команда — это не только работа" [ref=e283]:
+      - heading "Команда — это не только работа" [level=2] [ref=e284]
+      - list [ref=e285]:
+        - listitem [ref=e286]:
+          - img "Команда BIV на праздничном мероприятии" [ref=e288]
+        - listitem [ref=e289]:
+          - img "Награждение сотрудника BIV" [ref=e291]
+        - listitem [ref=e292]:
+          - img "Общая встреча команды BIV" [ref=e294]
+        - listitem [ref=e295]:
+          - img "Сотрудники BIV на неформальной встрече" [ref=e297]
+        - listitem [ref=e298]:
+          - img "Команда BIV на корпоративном мероприятии" [ref=e300]
+        - listitem [ref=e301]:
+          - img "Друзья общаются на вечеринке" [ref=e303]
+        - listitem [ref=e304]:
+          - img "Команда BIV на празднике" [ref=e306]
+        - listitem [ref=e307]:
+          - img "Команда BIV играет в лазертаг" [ref=e309]
+        - listitem [ref=e310]:
+          - img "Творческое выступление сотрудников BIV" [ref=e312]
+        - listitem [ref=e313]:
+          - img "Сотрудники BIV отмечают событие в офисе" [ref=e315]
+    - generic [ref=e319]:
+      - heading "контакты" [level=2] [ref=e320]
+      - generic [ref=e321]:
+        - generic [ref=e322]:
+          - textbox "Ваше имя*" [ref=e325]
+          - textbox "телефон" [ref=e328]
+          - textbox "E-mail" [ref=e331]
+          - textbox "Ваше сообщение" [ref=e334]
+        - generic [ref=e338] [cursor=pointer]:
+          - text: Нажимая на кнопку «Отправить», подтверждаю своё согласие с
+          - link "обработкой персональных данных" [ref=e339]:
+            - /url: "#"
+          - text: и положениями
+          - link "Политики конфиденциальности" [ref=e340]:
+            - /url: "#"
+        - button "Отправить" [ref=e341] [cursor=pointer]
+  - contentinfo [ref=e342]:
+    - generic [ref=e343]:
+      - generic [ref=e344]:
+        - generic [ref=e345]:
+          - link [ref=e346] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e347]: 2025, BIV
+        - navigation [ref=e349]:
+          - list [ref=e350]:
+            - listitem [ref=e351]:
+              - link "компания" [ref=e352] [cursor=pointer]:
+                - /url: "#"
+              - list [ref=e353]:
+                - listitem [ref=e354]:
+                  - link "о компании" [ref=e355] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e356]:
+                  - link "направления" [ref=e357] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e358]:
+                  - link "карьера" [ref=e359] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e360]:
+                  - link "портфолио" [ref=e361] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e362]:
+                  - link "блог" [ref=e363] [cursor=pointer]:
+                    - /url: "#"
+            - listitem [ref=e364]:
+              - link "документы" [ref=e365] [cursor=pointer]:
+                - /url: "#"
+              - list [ref=e366]:
+                - listitem [ref=e367]:
+                  - link "политика конфиденциальности" [ref=e368] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e369]:
+                  - link "термины" [ref=e370] [cursor=pointer]:
+                    - /url: "#"
+        - generic [ref=e372]:
+          - paragraph [ref=e373]:
+            - text: Москва, БизнесDepo, Илимская
+            - text: ул. 5, корп. 2,127576
+          - paragraph [ref=e374]:
+            - link "+7 (495) 228 19 42" [ref=e375] [cursor=pointer]:
+              - /url: tel:+74952281942
+          - paragraph [ref=e376]:
+            - link "info@bivgroup.com" [ref=e377] [cursor=pointer]:
+              - /url: mailto:info@bivgroup.com
+      - generic [ref=e378]:
+        - generic [ref=e380]:
+          - paragraph [ref=e381]: "Информация о компании:"
+          - paragraph [ref=e382]: "ОГРН: 1107746323552"
+          - paragraph [ref=e383]: "ИНН / КПП: 7726651929 /"
+          - paragraph [ref=e384]: 771501001ООО
+          - paragraph [ref=e385]: "\"БИАЙВИ\""
+        - generic [ref=e387]:
+          - paragraph [ref=e388]: "Юр. адрес: 127576, Москва г, г. Москва, ул. Илимская, д. 5 корп. 2,"
+          - paragraph [ref=e389]: "Фактический адрес:"
+          - list [ref=e390]:
+            - listitem [ref=e391]: "• Москва, головной офис: 127576, г. Москва, ул. Илимская, д. 5 корп. 2"
+            - listitem [ref=e392]: "• Санкт-Петербург: 191186, Санкт-Петербург, наб. канала Грибоедова, д. 5"
+            - listitem [ref=e393]: "• Череповец: 162602, Череповец, Советский пр-т, 35"
+            - listitem [ref=e394]: "• Казань: 420044, Казань, улица Короленко, 28Б"
+            - listitem [ref=e395]: "• Рыбинск: 152901, Рыбинск, ул. Бородулина, 6А"
+        - paragraph [ref=e398]: "Основной код ОКВЭД: 62.0 (Разработка компьютерного программного обеспечения, консультационные услуги в данной области и другие сопутствующие услуги). Стоимость услуг по разработке ПО на заказ зависит от конкретных требований. Для получения информации о стоимости свяжитесь с нами по почте: info@bivgroup.ru. Номер в Едином Реестре российского ПО: 19858. Для получения доступа к платформе и руководствам свяжитесь с на по почте: info@bivgroup.ru."
+  - img

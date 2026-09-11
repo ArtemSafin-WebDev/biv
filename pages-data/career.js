@@ -166,22 +166,30 @@ export default {
           number: "1",
           title: "Отклик на вакансию",
           description: "Вы отправляете резюме, наша hr-команда его изучает",
+          image: "/images/career-interview/1.webp",
+          imageAlt: "Сотрудница BIV работает за ноутбуком",
         },
         {
           number: "2",
           title: "Знакомство с HR",
           description:
             "Онлайн-созвон (30–40 минут). На этом этапе я или мои коллеги из филиалов с вами пообщаются",
+          image: "/images/career-interview/2.webp",
+          imageAlt: "Коллеги BIV обсуждают рабочие вопросы",
         },
         {
           number: "3",
           title: "Техническое интервью",
           description:
             "Встреча с будущим руководителем и коллегами (1–1,5 часа). Обсуждаем профессиональные задачи",
+          image: "/images/career-interview/3.webp",
+          imageAlt: "Рабочее пространство офиса BIV",
         },
         {
           number: "4",
           title: "Приглашение в команду",
+          image: "/images/career-interview/4.webp",
+          imageAlt: "Зона отдыха в офисе BIV",
         },
       ],
     },

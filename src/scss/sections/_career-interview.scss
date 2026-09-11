@@ -307,8 +307,84 @@
   }
 
   .career-interview__step {
+    perspective: 100rem;
+  }
+
+  .career-interview__step-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: inherit;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .career-interview__step:hover .career-interview__step-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .career-interview__step-inner {
+      transition-duration: 0.01ms;
+    }
+  }
+
+  .career-interview__step-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    backface-visibility: hidden;
+  }
+
+  .career-interview__step-face--front {
+    display: grid;
     place-items: center;
+    box-sizing: border-box;
     border: 1px solid white;
+  }
+
+  .career-interview__step-face--back {
+    transform: rotateY(180deg);
+
+    img {
+      position: absolute;
+      display: block;
+      max-width: none;
+    }
+  }
+
+  .career-interview__step-slide:nth-child(2)
+    .career-interview__step-face--back img,
+  .career-interview__step-slide:nth-child(3)
+    .career-interview__step-face--back img {
+    top: -8.27%;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .career-interview__step-slide:nth-child(3)
+    .career-interview__step-face--back img {
+    top: -7.28%;
+  }
+
+  .career-interview__step-slide:nth-child(4)
+    .career-interview__step-face--back img {
+    top: 0;
+    left: -33.33%;
+    width: 133.33%;
+    height: 100%;
+  }
+
+  .career-interview__step-slide:nth-child(5)
+    .career-interview__step-face--back img {
+    top: -7.25%;
+    left: -30.08%;
+    width: 152.7%;
+    height: 114.5%;
   }
 
   .career-interview__step-content {

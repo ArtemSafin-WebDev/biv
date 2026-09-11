@@ -28,12 +28,19 @@
                         {{#each careerInterview.steps}}
                             <li class="career-interview__slide career-interview__step-slide swiper-slide">
                                 <article class="career-interview__step">
-                                    <div class="career-interview__step-content">
-                                        <div class="career-interview__step-number">{{number}}</div>
-                                        <h3 class="career-interview__step-title">{{title}}</h3>
-                                        {{#if description}}
-                                            <p class="career-interview__step-description">{{description}}</p>
-                                        {{/if}}
+                                    <div class="career-interview__step-inner">
+                                        <div class="career-interview__step-face career-interview__step-face--front">
+                                            <div class="career-interview__step-content">
+                                                <div class="career-interview__step-number">{{number}}</div>
+                                                <h3 class="career-interview__step-title">{{title}}</h3>
+                                                {{#if description}}
+                                                    <p class="career-interview__step-description">{{description}}</p>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                        <div class="career-interview__step-face career-interview__step-face--back">
+                                            <img src="{{image}}" alt="{{imageAlt}}">
+                                        </div>
                                     </div>
                                 </article>
                             </li>

@@ -376,11 +376,18 @@
     }
 
     .career-reasons__mosaic {
-      grid-template-columns: repeat(2, 20rem);
-      grid-auto-rows: 20rem;
+      --career-reasons-mobile-tile-size: calc(
+        50vw + var(--container-padding)
+      );
+
+      grid-template-columns: repeat(
+        2,
+        var(--career-reasons-mobile-tile-size)
+      );
+      grid-auto-rows: var(--career-reasons-mobile-tile-size);
       margin-block-start: 1.7rem;
       margin-block-end: -3.2rem;
-      margin-inline: -4rem;
+      margin-inline: calc(var(--container-padding) * -2);
     }
 
     .career-reasons__tile--team {
