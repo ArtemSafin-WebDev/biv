@@ -1,0 +1,200 @@
+@use "mixins" as *;
+
+@layer components {
+  .vacancy-card {
+    padding-block: 3rem;
+
+    @include mobile {
+      padding-block: 2rem;
+    }
+  }
+
+  .vacancy-card__heading {
+    font: inherit;
+  }
+
+  .vacancy-card__toggle {
+    display: grid;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include mobile {
+      grid-template-columns: minmax(0, 1fr) 3rem;
+      gap: 1.4rem 1rem;
+    }
+  }
+
+  .vacancy-card__title {
+    font-size: 5rem;
+    line-height: 90%;
+    letter-spacing: -0.1rem;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+
+    @include mobile {
+      font-size: 2.6rem;
+      line-height: 100%;
+      letter-spacing: -0.052rem;
+    }
+  }
+
+  .vacancy-card__meta {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    min-width: 0;
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  .vacancy-card__tags {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    min-width: 0;
+    gap: 0.8rem;
+
+    @include mobile {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      gap: 0.6rem;
+    }
+  }
+
+  .vacancy-card__tag {
+    // Компенсируем смещение видимой части букв внутри строки шрифта.
+    padding: 0.6rem 1rem 1rem;
+    border-radius: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 94%;
+    letter-spacing: -0.04rem;
+
+    @include mobile {
+      padding: 0.5rem 0.8rem 0.7rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.024rem;
+    }
+  }
+
+  .vacancy-card__arrow {
+    flex-shrink: 0;
+    width: 3.9rem;
+    height: 3.9rem;
+    overflow: visible;
+    fill: none;
+    transition: transform 0.3s;
+
+    .vacancy-card.active & {
+      transform: rotate(45deg);
+    }
+
+    @include mobile {
+      grid-column: 2;
+      grid-row: 1;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .vacancy-card__dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.35s ease, visibility 0.35s;
+
+    .vacancy-card.active & {
+      grid-template-rows: 1fr;
+      visibility: visible;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition-duration: 0.01ms;
+    }
+  }
+
+  .vacancy-card__inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .vacancy-card__body {
+    padding-block-start: 2rem;
+  }
+
+  .vacancy-card__description {
+    max-width: 120rem;
+    font-size: 2rem;
+    line-height: 120%;
+    overflow-wrap: anywhere;
+
+    > * + * {
+      margin-block-start: 1.2rem;
+    }
+
+    p + p {
+      margin-block-start: 2.4rem;
+    }
+
+    :is(h2, h3, h4, h5, h6) {
+      font: inherit;
+      font-weight: 700;
+    }
+
+    :is(ul, ol) {
+      padding-inline-start: 3rem;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    ol {
+      list-style: decimal;
+    }
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    @include mobile {
+      font-size: 1.4rem;
+      line-height: 130%;
+
+      p + p {
+        margin-block-start: 1.8rem;
+      }
+
+      :is(ul, ol) {
+        padding-inline-start: 2rem;
+      }
+    }
+  }
+
+  .vacancy-card__apply {
+    margin-block-start: 2rem;
+    padding: 1.2rem 1rem;
+    border-radius: 3rem;
+    background-color: var(--primary-color);
+    font-size: 2rem;
+    line-height: 120%;
+
+    @include hover-device {
+      &:hover {
+        color: white;
+        background-color: var(--text-color);
+      }
+    }
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+}

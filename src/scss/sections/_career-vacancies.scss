@@ -1,0 +1,143 @@
+@use "mixins" as *;
+
+@layer sections {
+  .career-vacancies {
+    padding-block: 5rem 3rem;
+    background-color: var(--bg-color);
+    scroll-margin-block-start: var(--header-height);
+
+    @include mobile {
+      padding-block: 5rem 3rem;
+    }
+  }
+
+  .career-vacancies__header {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 2.8rem;
+    margin-block-end: 3.7rem;
+
+    @include mobile {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 2rem;
+      margin-block-end: 2.4rem;
+    }
+  }
+
+  .career-vacancies__index {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 94%;
+    letter-spacing: -0.12rem;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .career-vacancies__title {
+    grid-column: 2 / -1;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+
+    @include mobile {
+      grid-column: 1;
+      font-size: 4rem;
+      letter-spacing: -0.08rem;
+    }
+  }
+
+  .career-vacancies__tabs {
+    grid-column: 2 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+
+    @include mobile {
+      grid-column: 1;
+      gap: 0.8rem;
+    }
+  }
+
+  .career-vacancies__tab {
+    // Оптическое центрирование Pragmatica с сохранением высоты кнопки.
+    padding: 0.5rem 0.9rem 0.9rem;
+    border: 1px solid var(--text-color);
+    border-radius: 2rem;
+    font-size: 2rem;
+    line-height: 120%;
+    transition: color 0.2s, background-color 0.2s;
+
+    &.active {
+      color: white;
+      background-color: var(--text-color);
+    }
+
+    @include hover-device {
+      &:hover {
+        color: white;
+        background-color: var(--text-color);
+      }
+    }
+
+    @include mobile {
+      padding: 0.6rem 1rem 0.8rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .career-vacancies__list {
+    border-block-start: 1px solid rgb(0 36 53 / 30%);
+  }
+
+  .career-vacancies__item {
+    border-block-end: 1px solid rgb(0 36 53 / 30%);
+
+    .career-vacancies__list:not(.is-expanded) > &:nth-child(n + 7) {
+      display: none;
+    }
+  }
+
+  .career-vacancies__more {
+    display: none;
+    margin: 2.4rem auto 0;
+    padding: 0.9rem 1.9rem;
+    border: 1px solid var(--text-color);
+    border-radius: 3rem;
+    background-color: white;
+    font-size: 2rem;
+    line-height: 120%;
+
+    .career-vacancies__list:not(.is-expanded):has(> .career-vacancies__item:nth-child(7)) + & {
+      display: block;
+    }
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+
+  .career-vacancies__empty {
+    padding-block: 3rem;
+    border-block: 1px solid rgb(0 36 53 / 30%);
+    font-size: 2rem;
+    line-height: 120%;
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
+  }
+
+  .career-vacancies [hidden] {
+    display: none;
+  }
+
+  .career-vacancies :is(button, [tabindex]):focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 0.4rem;
+  }
+}

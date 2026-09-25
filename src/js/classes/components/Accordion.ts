@@ -69,14 +69,23 @@ class Accordion extends Component {
 
   public open() {
     this.element.classList.add("active");
+    this.syncAccessibility();
   }
 
   public close() {
     this.element.classList.remove("active");
+    this.syncAccessibility();
   }
 
   public toggle() {
     this.element.classList.toggle("active");
+    this.syncAccessibility();
+  }
+
+  private syncAccessibility() {
+    const isOpen = this.element.classList.contains("active");
+    this.button?.setAttribute("aria-expanded", String(isOpen));
+    if (this.dropdown) this.dropdown.inert = !isOpen;
   }
 
   /** Снимает все обработчики — вызывать при удалении аккордеона из DOM */

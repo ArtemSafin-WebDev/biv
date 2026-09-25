@@ -1,0 +1,28 @@
+<article class="vacancy-card">
+    <h3 class="vacancy-card__heading">
+        <button class="vacancy-card__toggle" type="button" id="vacancy-{{tabId}}-{{id}}-toggle"
+            aria-expanded="false" aria-controls="vacancy-{{tabId}}-{{id}}-content">
+            <span class="vacancy-card__title">{{title}}</span>
+            <span class="vacancy-card__meta">
+                <span class="vacancy-card__tags">
+                    {{#each tags}}
+                        <span class="vacancy-card__tag">{{this}}</span>
+                    {{/each}}
+                </span>
+                <svg class="vacancy-card__arrow" width="39" height="39" viewBox="0 0 39 39" aria-hidden="true">
+                    <use xlink:href="#career-vacancies/arrow"></use>
+                </svg>
+            </span>
+        </button>
+    </h3>
+    <div class="vacancy-card__dropdown" id="vacancy-{{tabId}}-{{id}}-content"
+        role="region" aria-labelledby="vacancy-{{tabId}}-{{id}}-toggle" inert>
+        <div class="vacancy-card__inner">
+            <div class="vacancy-card__body">
+                <div class="vacancy-card__description">{{{description}}}</div>
+                <button class="vacancy-card__apply" type="button" data-modal-open="career-application-modal"
+                    aria-controls="career-application-modal" aria-haspopup="dialog">Откликнуться</button>
+            </div>
+        </div>
+    </div>
+</article>

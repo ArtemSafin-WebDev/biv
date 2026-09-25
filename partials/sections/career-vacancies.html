@@ -1,0 +1,32 @@
+<section class="career-vacancies js-career-vacancies" id="vacancies" aria-labelledby="career-vacancies-title">
+    <div class="container">
+        <div class="career-vacancies__header">
+            <span class="career-vacancies__index" aria-hidden="true">(3)</span>
+            <h2 class="career-vacancies__title" id="career-vacancies-title">{{careerVacancies.title}}</h2>
+            <div class="career-vacancies__tabs" role="tablist" aria-label="Направления вакансий">
+                {{#each careerVacancies.tabs}}
+                    <button class="career-vacancies__tab{{#if @first}} active{{/if}}" type="button" role="tab"
+                        id="vacancies-tab-{{id}}" aria-controls="vacancies-panel-{{id}}"
+                        aria-selected="{{#if @first}}true{{else}}false{{/if}}" tabindex="{{#if @first}}0{{else}}-1{{/if}}">{{label}}</button>
+                {{/each}}
+            </div>
+        </div>
+        {{#each careerVacancies.tabs}}
+            <div class="career-vacancies__panel{{#if @first}} active{{/if}}" role="tabpanel"
+                id="vacancies-panel-{{id}}" aria-labelledby="vacancies-tab-{{id}}" tabindex="0" {{#unless @first}}hidden{{/unless}}>
+                {{#if items.length}}
+                    <ul class="career-vacancies__list">
+                        {{#each items}}
+                            <li class="career-vacancies__item">
+                                {{> components/cards/vacancy-card tabId=../id}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <button class="career-vacancies__more" type="button">Показать еще</button>
+                {{else}}
+                    <p class="career-vacancies__empty">Сейчас в этом направлении нет открытых вакансий.</p>
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+</section>

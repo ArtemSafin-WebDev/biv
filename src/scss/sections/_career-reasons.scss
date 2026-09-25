@@ -49,7 +49,6 @@
     grid-auto-rows: 34.8rem;
     width: max-content;
     margin-block-start: -41.6rem;
-    margin-block-end: -3.7rem;
     margin-inline-start: auto;
     margin-inline-end: -7rem;
   }
@@ -241,7 +240,6 @@
       grid-template-columns: repeat(5, 26rem);
       grid-auto-rows: 26rem;
       margin-block-start: -28.9rem;
-      margin-block-end: -2.5rem;
       margin-inline-end: -7rem;
     }
 
@@ -288,7 +286,6 @@
       grid-template-columns: repeat(5, 20rem);
       grid-auto-rows: 20rem;
       margin-block-start: -30.7rem;
-      margin-block-end: -2.1rem;
       margin-inline-end: -5.3rem;
     }
 
@@ -386,7 +383,6 @@
       );
       grid-auto-rows: var(--career-reasons-mobile-tile-size);
       margin-block-start: 1.7rem;
-      margin-block-end: -3.2rem;
       margin-inline: calc(var(--container-padding) * -2);
     }
 
