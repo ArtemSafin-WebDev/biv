@@ -13,6 +13,25 @@
       pointer-events: auto;
     }
 
+    &[aria-disabled="false"][aria-current="true"] .career-story-card__play,
+    &[aria-disabled="false"][aria-current="true"] .career-story-card__pause {
+      pointer-events: auto;
+    }
+
+    &:has(video) .career-story-card__play {
+      display: block;
+    }
+
+    &:has(video.is-play) {
+      .career-story-card__play {
+        display: none;
+      }
+
+      &[aria-current="true"] .career-story-card__pause {
+        display: block;
+      }
+    }
+
     &[aria-disabled="true"] {
       cursor: default;
     }
@@ -69,8 +88,9 @@
     }
   }
 
-  .career-story-card__image {
-    // Two registered layers allow a smooth luminosity-to-colour transition.
+  // Images and inline videos fill the same circular portrait.
+  .career-story-card__image,
+  .career-story-card__portrait video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -88,7 +108,8 @@
     mix-blend-mode: luminosity;
   }
 
-  .career-story-card__play {
+  .career-story-card__play,
+  .career-story-card__pause {
     z-index: 1;
     grid-area: 1 / 1;
     width: 16.43%;
@@ -101,6 +122,10 @@
     @include mobile {
       display: none;
     }
+  }
+
+  .career-story-card__pause {
+    display: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

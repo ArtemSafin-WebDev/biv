@@ -24,10 +24,11 @@ interface StoryDrag {
 
 interface StorySlide {
   element: HTMLElement;
-  button: HTMLButtonElement;
+  button: HTMLElement;
   background: HTMLElement;
   portrait: HTMLElement;
-  color: HTMLImageElement;
+  color: HTMLImageElement | null;
+  video: HTMLVideoElement | null;
   play: SVGElement;
 }
 
@@ -66,19 +67,26 @@ class CareerStoriesSlider extends Component {
     this.slides = Array.from(
       element.querySelectorAll<HTMLElement>(".career-stories__slide")
     ).flatMap((slide) => {
-      const button = slide.querySelector<HTMLButtonElement>(".career-story-card");
+      const button = slide.querySelector<HTMLElement>(".career-story-card");
       const background = slide.querySelector<HTMLElement>(".career-story-card__background");
       const portrait = slide.querySelector<HTMLElement>(".career-story-card__portrait");
       const color = slide.querySelector<HTMLImageElement>(".career-story-card__image--color");
+      const video = portrait?.querySelector<HTMLVideoElement>("video") ?? null;
       const play = slide.querySelector<SVGElement>(".career-story-card__play");
-      return button && background && portrait && color && play
-        ? [{ element: slide, button, background, portrait, color, play }]
+      return button && background && portrait && (color || video) && play
+        ? [{ element: slide, button, background, portrait, color, video, play }]
         : [];
     });
     this.resizeObserver = new ResizeObserver(this.handleResize);
 
     if (!this.stage || !this.slider || !this.slides.length) return;
 
+    this.slides.forEach(({ button, video }) => {
+      if (!(button instanceof HTMLButtonElement)) button.setAttribute("role", "button");
+      video?.addEventListener("play", this.handleVideoPlayback);
+      video?.addEventListener("pause", this.handleVideoPlayback);
+      video?.addEventListener("ended", this.handleVideoPlayback);
+    });
     this.element.addEventListener("click", this.handleClick);
     this.element.addEventListener("keydown", this.handleKeydown);
     this.stage.addEventListener("pointerdown", this.handlePointerDown);
@@ -110,6 +118,11 @@ class CareerStoriesSlider extends Component {
     this.swiper = null;
     this.resetStyles();
     this.slides.forEach((slide) => {
+      slide.video?.pause();
+      slide.video?.removeEventListener("play", this.handleVideoPlayback);
+      slide.video?.removeEventListener("pause", this.handleVideoPlayback);
+      slide.video?.removeEventListener("ended", this.handleVideoPlayback);
+      slide.video?.classList.remove("is-play");
       slide.element.removeAttribute("aria-hidden");
       slide.button.tabIndex = -1;
       slide.button.setAttribute("aria-disabled", "true");
@@ -147,7 +160,10 @@ class CareerStoriesSlider extends Component {
   private resetStyles() {
     this.slides.forEach((slide) => {
       gsap.set(
-        [slide.element, slide.background, slide.portrait, slide.color, slide.play],
+        [
+          slide.element, slide.background, slide.portrait, slide.play,
+          ...(slide.color ? [slide.color] : []),
+        ],
         { clearProps: "all" }
       );
     });
@@ -217,7 +233,7 @@ class CareerStoriesSlider extends Component {
         x: active ? 0 : geometry.photoX,
         scale: active ? 1 : geometry.photoScale,
       });
-      gsap.set(slide.color, { opacity: active ? 1 : 0 });
+      if (slide.color) gsap.set(slide.color, { opacity: active ? 1 : 0 });
       gsap.set(slide.play, { opacity: active ? 1 : 0 });
     });
     this.updateAccessibility();
@@ -243,6 +259,7 @@ class CareerStoriesSlider extends Component {
       (slide) => slide.button === document.activeElement
     );
     this.activeIndex = this.wrap(this.activeIndex + direction);
+    this.pauseInactiveVideos();
 
     if (this.reducedMotion.matches) {
       this.renderDesktop();
@@ -288,7 +305,7 @@ class CareerStoriesSlider extends Component {
         x: active ? 0 : geometry.photoX,
         scale: active ? 1 : geometry.photoScale,
       }, 0);
-      this.animation?.to(slide.color, { opacity: active ? 1 : 0 }, 0);
+      if (slide.color) this.animation?.to(slide.color, { opacity: active ? 1 : 0 }, 0);
       this.animation?.to(slide.play, {
         opacity: active ? 1 : 0,
         duration: 0.25,
@@ -309,6 +326,7 @@ class CareerStoriesSlider extends Component {
   }
 
   private updateContent(animateHeight = false) {
+    this.pauseInactiveVideos();
     const nextStory = this.stories[this.activeIndex];
     const currentStory = this.stories.find((story) => !story.hidden);
     const shouldAnimateHeight = Boolean(
@@ -354,17 +372,30 @@ class CareerStoriesSlider extends Component {
       const offset = this.offset(index);
       const visible = this.mobile.matches ? offset === 0 : Math.abs(offset) <= 1;
       const interactive = visible;
+      const playing = Boolean(slide.video && !slide.video.paused && !slide.video.ended);
+      const playbackLabel = playing ? "Приостановить" : "Смотреть";
       slide.element.setAttribute("aria-hidden", String(!visible));
       slide.button.tabIndex = interactive ? 0 : -1;
       slide.button.setAttribute("aria-disabled", String(!interactive));
       slide.button.setAttribute("aria-current", String(offset === 0));
+      slide.video?.classList.toggle("is-play", playing);
       slide.button.setAttribute("aria-label", offset === 0
-        ? `Смотреть видео: история ${index + 1} из ${this.slides.length}`
+        ? `${playbackLabel} видео: история ${index + 1} из ${this.slides.length}`
         : interactive
         ? `${offset < 0 ? "Предыдущая" : "Следующая"} история (${index + 1} из ${this.slides.length})`
         : `История ${index + 1} из ${this.slides.length}`);
     });
   }
+
+  private pauseInactiveVideos() {
+    this.slides.forEach((slide, index) => {
+      if (index !== this.activeIndex) slide.video?.pause();
+    });
+  }
+
+  private handleVideoPlayback = () => {
+    this.updateAccessibility();
+  };
 
   private handleResize = () => {
     if (this.mobile.matches) return;
@@ -374,6 +405,14 @@ class CareerStoriesSlider extends Component {
   };
 
   private handleClick = (event: MouseEvent) => {
+    // Inline playback is owned here; do not toggle it again in backend.js.
+    if (
+      event.target instanceof Element &&
+      event.target.closest(".career-story-card")?.querySelector("video")
+    ) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     if (this.suppressClick) {
       this.suppressClick = false;
       return;
@@ -385,8 +424,18 @@ class CareerStoriesSlider extends Component {
       const slide = event.target.closest<HTMLElement>(".career-stories__slide");
       if (!slide || this.animation || this.dragAnimation || this.swiper?.animating) return;
       const index = this.slides.findIndex((item) => item.element === slide);
+      if (index < 0) return;
       const offset = this.offset(index);
       if (offset === 0) {
+        const video = this.slides[index]?.video;
+        if (video) {
+          if (video.paused) {
+            void video.play().catch(() => this.updateAccessibility());
+          } else {
+            video.pause();
+          }
+          return;
+        }
         const button = this.slides[index]?.button;
         const src = button?.dataset.videoSrc;
         if (src && !this.videoPopup) {
@@ -419,6 +468,17 @@ class CareerStoriesSlider extends Component {
   };
 
   private handleKeydown = (event: KeyboardEvent) => {
+    const button = event.target instanceof Element
+      ? event.target.closest<HTMLElement>(".career-story-card")
+      : null;
+    if (
+      button && !(button instanceof HTMLButtonElement) &&
+      (event.key === "Enter" || event.key === " ")
+    ) {
+      event.preventDefault();
+      button.click();
+      return;
+    }
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
     event.preventDefault();
     this.move(event.key === "ArrowRight" ? 1 : -1);
@@ -455,6 +515,7 @@ class CareerStoriesSlider extends Component {
         return;
       }
       pointer.dragging = true;
+      this.slides[this.activeIndex]?.video?.pause();
       this.suppressClick = true;
       this.stage?.classList.add("is-dragging");
     }
@@ -488,7 +549,7 @@ class CareerStoriesSlider extends Component {
         x: geometry.photoX * (1 - focus),
         scale: geometry.photoScale + (1 - geometry.photoScale) * focus,
       });
-      gsap.set(slide.color, { opacity: focus });
+      if (slide.color) gsap.set(slide.color, { opacity: focus });
       gsap.set(slide.play, { opacity: Math.max(0, (focus - 0.65) / 0.35) });
     });
   }
