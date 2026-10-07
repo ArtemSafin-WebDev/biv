@@ -4,8 +4,9 @@
   .career-team {
     position: relative;
     isolation: isolate;
+    container-type: inline-size;
     overflow: clip;
-    padding-block-start: 12rem;
+    padding-block: 12rem 3.3rem;
     color: white;
     background-color: var(--career-team-bg);
 
@@ -19,7 +20,7 @@
 
     @include mobile {
       padding-block-start: 5rem;
-      padding-block-end: 6.3rem;
+      background-color: var(--primary-color);
     }
   }
 
@@ -53,240 +54,139 @@
   }
 
   .career-team__gallery {
-    position: relative;
-    z-index: 1;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-flow: row dense;
-    gap: 4rem 2rem;
-    margin-block: 4rem -10.9rem;
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+    grid-auto-rows: calc((100cqw - 10rem) * 47 / 182);
+    gap: 2rem;
+    margin-block-start: 4rem;
     padding-inline: 5rem;
     list-style: none;
 
-    @include desktop {
-      gap: 1.6rem 2rem;
-      margin-block: 4rem -6.9rem;
-      padding-inline: 4rem;
-    }
-
-    @include tablet {
-      gap: 1.2rem;
-      margin-block: 4rem -6.1rem;
-      padding-inline: 2rem;
-    }
-
     @include mobile {
       grid-template-columns: minmax(0, 1fr);
-      grid-auto-flow: row;
+      grid-auto-rows: auto;
       gap: 1rem;
-      margin-block: 2.7rem 0;
+      margin-block-start: 2.7rem;
       padding-inline: 2rem;
     }
   }
 
   .career-team__item {
+    display: grid;
+    grid-column: span var(--card-columns, 12);
     min-width: 0;
 
-    &:nth-child(10n + 1) {
-      grid-column: 1;
-
-      .career-team__media {
-        aspect-ratio: 440 / 293;
-      }
-    }
-
-    &:nth-child(10n + 2) {
-      grid-column: 2;
-
-      .career-team__media {
-        aspect-ratio: 439 / 293;
-      }
-    }
-
-    &:nth-child(10n + 3) {
-      grid-column: 3 / -1;
-      width: calc((100% - 2rem) / 2);
-      justify-self: end;
-
-      .career-team__media {
-        aspect-ratio: 440 / 297;
-      }
-    }
-
-    &:nth-child(10n + 4) {
-      grid-column: 1 / span 2;
-
-      .career-team__media {
-        aspect-ratio: 900 / 517;
-      }
-
-      .career-team__image {
-        object-position: center bottom;
-      }
-    }
-
-    &:nth-child(10n + 5) {
-      grid-column: 3 / -1;
-      width: calc((100% - 2rem) / 2);
-      justify-self: start;
-
-      .career-team__media {
-        aspect-ratio: 440 / 251;
-      }
-
-      .career-team__image {
-        object-position: center top;
-      }
-    }
-
-    &:nth-child(10n + 6) {
-      grid-column: 4;
-
-      .career-team__media {
-        aspect-ratio: 440 / 295;
-      }
-
-      .career-team__image {
-        object-position: center top;
-      }
-    }
-
-    &:nth-child(10n + 7) {
-      grid-column: 3;
-
-      .career-team__media {
-        aspect-ratio: 440 / 295;
-      }
-    }
-
-    &:nth-child(10n + 8) {
-      grid-column: 1 / span 2;
-      width: calc((100% - 2rem) / 2);
-      justify-self: start;
-
-      .career-team__media {
-        aspect-ratio: 440 / 297;
-      }
-    }
-
-    &:nth-child(10n + 9) {
-      grid-column: 3 / -1;
-
-      .career-team__media {
-        aspect-ratio: 900 / 1006;
-      }
-
-      .career-team__image {
-        object-position: center bottom;
-      }
-    }
-
-    &:nth-child(10n) {
-      grid-column: 1 / span 2;
-      width: calc((100% - 2rem) / 2);
-      justify-self: end;
-
-      .career-team__media {
-        aspect-ratio: 440 / 671;
-      }
-    }
-
-    @include tablet {
-      &:nth-child(10n + 3),
-      &:nth-child(10n + 5),
-      &:nth-child(10n + 8),
-      &:nth-child(10n) {
-        width: calc((100% - 1.2rem) / 2);
-      }
+    .career-team.is-collapsible:not(.is-expanded) &:nth-child(n + 9) {
+      display: none;
     }
 
     @include mobile {
-      &:nth-child(n) {
-        grid-column: 1;
-        width: 100%;
-        margin: 0;
-        justify-self: stretch;
-      }
+      grid-column: 1;
 
-      &:nth-child(10n + 1) {
-        order: 1;
-        .career-team__media {
-          aspect-ratio: 320 / 213;
-        }
-      }
-
-      &:nth-child(10n + 2) {
-        order: 2;
-        .career-team__media {
-          aspect-ratio: 320 / 214;
-        }
-      }
-
-      &:nth-child(10n + 3) {
-        order: 4;
-        .career-team__media {
-          aspect-ratio: 320 / 216;
-        }
-      }
-
-      &:nth-child(10n + 4) {
-        order: 3;
-        .career-team__media {
-          aspect-ratio: 320 / 184;
-        }
-      }
-
-      &:nth-child(10n + 5) {
-        order: 5;
-        .career-team__media {
-          aspect-ratio: 320 / 183;
-        }
-      }
-
-      &:nth-child(10n + 6) {
+      .career-team.is-collapsible:not(.is-expanded) &:nth-child(n + 7) {
         display: none;
-      }
-
-      &:nth-child(10n + 7) {
-        order: 9;
-        .career-team__media {
-          aspect-ratio: 320 / 215;
-        }
-      }
-
-      &:nth-child(10n + 8) {
-        order: 7;
-        .career-team__media {
-          aspect-ratio: 320 / 216;
-        }
-      }
-
-      &:nth-child(10n + 9) {
-        order: 8;
-        .career-team__media {
-          aspect-ratio: 320 / 358;
-        }
-      }
-
-      &:nth-child(10n) {
-        order: 6;
-        .career-team__media {
-          aspect-ratio: 320 / 488;
-        }
       }
     }
   }
 
   .career-team__media {
+    position: relative;
     width: 100%;
     overflow: hidden;
     background-color: color-mix(in srgb, var(--career-team-bg), black 8%);
+
+    .is-animated & {
+      clip-path: inset(50%);
+      transition: clip-path 1.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
+    }
+
+    .is-animated .is-visible & {
+      clip-path: inset(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .is-animated & {
+        clip-path: none;
+        transition: none;
+      }
+    }
   }
 
   .career-team__image {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
+    max-width: none;
     object-fit: cover;
+    object-position: center;
+
+    @include mobile {
+      position: static;
+      height: auto;
+    }
+
+    .is-animated & {
+      transform: scale(1.2);
+      transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
+    }
+
+    .is-animated .is-visible & {
+      transform: scale(1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .is-animated & {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+
+  .career-team__more {
+    --button-border-color: var(--career-support-text-color);
+
+    display: none;
+    width: fit-content;
+    margin: 4rem auto 0;
+    // Оптическое центрирование Pragmatica с сохранением высоты кнопки.
+    padding: 0.7rem 1.9rem 1.1rem;
+    border-color: var(--button-border-color);
+    font-size: 2rem;
+    line-height: 2.8rem;
+
+    .career-team.is-collapsible:not(.is-expanded):has(.career-team__item:nth-child(9)) & {
+      display: block;
+    }
+
+    @include mobile {
+      --button-border-color: var(--text-color);
+
+      width: calc(100% - 4rem);
+      margin-block-start: 2rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
+
+      .career-team.is-collapsible:not(.is-expanded):has(.career-team__item:nth-child(7)) & {
+        display: block;
+      }
+
+      .career-team.is-collapsible:not(.is-expanded):not(:has(.career-team__item:nth-child(7))) & {
+        display: none;
+      }
+    }
+
+    @include hover-device {
+      &:hover {
+        background-color: var(--button-border-color);
+        color: white;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 0.4rem;
+    }
   }
 }

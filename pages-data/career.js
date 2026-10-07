@@ -229,46 +229,58 @@ export default {
     },
     careerTeam: {
       title: "Команда — это не только работа",
+      // columns: ширина карточки в колонках сетки (1–24), по умолчанию 12.
+      // Порядок массива задает общую последовательность на всех экранах.
       items: [
         {
           image: "/images/career-team/1.webp",
+          columns: 9,
           imageAlt: "Команда BIV на праздничном мероприятии",
         },
         {
           image: "/images/career-team/2.webp",
+          columns: 9,
           imageAlt: "Награждение сотрудника BIV",
         },
         {
-          image: "/images/career-team/3.webp",
-          imageAlt: "Общая встреча команды BIV",
+          image: "/images/career-team/9.webp",
+          columns: 6,
+          imageAlt: "Творческое выступление сотрудников BIV",
         },
         {
           image: "/images/career-team/4.webp",
+          columns: 13,
           imageAlt: "Сотрудники BIV на неформальной встрече",
         },
         {
           image: "/images/career-team/5.webp",
+          columns: 11,
           imageAlt: "Команда BIV на корпоративном мероприятии",
         },
         {
-          image: "/images/career-team/6.webp",
-          imageAlt: "Друзья общаются на вечеринке",
-        },
-        {
-          image: "/images/career-team/7.webp",
-          imageAlt: "Команда BIV на празднике",
-        },
-        {
           image: "/images/career-team/8.webp",
+          columns: 9,
           imageAlt: "Команда BIV играет в лазертаг",
         },
         {
-          image: "/images/career-team/9.webp",
-          imageAlt: "Творческое выступление сотрудников BIV",
+          image: "/images/career-team/7.webp",
+          columns: 9,
+          imageAlt: "Команда BIV на празднике",
         },
         {
           image: "/images/career-team/10.webp",
+          columns: 6,
           imageAlt: "Сотрудники BIV отмечают событие в офисе",
+        },
+        {
+          image: "/images/career-team/3.webp",
+          columns: 12,
+          imageAlt: "Общая встреча команды BIV",
+        },
+        {
+          image: "/images/career-team/6.webp",
+          columns: 12,
+          imageAlt: "Друзья общаются на вечеринке",
         },
       ],
     },

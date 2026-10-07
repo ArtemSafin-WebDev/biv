@@ -1,13 +1,13 @@
-<section class="career-team" aria-labelledby="career-team-title">
+<section class="career-team js-career-team" aria-labelledby="career-team-title">
     <h2 class="career-team__title" id="career-team-title">{{careerTeam.title}}</h2>
 
-    <ul class="career-team__gallery">
+    <ul class="career-team__gallery" id="career-team-gallery">
         {{#each careerTeam.items}}
-            <li class="career-team__item">
-                <div class="career-team__media">
-                    <img class="career-team__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy" decoding="async">
-                </div>
-            </li>
+            {{> components/cards/career-team-card }}
         {{/each}}
     </ul>
+
+    <button class="btn btn--white career-team__more" type="button" aria-expanded="false" aria-controls="career-team-gallery">
+        Показать еще
+    </button>
 </section>
