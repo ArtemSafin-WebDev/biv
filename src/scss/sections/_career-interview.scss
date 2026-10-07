@@ -306,6 +306,33 @@
     }
   }
 
+  .career-interview__pause {
+    display: none;
+    position: relative;
+    z-index: 1;
+    width: 9.2rem;
+    height: 9.2rem;
+    box-sizing: border-box;
+    border: 0.2rem solid white;
+    border-radius: 50%;
+    fill: white;
+
+    @include desktop {
+      width: 8.1rem;
+      height: 8.1rem;
+    }
+
+    @include tablet {
+      width: 5.9rem;
+      height: 5.9rem;
+    }
+
+    @include mobile {
+      width: 5.1rem;
+      height: 5.1rem;
+    }
+  }
+
   .career-interview__step {
     perspective: 100rem;
   }
