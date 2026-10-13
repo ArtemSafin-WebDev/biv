@@ -5,6 +5,7 @@
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
 
     @supports (scrollbar-gutter: stable) {
       scrollbar-gutter: stable;

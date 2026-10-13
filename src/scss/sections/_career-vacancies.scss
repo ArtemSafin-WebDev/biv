@@ -4,7 +4,6 @@
   .career-vacancies {
     padding-block: 5rem 3rem;
     background-color: var(--bg-color);
-    scroll-margin-block-start: var(--header-height);
 
     @include mobile {
       padding-block: 5rem 3rem;

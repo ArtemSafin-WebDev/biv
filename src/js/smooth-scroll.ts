@@ -4,27 +4,54 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const isTouch = window.matchMedia("(pointer: coarse)").matches;
-const isBitrixAdmin = document.body.classList.contains("is-admin");
+export default function initSmoothScroll() {
+  if (document.body.classList.contains("is-admin")) return;
 
-if (!isTouch && !isBitrixAdmin) {
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
   const desktopQuery = window.matchMedia("(min-width: 1025px)");
+  let lenis: Lenis | null = null;
+  const tick = (time: number) => lenis?.raf(time * 1000);
 
   function init() {
     const lenis = new Lenis();
 
     lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+    gsap.ticker.add(tick);
 
     gsap.ticker.lagSmoothing(0);
 
     return lenis;
   }
 
-  let lenis: Lenis | null = null;
+  function getTarget(hash: string) {
+    if (!hash || hash === "#") return null;
+    try {
+      return document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch {
+      return null;
+    }
+  }
+
+  function scrollToTarget(target: HTMLElement, immediate: boolean) {
+    const headerHeight =
+      document.querySelector<HTMLElement>(".page-header")?.getBoundingClientRect()
+        .height ?? 0;
+    if (lenis) {
+      lenis.resize();
+      lenis.scrollTo(target, {
+        offset: -headerHeight,
+        immediate,
+        // A font or image may finish loading while the smooth scroll is running.
+        onComplete: immediate ? undefined : () => scrollToTarget(target, true),
+      });
+    } else {
+      window.scrollTo({
+        top: window.scrollY + target.getBoundingClientRect().top - headerHeight,
+        behavior: immediate ? "instant" : "smooth",
+      });
+    }
+  }
 
   // Lenis' built-in anchor handler also scrolls href="#" UI controls to the top.
   window.addEventListener("click", (event: MouseEvent) => {
@@ -50,29 +77,66 @@ if (!isTouch && !isBitrixAdmin) {
       !anchor.hash
     ) return;
 
-    const target = document.getElementById(anchor.hash.slice(1));
+    const target = getTarget(anchor.hash);
     if (!target) return;
 
     event.preventDefault();
-    const headerHeight =
-      document.querySelector<HTMLElement>(".page-header")?.getBoundingClientRect()
-        .height ?? 0;
-    lenis.scrollTo(target, {
-      offset: -headerHeight,
-      immediate: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    });
+    scrollToTarget(
+      target,
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
   });
 
-  if (desktopQuery.matches) {
+  if (!isTouch && desktopQuery.matches) {
     lenis = init();
   }
 
   desktopQuery.addEventListener("change", (e) => {
+    if (isTouch) return;
     if (e.matches && !lenis) {
       lenis = init();
     } else if (!e.matches && lenis) {
+      gsap.ticker.remove(tick);
       lenis.destroy();
       lenis = null;
     }
   });
+
+  window.addEventListener("hashchange", () => {
+    const target = getTarget(window.location.hash);
+    if (target) scrollToTarget(target, true);
+  });
+
+  const initialHash = window.location.hash;
+  if (!getTarget(initialHash)) return;
+
+  let interrupted = false;
+  const interrupt = () => {
+    interrupted = true;
+  };
+  const inputEvents = ["wheel", "touchstart", "pointerdown", "keydown"] as const;
+  inputEvents.forEach((event) => {
+    window.addEventListener(event, interrupt, { passive: true });
+  });
+
+  async function scrollToInitialHash() {
+    // Images, fonts and component initialization can move the anchor. GSAP's
+    // refresh can also restore a scroll position captured before the native jump.
+    await document.fonts.ready;
+    ScrollTrigger.refresh();
+    await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+
+    inputEvents.forEach((event) => window.removeEventListener(event, interrupt));
+    if (interrupted || window.location.hash !== initialHash) return;
+    const target = getTarget(initialHash);
+    if (target) scrollToTarget(target, true);
+  }
+
+  if (document.readyState === "complete") {
+    void scrollToInitialHash();
+  } else {
+    window.addEventListener("load", () => {
+      void scrollToInitialHash();
+    }, { once: true });
+  }
 }
