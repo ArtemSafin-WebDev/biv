@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  <main class="page-main">
+    <div class="container">
+      <div>
+        <button class="btn" type="button" data-modal-open="employer-rating-modal">
+          Открыть попап
+        </button>
+      </div>
+    </div>
+  </main>
+  {{> sections/employer-rating-modal }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>

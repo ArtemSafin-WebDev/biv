@@ -1,0 +1,200 @@
+@use "mixins" as *;
+
+@layer sections {
+  .employer-rating-modal {
+    position: fixed;
+    inset: 0;
+    width: 60rem;
+    max-width: calc(100% - 4rem);
+    max-height: calc(100% - 4rem);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 1.6rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    color: var(--text-color);
+    background-color: white;
+    opacity: 0;
+    transform: translateY(1.2rem) scale(0.98);
+    transition:
+      opacity 0.28s ease,
+      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      display 0.32s allow-discrete,
+      overlay 0.32s allow-discrete;
+
+    &[open] {
+      opacity: 1;
+      transform: none;
+    }
+
+    &::backdrop {
+      background-color: rgba(0, 36, 53, 0.4);
+      opacity: 0;
+      transition:
+        opacity 0.28s ease,
+        display 0.32s allow-discrete,
+        overlay 0.32s allow-discrete;
+    }
+
+    &[open]::backdrop {
+      opacity: 1;
+    }
+
+    @starting-style {
+      &[open] {
+        opacity: 0;
+        transform: translateY(1.2rem) scale(0.98);
+      }
+
+      &[open]::backdrop {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transform: none;
+      transition: none;
+
+      &::backdrop {
+        transition: none;
+      }
+    }
+
+    @include desktop {
+      width: 54rem;
+    }
+
+    @include mobile {
+      width: 32rem;
+    }
+  }
+
+  .employer-rating-modal__body {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include mobile {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .employer-rating-modal__art {
+    display: block;
+    aspect-ratio: 5 / 6;
+    overflow: hidden;
+
+    @include desktop {
+      aspect-ratio: 9 / 10;
+    }
+
+    @include mobile {
+      aspect-ratio: 2;
+    }
+  }
+
+  .employer-rating-modal__image {
+    width: 100%;
+  }
+
+  .employer-rating-modal__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: start;
+    padding: 9rem 1.5rem 0;
+    text-align: center;
+
+    @include desktop {
+      padding: 6rem 2.7rem 0;
+    }
+
+    @include mobile {
+      padding: 3.8rem 2.5rem 4rem;
+    }
+  }
+
+  .employer-rating-modal__title {
+    align-self: stretch;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 110%;
+
+    @include desktop {
+      font-size: 1.8rem;
+    }
+  }
+
+  .employer-rating-modal__description {
+    align-self: stretch;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    line-height: 120%;
+
+    @include desktop {
+      margin-top: 2.1rem;
+    }
+
+    @include mobile {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .employer-rating-modal__vote {
+    margin-top: 2rem;
+    padding: 1.2rem 1.6rem;
+    border: 0;
+    border-radius: 7.1rem;
+    color: white;
+    background-color: var(--employer-rating-accent);
+    box-shadow: 0 0.4rem 0.2rem rgba(0, 36, 53, 0.25);
+    font-size: 1.6rem;
+    line-height: 94%;
+    letter-spacing: -0.032rem;
+
+    @include desktop {
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+    }
+  }
+
+  .employer-rating-modal__close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    color: var(--employer-rating-accent);
+
+    @include hover-device {
+      &:hover {
+        color: #45b7e9;
+      }
+    }
+
+    @include mobile {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+
+  .employer-rating-modal__close-icon {
+    width: 4.06rem;
+    height: 4.06rem;
+    margin: -0.13rem -0.93rem -0.93rem -0.13rem;
+    fill: currentColor;
+  }
+
+  .employer-rating-modal__close-outline {
+    fill: none;
+    stroke: white;
+  }
+
+  .employer-rating-modal :is(a, button):focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 0.3rem;
+  }
+}
