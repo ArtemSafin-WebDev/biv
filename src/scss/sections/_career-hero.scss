@@ -116,7 +116,7 @@
     align-content: space-between;
     width: 100%;
     height: 100%;
-    padding: 18.6rem 9.4rem 17.6rem;
+    padding: 18.1rem 9.4rem;
   }
 
   .career-hero__link-item--employees,
@@ -208,18 +208,18 @@
 
   .career-hero__links {
     @include desktop {
-      padding: 16.6rem 6rem 17.4rem;
+      padding: 17rem 6rem;
     }
 
     @media (width: 1025px) {
-      padding: 21.37rem 7.73rem 21.9rem;
+      padding: 21.635rem 7.73rem;
     }
 
     @include mobile {
-      grid-template-columns: max-content max-content max-content;
+      grid-template-columns: 1fr max-content 1fr;
       grid-template-rows: max-content max-content max-content;
       align-items: center;
-      padding: 2rem 1.1rem 3rem;
+      padding: 2.5rem 1.1rem;
     }
   }
 
