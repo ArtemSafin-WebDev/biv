@@ -182,9 +182,9 @@
   }
 
   .employer-rating-modal__close-icon {
-    width: 4.06rem;
-    height: 4.06rem;
-    margin: -0.13rem -0.93rem -0.93rem -0.13rem;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
     fill: currentColor;
   }
 
@@ -194,7 +194,7 @@
   }
 
   .employer-rating-modal :is(a, button):focus-visible {
-    outline: 2px solid var(--text-color);
-    outline-offset: 0.3rem;
+    /* outline: 2px solid var(--text-color);
+    outline-offset: 0.3rem; */
   }
 }

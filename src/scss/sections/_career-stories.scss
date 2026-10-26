@@ -42,7 +42,7 @@
     isolation: isolate;
     width: min(171rem, calc(100% - 8rem));
     margin-inline: auto;
-    margin-block-start: -2.3rem;
+    margin-block-start: 2.3rem;
     touch-action: pan-y;
     user-select: none;
 
@@ -53,7 +53,7 @@
 
     @include mobile {
       width: var(--stories-focus-size);
-      margin-block-start: -1.3rem;
+      margin-block-start: 1.3rem;
     }
   }
 
